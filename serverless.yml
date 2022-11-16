@@ -19,6 +19,11 @@ provider:
 functions:
   broadband:
     handler: handler.broadband
+    events: 
+      - http: 
+          path: broadband
+          method: post
+          cors: true
 
 plugins:
   - serverless-offline
