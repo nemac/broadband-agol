@@ -2,15 +2,25 @@ service: broadband-agol
 
 frameworkVersion: '2 || 3'
 
+custom:
+  pythonRequirements:
+    # dockerizePip: true
+    zip: true
 
 provider:
   name: aws
   runtime: python3.8
+  stage: ${opt:stage, 'dev'}
   lambdaHashingVersion: 20201221
+  memorySize: 128
+  timeout: 30
+  environment:
+    STAGE: ${self:provider.stage}
 
 functions:
-  hello:
-    handler: handler.hello
+  broadband:
+    handler: handler.broadband
 
 plugins:
+  - serverless-offline
   - serverless-python-requirements

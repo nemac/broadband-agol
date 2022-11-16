@@ -99,15 +99,3 @@ serverless plugin install -n serverless-python-requirements
 
 Running the above will automatically add `serverless-python-requirements` to `plugins` section in your `serverless.yml` file and add it as a `devDependency` to `package.json` file. The `package.json` file will be automatically created if it doesn't exist beforehand. Now you will be able to add your dependencies to `requirements.txt` file (`Pipfile` and `pyproject.toml` is also supported but requires additional configuration) and they will be automatically injected to Lambda package during build process. For more details about the plugin's configuration, please refer to [official documentation](https://github.com/UnitedIncome/serverless-python-requirements).
 
-### Installed Dependencies
-`serverless-python-requirements` was installed along with [ArcGIS API Install with minimum dependencies](https://developers.arcgis.com/python/guide/install-and-set-up/#Install-with-minimum-dependencies)
-
-```pip install arcgis --no-deps
-pip install ujson --no-deps
-pip install six --no-deps
-pip install requests
-pip install requests_toolbelt --no-deps
-pip install requests_ntlm
-pip install ntlm_auth --no-deps
-pip install pandas
-pip freeze > requirements.txt```
