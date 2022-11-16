@@ -9,9 +9,8 @@ custom:
 
 provider:
   name: aws
-  runtime: python3.8
+  runtime: python3.9
   stage: ${opt:stage, 'dev'}
-  lambdaHashingVersion: 20201221
   memorySize: 128
   timeout: 30
   environment:
