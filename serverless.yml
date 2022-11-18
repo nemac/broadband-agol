@@ -1,17 +1,17 @@
 service: broadband-agol
 
-frameworkVersion: '2 || 3'
+#frameworkVersion: '2 || 3'
 
 custom:
   pythonRequirements:
-    # dockerizePip: true
+    dockerizePip: true
     zip: true
 
 provider:
   name: aws
   runtime: python3.9
   stage: ${opt:stage, 'dev'}
-  memorySize: 128
+  memorySize: 2048
   timeout: 30
   environment:
     STAGE: ${self:provider.stage}

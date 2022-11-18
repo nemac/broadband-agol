@@ -1,3 +1,7 @@
+try:
+  import unzip_requirements
+except ImportError:
+  pass
 from arcgis import GIS
 import json, os, pandas, requests
 
