@@ -4,7 +4,7 @@ service: broadband-agol
 
 custom:
   pythonRequirements:
-    dockerizePip: true
+    # dockerizePip: 'non-linux'
     zip: true
 
 provider:
