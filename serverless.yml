@@ -5,11 +5,16 @@ service: broadband-agol
 custom:
   pythonRequirements:
     dockerizePip: true
+    dockerImage: public.ecr.aws/sam/build-python3.8:latest
+    useStaticCache: false
+    # dockerImage: esridocker/arcgis-api-python-notebook:latest
     zip: true
+    #slim: true
+    strip: false # get around ELF issues
 
 provider:
   name: aws
-  runtime: python3.9
+  runtime: python3.8
   stage: ${opt:stage, 'dev'}
   memorySize: 2048
   timeout: 30
