@@ -5,12 +5,11 @@ service: broadband-agol
 custom:
   pythonRequirements:
     dockerizePip: true
-    # dockerImage: public.ecr.aws/sam/build-python3.8:latest
     useStaticCache: false
-    # dockerImage: esridocker/arcgis-api-python-notebook:latest
     zip: true
-    #slim: true
-    strip: false # get around ELF issues
+    slim: true
+    pipCmdExtraArgs:
+      - --no-deps
 
 provider:
   name: aws

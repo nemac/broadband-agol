@@ -3,7 +3,8 @@ try:
 except ImportError:
   pass
 from arcgis import GIS
-import json, os, pandas, requests
+#import json, os, pandas, requests
+import json, os, requests
 
 # portal_url = "https://thisWillFail.maps.arcgis.com"
 # portal_user = "notAUser"
