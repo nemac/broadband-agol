@@ -5,7 +5,7 @@ service: broadband-agol
 custom:
   pythonRequirements:
     dockerizePip: true
-    dockerImage: public.ecr.aws/sam/build-python3.8:latest
+    # dockerImage: public.ecr.aws/sam/build-python3.8:latest
     useStaticCache: false
     # dockerImage: esridocker/arcgis-api-python-notebook:latest
     zip: true
