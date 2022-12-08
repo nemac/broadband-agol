@@ -7,13 +7,14 @@ custom:
     dockerizePip: true
     useStaticCache: false
     zip: true
-    slim: true
+    # seems like slim cannot be true for geopandas to work
+    # slim: true
     pipCmdExtraArgs:
       - --no-deps
 
 provider:
   name: aws
-  runtime: python3.8
+  runtime: python3.9
   stage: ${opt:stage, 'dev'}
   memorySize: 2048
   timeout: 30

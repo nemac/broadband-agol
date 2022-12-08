@@ -3,8 +3,7 @@ try:
 except ImportError:
   pass
 from arcgis import GIS
-#import json, os, pandas, requests
-import json, os, requests
+import json, os, geopandas, pandas, requests, boto3
 
 # portal_url = "https://thisWillFail.maps.arcgis.com"
 # portal_user = "notAUser"
@@ -22,6 +21,9 @@ def broadband(event, context):
     try:
         print("ArcGIS Online as anonymous user")
         print("Logged in as anonymous user to " + gis.properties.portalName)
+        url = "http://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_land.geojson"
+        file = geopandas.read_file(url)
+        print(file)
     except Exception as e:
         print(e)
 
