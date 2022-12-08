@@ -11,6 +11,8 @@ import json, os, geopandas, pandas, requests, boto3
 
 #gis = GIS(url=portal_url, username=portal_user, password=portal_password)
 gis = GIS()
+s3_client = boto3.client("s3")
+S3_BUCKET_NAME = 'broadband-agol-data'
 
 def broadband(event, context):
     body = {
@@ -21,9 +23,11 @@ def broadband(event, context):
     try:
         print("ArcGIS Online as anonymous user")
         print("Logged in as anonymous user to " + gis.properties.portalName)
-        url = "http://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_land.geojson"
-        file = geopandas.read_file(url)
-        print(file)
+
+        test_input_file = 'sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg'
+        s3_file_content = s3_client.get_object(Bucket=S3_BUCKET, Key=test_input_file)["Body"].read()
+        test_input_file_read = geopandas.read_file(s3_file_content)
+        print(test_input_file_read)
     except Exception as e:
         print(e)
 
