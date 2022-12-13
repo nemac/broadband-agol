@@ -3,13 +3,11 @@ import geopandas, os
 sample_dir = os.path.join(os.getcwd(), 'gpkgs')
 input_file = os.path.join(sample_dir, 'outputs/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')
 output_file = os.path.join(sample_dir, 'outputs/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE.gpkg')
+sample_input = geopandas.read_file(input_file)
 
-def generate_data(input_path, output_path):
-    sample_dir = os.path.join(os.getcwd(), 'gpkgs')
-    input_path = os.path.join(sample_dir, 'outputs/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')
-    output_path = os.path.join(sample_dir, 'outputs/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE.gpkg')
 
-    sample_input = geopandas.read_file(input_path)
+def generate_data(input_data):
+
     # sample_output = geopandas.read_file(output_path)
 
     ookla_data = geopandas.read_file(os.path.join(sample_dir, 'ookola_fixed.gpkg'))
@@ -30,4 +28,4 @@ def generate_data(input_path, output_path):
     return output_df
 
 if __name__ == '__main__':
-    generate_data(input_file, output_file)
+    generate_data(sample_input)
