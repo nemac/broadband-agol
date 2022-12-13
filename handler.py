@@ -25,7 +25,7 @@ def broadband(event, context):
         print("Logged in as anonymous user to " + gis.properties.portalName)
 
         test_input_file = 'sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg'
-        s3_file_content = s3_client.get_object(Bucket=S3_BUCKET, Key=test_input_file)["Body"].read()
+        s3_file_content = s3_client.get_object(Bucket=S3_BUCKET, Key=test_input_file).read()
         test_input_file_read = geopandas.read_file(s3_file_content)
         print(test_input_file_read)
     except Exception as e:
