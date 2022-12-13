@@ -6,8 +6,9 @@ output_file = os.path.join(sample_dir, 'outputs/wnc_user_defined_summary-THIS-IS
 sample_input = geopandas.read_file(input_file)
 
 
-def generate_data(input_data):
+def generate_data(input_data=sample_input):
 
+    input_data = geopandas.read_file(input_data)
     # sample_output = geopandas.read_file(output_path)
 
     ookla_data = geopandas.read_file(os.path.join(sample_dir, 'ookola_fixed.gpkg'))
@@ -28,4 +29,4 @@ def generate_data(input_data):
     return output_df
 
 if __name__ == '__main__':
-    generate_data(sample_input)
+    generate_data()
