@@ -6,7 +6,7 @@ output_file = os.path.join(sample_dir, 'outputs/wnc_user_defined_summary-THIS-IS
 sample_input = geopandas.read_file(input_file)
 
 
-def generate_data(input_data=sample_input):
+def generate_data(input_data=input_file):
 
     input_data = geopandas.read_file(input_data)
     # sample_output = geopandas.read_file(output_path)
@@ -25,7 +25,7 @@ def generate_data(input_data=sample_input):
         raw_data = ookla_data[ookla_data['geometry'].map(lambda shape: shape.intersects(geom))]
     for i, col_name in enumerate(new_cols):
         output_df.loc[index, form_cols[i]] = raw_data[col_name].mean()
-    print(output_df)
+    print(output_df)  # WE ALSO WANT TO WRITE THIS JAZZ TO S3 as a TIMESTAMP OF GOOD TIMES!!!!!!
     return output_df
 
 if __name__ == '__main__':
