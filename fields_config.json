@@ -1150,77 +1150,77 @@
     "ookola_mobile_devices_22_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_22_0"
+            "devices_22_07"
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_devices_22_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_22_0"
+            "devices_22_04"
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_devices_22_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_22_0"
+            "devices_22_01"
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_devices_21_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_21_1"
+            "devices_21_10"
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_devices_21_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_21_0"
+            "devices_21_07"
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_devices_21_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_21_0"
+            "devices_21_04"
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_devices_21_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_21_0"
+            "devices_21_01"
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_devices_20_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_20_1"
+            "devices_20_10"
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_devices_20_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_20_0"
+            "devices_20_07"
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_devices_20_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_20_0"
+            "devices_20_04"
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_devices_20_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "devices_20_0"
+            "devices_20_01"
         ],
         "operation": "AVERAGE"
     },
