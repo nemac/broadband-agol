@@ -536,503 +536,503 @@
     },
     "ookola_fixed_d_mbps_22_10": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_22_10"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_22_10": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_22_10"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_22_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_22_07"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_22_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_22_07"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_22_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_22_04"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_22_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_22_04"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_22_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_22_01"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_22_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_22_01"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_21_10": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_21_10"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_21_10": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_21_10"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_21_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_21_07"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_21_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_21_07"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_21_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_21_04"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_21_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_21_04"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_21_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_21_01"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_21_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_21_01"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_20_10": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_20_10"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_20_10": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_20_10"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_20_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_20_07"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_20_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_20_07"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_20_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_20_04"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_20_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_20_04"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_d_mbps_20_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_20_01"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_20_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_20_01"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_22_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_22_07"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_22_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_22_04"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_22_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_22_01"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_21_10": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_21_10"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_21_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_21_07"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_21_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_21_04"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_21_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_21_01"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_20_10": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_20_10"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_20_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_20_07"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_20_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_20_04"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_tests_20_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_20_01"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_22_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_22_0"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_22_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_22_0"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_22_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_22_0"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_21_10": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_21_1"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_21_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_21_0"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_21_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_21_0"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_21_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_21_0"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_20_10": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_20_1"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_20_07": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_20_0"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_20_04": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_20_0"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_devices_20_01": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_20_0"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_avg_d_mbps": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["avg_d_mbps"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_avg_u_mbps": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["avg_u_mbps"],
+        "operation": "AVERAGE"
     },
     "ookola_fixed_total_tests": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["total_tests"],
+        "operation": "SUM"
     },
     "ookola_fixed_total_devices": {
         "sourcefile": "ookola_fixed.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["total_devices"],
+        "operation": "SUM"
     },
     "ookola_mobile_d_mbps_22_10": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_22_10"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_22_10": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_22_10"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_22_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_22_07"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_22_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_22_07"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_22_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_22_04"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_22_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_22_04"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_22_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_22_01"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_22_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_22_01"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_21_10": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_21_10"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_21_10": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_21_10"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_21_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_21_07"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_21_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_21_07"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_21_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_21_04"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_21_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_21_04"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_21_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_21_01"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_21_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_21_01"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_20_10": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_20_10"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_20_10": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_20_10"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_20_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_20_07"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_20_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_20_07"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_20_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_20_04"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_20_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_20_04"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_d_mbps_20_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["d_mbps_20_01"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_20_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["u_mbps_20_01"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_22_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_22_07"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_22_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_22_04"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_22_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_22_01"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_21_10": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_21_10"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_21_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_21_07"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_21_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_21_04"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_21_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_21_01"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_20_10": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_20_10"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_20_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_20_07"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_20_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["tests_20_04"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_tests_20_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
+        "sourcefields": ["tests_20_01"],
         "operation": "TBD"
     },
     "ookola_mobile_devices_22_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_22_0"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_devices_22_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_22_0"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_devices_22_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_22_0"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_devices_21_10": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_21_1"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_devices_21_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_21_0"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_devices_21_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_21_0"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_devices_21_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_21_0"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_devices_20_10": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_20_1"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_devices_20_07": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_20_0"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_devices_20_04": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_20_0"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_devices_20_01": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["devices_20_0"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_avg_d_mbps": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["avg_d_mbps"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_avg_u_mbps": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["avg_u_mbps"],
+        "operation": "AVERAGE"
     },
     "ookola_mobile_total_tests": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["total_tests"],
+        "operation": "SUM"
     },
     "ookola_mobile_total_devices": {
         "sourcefile": "ookola_mobile.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["total_device"],
+        "operation": "SUM"
     },
     "uid": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
