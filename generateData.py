@@ -62,25 +62,20 @@ def get_field_data(field_name, id, src_data):
 
     # ONLY NEED TO READ INPUT
     if task == 'COPYINPUT':
-        print(f'copying input for {field_name}...')
-        value = src_data.loc[src_data['id'] == id][field_name]
-        print(type(value))
-        print(value)
+        value = src_data.loc[src_data['id'] == id][field_name].iloc[0] #return 1st (only) geoseries element
+
         return value
     else: # NEED TO CHECK AGAINST A SEPARATE GPKG
         # GET QUERIED GEOMETRY
-        poly_of_interest = input_data.loc[input_data['id']==id]['geometry'][0]
-        print(f"poly of interest: {poly_of_interest}")
+        poly_of_interest = input_data.loc[input_data['id']==id]['geometry'].iloc[0] #return 1st (only) geoseries element
 
         if task == 'AVERAGE':
             # print(f'calculating average for {field_name}...')
             # print(src_data[src_data['geometry'].map(lambda shape: shape.intersects(poly_of_interest))])
             ret_values = src_data[src_data['geometry'].map(lambda shape: shape.intersects(poly_of_interest))]
-            print('all values')
             all_values = np.array(list(ret_values[fields_config[field_name]['sourcefields'][0]]))
-            print(all_values)
             value = np.average(all_values)
-            print(f'value: {value}')
+            return value # Currently can return NaN
         elif task == 'SUM':
             pass
         else:
@@ -112,9 +107,10 @@ def generate_data():
     # THIS BLOCK FOR DEV ONLY
     gpkg_data = read_all_gpkgs(debug=True) # THIS WILL MOVE TO if has_new_values
     test_ids = [1, 2, 3, 4, 5]
-    test_fields = ["ookola_fixed_d_mbps_21_07", "project_name", "id"]
+    test_fields = ["ookola_fixed_d_mbps_21_07", "project_name", "id", "geometry"]
     output_df = output_data.copy(deep=True)
     test_output = {}
+    
     # for id in new_ids:
     for id in test_ids:
         test_output[id] = {}
@@ -126,6 +122,7 @@ def generate_data():
             else:
                 src_data = gpkg_data[gpkg_src_file]
             test_output[id][field] = get_field_data(field, id, src_data)
+    print('output data as dictionary, needs to be DF when all fields exist:')
     print(test_output)
     exit()
 
