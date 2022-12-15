@@ -2,47 +2,47 @@
     "id": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["id"],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     },
     "objectid": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["objectid"],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     },
     "globalid": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["globalid"],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     },
     "creationdate": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["creationdate"],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     },
     "creator": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["creator"],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     },
     "editdate": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["editdate"],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     },
     "editor": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["editor"],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     },
     "project_name": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["project_name"],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     },
     "_date": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["_date"],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     },
     "hexid": {
         "sourcefile": "TBD",
@@ -107,7 +107,7 @@
     "fed_grant_names": {
         "sourcefile": "wnc_fed_grant_areas.gpkg",
         "sourcefields": [],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     },
     "is_fed_grant_ineligible": {
         "sourcefile": "wnc_fed_grant_areas.gpkg",
@@ -1092,6 +1092,6 @@
     "geometry": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["geometry"],
-        "operation": "COPY"
+        "operation": "COPYINPUT"
     }
 }
