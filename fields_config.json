@@ -1258,32 +1258,56 @@
         "operation": "TBD"
     },
     "fccnew_questionable": {
-        "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "FCCNEW",
+        "sourcefields": [
+            "tech_questionable",
+            "fccnew_summary_speedtier",
+            "speed_questionable",
+            "ncsur_speed_questionable",
+            "ookola_speed_questionable",
+            "ook_speedtestsless",
+            "ncsur_peedtestsless"
+        ],
+        "operation": "BOOLSUMTABLE"
     },
     "fccnew_techquestionable": {
-        "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "FCCNEW",
+        "sourcefields": [
+            "fccnew_summary_categories"
+        ],
+        "operation": "BOOLSUMTABLE"
     },
     "fccnew_need_more_ook": {
-        "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "FCCNEW",
+        "sourcefields": [
+            "need_ook_speedtest",
+            "tech_questionable",
+            "ook_speedtestsless",
+            "ncsur_peedtestsless"
+        ],
+        "operation": "BOOLSUMTABLE"
     },
     "fccnew_need_survey": {
-        "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "FCCNEW",
+        "sourcefields": [
+            "need_ncsur",
+            "tech_questionable",
+            "ook_speedtestsless",
+            "ncsur_peedtestsless"
+        ],
+        "operation": "BOOLSUMTABLE"
     },
     "fccnew_speed_questionable": {
-        "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "FCCNEW",
+        "sourcefields": [
+            "fccnew_max_advertised_download_speed",
+            "fccnew_max_advertised_upload_speed",
+            "fccnew_summary_speedtier"
+        ],
+        "operation": "BOOLSUMTABLE"
     },
     "fccold_questionable": {
-        "sourcefile": "OUTPUTFILE",
+        "sourcefile": "FCCOLD",
         "sourcefields": [
             "tech_questionable",
             "fccold_summary_speedtier",
@@ -1294,40 +1318,40 @@
             "ook_speedtestsless",
             "ncsur_peedtestsless"
         ],
-        "operation": "BOOLSUM"
+        "operation": "BOOLSUMTABLE"
     },
     "fccold_techquestionable": {
-        "sourcefile": "OUTPUTFILE",
+        "sourcefile": "FCCOLD",
         "sourcefields": ["fccold_summary_category"],
-        "operation": "BOOLSUM"
+        "operation": "BOOLSUMTABLE"
     },
     "fccold_need_more_ook": {
-        "sourcefile": "OUTPUTFILE",
+        "sourcefile": "FCCOLD",
         "sourcefields": [
             "need_ook_speedtest",
             "tech_questionable",
             "ook_speedtestsless",
             "ncsur_peedtestsless"
         ],
-        "operation": "BOOLSUM"
+        "operation": "BOOLSUMTABLE"
     },
     "fccold_need_survey": {
-        "sourcefile": "OUTPUTFILE",
+        "sourcefile": "FCCOLD",
         "sourcefields": [
             "need_ncsur",
             "tech_questionable",
             "ook_speedtestsless",
             "ncsur_peedtestsless"],
-        "operation": "BOOLSUM"
+        "operation": "BOOLSUMTABLE"
     },
     "fccold_speed_questionable": {
-        "sourcefile": "OUTPUTFILE",
+        "sourcefile": "FCCOLD",
         "sourcefields": [
             "fccold_all_max_down",
             "fccold_all_max_up",
             "fccold_speedtier"
         ],
-        "operation": "BOOLSUM"
+        "operation": "BOOLSUMTABLE"
     },
     "geometry": {
         "sourcefile": "USERINPUT",
