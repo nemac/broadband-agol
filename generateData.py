@@ -89,8 +89,8 @@ def generate_data():
     and processed from the input data.
 
 
-    :return: A dataframe containing ALL data to be sent back to AGOL and replace previous data.
-    :rtype: geopandas.geodataframe.GeoDataFrame """
+    :return: A dict containing ALL data to be sent back to AGOL and replace previous data.
+    :rtype: dict """
 
     # CHECK FOR NEW ENTRIES
     new_ids = list(set(input_data['id']).symmetric_difference(set(output_data['id'])))
@@ -122,8 +122,8 @@ def generate_data():
             else:
                 src_data = gpkg_data[gpkg_src_file]
             test_output[id][field] = get_field_data(field, id, src_data)
-    print('output data as dictionary, needs to be DF when all fields exist:')
-    print(test_output)
+    print('output data as dictionary')
+    return test_output
     exit()
 
     ookla_data = geopandas.read_file(os.path.join(sample_dir, 'ookola_fixed.gpkg'))
@@ -145,4 +145,4 @@ def generate_data():
 
 if __name__ == '__main__':
     # get_field_data('id')
-    generate_data()
+    print(generate_data())
