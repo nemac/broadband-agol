@@ -128,7 +128,7 @@ def generate_data(input_data=input_s3):
             else:
                 src_data = gpkg_data[gpkg_src_file]
             test_output[id][field] = get_field_data(field, id, src_data, input_data)
-    print('output data as dictionary')
+    # print('output data as dictionary')
     return test_output
     exit()
 
