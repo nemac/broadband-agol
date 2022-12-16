@@ -1,18 +1,28 @@
-import geopandas, os, json, glob
+import geopandas, os, json, glob, boto3
 import numpy as np
 
 #WE WILL PROBABLY RENAME THESE GLOBALS
 
+# READ GPKGS FROM S3
+s3_client = boto3.client("s3")
+S3_BUCKET = 'broadband-agol-data'
+s3_file_content = s3_client.list_objects_v2(Bucket=S3_BUCKET)['Contents']
+all_s3_gpkg_keys = [obj['Key'] for obj in s3_file_content]
 #sample_dir points to the dir containing our src gpkgs with all the data
-sample_dir = os.path.join(os.getcwd(), 'gpkgs')
+# sample_dir = os.path.join(os.getcwd(), 'gpkgs')
 #input_path points to latest user input file
-input_path = os.path.join(sample_dir, 'outputs/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')
+# input_path = os.path.join(sample_dir, 'outputs/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')
 #output_path points to our latest updated copy in s3
-output_path = os.path.join(sample_dir, 'outputs/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE.gpkg')
+# output_path = os.path.join(sample_dir, 'outputs/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE.gpkg')
 
 # START BY READIN IN/OUT FILES, ALWAYS NEEDS TO HAPPEN
-input_data = geopandas.read_file(input_path)
-output_data = geopandas.read_file(output_path)
+# input_data = geopandas.read_file(input_path)
+
+output_data = geopandas.read_file(s3_client.get_object(Bucket=S3_BUCKET, Key='sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')['Body'])
+input_data = geopandas.read_file(s3_client.get_object(Bucket=S3_BUCKET, Key='sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')['Body'])
+
+# output_data = geopandas.read_file(output_object)
+print(output_data)
 # Get configurations for field data
 with open('fields_config.json', 'r') as jfile:
     fields_config = json.load(jfile)
@@ -35,11 +45,13 @@ def read_all_gpkgs(debug=False):
     print(f"debug={debug}")
     if debug:
         print('debug mode, only reading ookola_fixed.gpkg')
-        ookola_fixed_path = os.path.join(sample_dir, 'ookola_fixed.gpkg')
-        gpkg_data = {'ookola_fixed.gpkg': geopandas.read_file(ookola_fixed_path)}
+        ookola_fixed_file = 'ookola_fixed.gpkg'
+        the_body= s3_client.get_object(Bucket=S3_BUCKET, Key=ookola_fixed_file)['Body']
+        gpkg_data = {'ookola_fixed.gpkg': geopandas.read_file(the_body)}
+
     else:
-        all_gpkgs = glob.glob(os.path.join(sample_dir, '*.gpkg'))
-        gpkg_data = {os.path.basename(path):geopandas.read_file(path) for path in all_gpkgs}
+        gpkg_data = {gpkg_file:geopandas.read_file(s3_client.get_object(Bucket=S3_BUCKET, Key=gpkg_file)['Body']) for gpkg_file in all_s3_gpkg_keys}
+
     print('done!')
     return gpkg_data
 
