@@ -7,21 +7,15 @@ import numpy as np
 s3_client = boto3.client("s3")
 S3_BUCKET = 'broadband-agol-data'
 s3_file_content = s3_client.list_objects_v2(Bucket=S3_BUCKET)['Contents']
-all_s3_gpkg_keys = [obj['Key'] for obj in s3_file_content]
-#sample_dir points to the dir containing our src gpkgs with all the data
-# sample_dir = os.path.join(os.getcwd(), 'gpkgs')
-#input_path points to latest user input file
-# input_path = os.path.join(sample_dir, 'outputs/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')
-#output_path points to our latest updated copy in s3
-# output_path = os.path.join(sample_dir, 'outputs/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE.gpkg')
+do_not_include = [
+    'sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg', 
+    'sample input:output data/wnc_h3_level8_summary-YOU-DONT-NEED-TO_GENERATE-THIS.gpkg', 
+    'sample input:output data/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE']
+all_s3_gpkg_keys = [obj['Key'] for obj in s3_file_content if not obj['Key'] in do_not_include]
 
-# START BY READIN IN/OUT FILES, ALWAYS NEEDS TO HAPPEN
-# input_data = geopandas.read_file(input_path)
-
-output_data = geopandas.read_file(s3_client.get_object(Bucket=S3_BUCKET, Key='sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')['Body'])
+output_data = geopandas.read_file(s3_client.get_object(Bucket=S3_BUCKET, Key='sample input:output data/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE')['Body'])
 input_data = geopandas.read_file(s3_client.get_object(Bucket=S3_BUCKET, Key='sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')['Body'])
 
-# output_data = geopandas.read_file(output_object)
 print(output_data)
 # Get configurations for field data
 with open('fields_config.json', 'r') as jfile:
