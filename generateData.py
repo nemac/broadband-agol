@@ -14,9 +14,8 @@ do_not_include = [
 all_s3_gpkg_keys = [obj['Key'] for obj in s3_file_content if not obj['Key'] in do_not_include]
 
 output_data = geopandas.read_file(s3_client.get_object(Bucket=S3_BUCKET, Key='sample input:output data/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE')['Body'])
-input_data = geopandas.read_file(s3_client.get_object(Bucket=S3_BUCKET, Key='sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')['Body'])
+input_s3 = geopandas.read_file(s3_client.get_object(Bucket=S3_BUCKET, Key='sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')['Body'])
 
-print(output_data)
 # Get configurations for field data
 with open('fields_config.json', 'r') as jfile:
     fields_config = json.load(jfile)
@@ -49,7 +48,7 @@ def read_all_gpkgs(debug=False):
     print('done!')
     return gpkg_data
 
-def get_field_data(field_name, id, src_data):
+def get_field_data(field_name, id, src_data, input_data):
     """This function takes in a geometry and returns the target
     field data matching all intersections (or direct copied for 
     field values from user input).
@@ -87,7 +86,7 @@ def get_field_data(field_name, id, src_data):
         else:
             raise Exception('Could not complete, unknown Operation:', task)
 
-def generate_data():
+def generate_data(input_data=input_s3):
     """This function takes an input from user and generates all data
     for all fields (contained in output_file), then returns a dataframe
     of the new data.  The newly returned data should contain all data
@@ -97,6 +96,7 @@ def generate_data():
 
     :return: A dict containing ALL data to be sent back to AGOL and replace previous data.
     :rtype: dict """
+
 
     # CHECK FOR NEW ENTRIES
     new_ids = list(set(input_data['id']).symmetric_difference(set(output_data['id'])))
@@ -127,7 +127,7 @@ def generate_data():
                 src_data = input_data
             else:
                 src_data = gpkg_data[gpkg_src_file]
-            test_output[id][field] = get_field_data(field, id, src_data)
+            test_output[id][field] = get_field_data(field, id, src_data, input_data)
     print('output data as dictionary')
     return test_output
     exit()
