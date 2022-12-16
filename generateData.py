@@ -95,6 +95,8 @@ def get_field_data(field_name, id, src_data, input_data):
                 lambda shape: shape.intersects(poly_of_interest))]
             all_values = np.array(
                 list(ret_values[fields_config[field_name]['sourcefields'][0]]))
+            if not len(all_values):
+                raise Exception('NO INTERSECTIONS DETECTED')
             value = np.average(all_values)
             return value  # Currently can return NaN
         elif task == 'SUM':
