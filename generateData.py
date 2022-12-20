@@ -324,7 +324,7 @@ def get_field_data(field_name, poly, src_data):
         raise Exception('Could not complete, unknown Operation:', task)
 
 
-def generate_data(input_data=input_s3, debug=False):
+def generate_data(input_geojson, debug=False):
     """This function takes an input from user and generates all data
     for all fields (contained in output_file), then returns a dataframe
     of the new data.  The newly returned data should contain all data
@@ -336,9 +336,9 @@ def generate_data(input_data=input_s3, debug=False):
     :rtype: dict """
 
     # CHECK FOR NEW ENTRIES
-    deserialized_input = json.load(input_data)
+    deserialized_input = json.loads(input_geojson)
+    input_data = geopandas.read_file(input_geojson)
     id = deserialized_input['properties']['objectid']
-    print(id)
     gpkg_data = {}
 
     # Generate output dictionary, blank for now
@@ -347,9 +347,7 @@ def generate_data(input_data=input_s3, debug=False):
     # THIS BLOCK FOR DEV ONLY
     # THIS WILL MOVE TO if has_new_values
     gpkg_data = read_all_gpkgs(debug=debug)
-    # test_ids = [1, 2, 3, 4, 5]
-    test_fields = ["ookola_fixed_d_mbps_21_07",
-                   "project_name", "id", "geometry"]
+
     first_round_ops = ['AVERAGE', 'SUM', 'COUNT', 'LIST',
                        'MAX', 'MIN', 'NONZERO', 'SET']
 
@@ -414,7 +412,7 @@ def generate_data(input_data=input_s3, debug=False):
 if __name__ == '__main__':
     input_geojson = """{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[-83.24920801364088, 35.24898181734354], [-83.24920801364088, 35.24891172352602], [-83.2491060896983, 35.24897305561967], [
         -83.24920801364088, 35.24898181734354]]]}, "properties": {"project_name": "dsfdsafdsdsffds fssdf sdfsdf", "_date": 1671037200000, "globalid": "{31724E0B-CE20-4965-82ED-0A6AA55DABC8}", "objectid": 8}}"""
-    test_input = geopandas.read_file(input_geojson)
-    pprint(generate_data(test_input))
+    # test_input = geopandas.read_file(input_geojson)
+    pprint(generate_data(input_geojson))
     # get_field_data('id')
     # pprint(generate_data())
