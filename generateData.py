@@ -59,25 +59,26 @@ def read_all_gpkgs(debug=False):
     print(f"debug={debug}")
     if debug:
         file_names = ['ookola_fixed.gpkg', 'ookola_mobile.gpkg',
-            'wnc_nc_broadband_survey.gpkg', 'wnc_ineligibletracts_2022.gpkg',
-            'wnc_great_grants_round1.gpkg', 'wnc_great_grants_round2.gpkg',
-            'wnc_great_grants_round3.gpkg', 'wnc_fed_grant_areas.gpkg',
-            'wnc_address.gpkg', 'wnc_fcc_rdof_auction_904_results.gpkg',
-            'wnc_provider_boundaries_block_477.gpkg',
-            'wnc_fixed_summary_block_477.gpkg']
+                      'wnc_nc_broadband_survey.gpkg', 'wnc_ineligibletracts_2022.gpkg',
+                      'wnc_great_grants_round1.gpkg', 'wnc_great_grants_round2.gpkg',
+                      'wnc_great_grants_round3.gpkg', 'wnc_fed_grant_areas.gpkg',
+                      'wnc_address.gpkg', 'wnc_fcc_rdof_auction_904_results.gpkg',
+                      'wnc_provider_boundaries_block_477.gpkg',
+                      'wnc_fixed_summary_block_477.gpkg']
         print(f'debug mode, only reading {file_names}')
         file_objects = [s3_client.get_object(
             Bucket=S3_BUCKET, Key=f)['Body'] for f in file_names]
-        gpkg_data = {n: geopandas.read_file(o) for n,o in zip(file_names, file_objects)}
+        gpkg_data = {n: geopandas.read_file(
+            o) for n, o in zip(file_names, file_objects)}
 
     else:
         gpkg_data = util_func(s3_client, all_s3_gpkg_keys)
         # gpkg_data = {gpkg_file: geopandas.read_file(s3_client.get_object(
         #     Bucket=S3_BUCKET, Key=gpkg_file)['Body']) for gpkg_file in all_s3_gpkg_keys}
 
-
     print('done!')
     return gpkg_data
+
 
 def generate_summaries(poly, data, output):
 
@@ -85,8 +86,8 @@ def generate_summaries(poly, data, output):
     #                        'fccnew_summary_speedtier': None, # READ IN.. STRING TO BOOL?
     #                        'speed_questionable': None, # CALCULATED HERE SEE FUNC
     #                        'ncsur_speed_questionable': None, # CALCULATED HERE state_survey_maxdownload <= 25 AND state_survey_maxupload <= 3
-    #                        'state_survey_maxdownload': get_field_data('state_survey_maxdownload', poly, data[fields_config['state_survey_maxdownload']]), # READ IN MAX(dl_speed) 
-    #                        'state_survey_maxupload': get_field_data('state_survey_maxupload', poly, data[fields_config['state_survey_maxupload']]), #READ IN MAX(ul_speed) 
+    #                        'state_survey_maxdownload': get_field_data('state_survey_maxdownload', poly, data[fields_config['state_survey_maxdownload']]), # READ IN MAX(dl_speed)
+    #                        'state_survey_maxupload': get_field_data('state_survey_maxupload', poly, data[fields_config['state_survey_maxupload']]), #READ IN MAX(ul_speed)
     #                        'ookola_speed_questioanble': None, # CALCULATED HERE ookola_mobile_avg_d_mbps <= 25 AND ookola_mobile_avg_u_mbps <= 3
     #                        'ookola_mobile_avg_d_mbps': get_field_data('ookola_mobile_avg_d_mbps', poly, data[fields_config['ookola_mobile_avg_d_mbps']]), # READ IN OOKOLA MOBILE
     #                        'ookola_mobile_avg_u_mbps': get_field_data('ookola_mobile_avg_u_mbps', poly, data[fields_config['ookola_mobile_avg_u_mbps']]), # READ IN OOKOLA MOBILE - AVERAGE get_avg(fld, src)
@@ -115,8 +116,8 @@ def generate_summaries(poly, data, output):
     #                        'need_ncsur': None,
     #                        'address_count': get_field_data('address_count', poly, data[fields_config['address_count']]), # READ IN FROM WNC_ADDRESS
     #                        'state_survey_count': get_field_data('state_survey_count', poly, data[fields_config['state_survey_count']]), #READ IN FROM WNC_NC_SURVEY - COUNT ID's Returned from intersection
-    #                        'fccold_all_max_down': get_field_data('fccold_all_max_down', poly, data[fields_config['fccold_all_max_down']]), # READ IN 
-    #                        'fccold_all_max_up': get_field_data('fccold_all_max_up', poly, data[fields_config['fccold_all_max_up']])} # READ IN 
+    #                        'fccold_all_max_down': get_field_data('fccold_all_max_down', poly, data[fields_config['fccold_all_max_down']]), # READ IN
+    #                        'fccold_all_max_up': get_field_data('fccold_all_max_up', poly, data[fields_config['fccold_all_max_up']])} # READ IN
 
     gen_fields = ['questionable', 'techquestionable', 'need_more_ook',
                   'need_survey', 'speed_questionable']
@@ -254,11 +255,13 @@ def generate_summaries(poly, data, output):
         fccold_summary_speedtier'''
         print('fcc_old_speed_questionable')
 
+
 def copy_input(id, field_name, src_data):
     # return 1st (only) geoseries element (all fields) matched by id
     target_field = fields_config[field_name]['sourcefields'][0]
     value = src_data.loc[src_data['objectid'] == id][target_field].iloc[0]
     return value
+
 
 def get_field_data(field_name, poly, src_data):
     """This function takes in a geometry and returns the target
@@ -274,8 +277,8 @@ def get_field_data(field_name, poly, src_data):
 
     :return: A single value, aggregated using the field's operation from config
     :rtype: String || double || int || bool """
-    NANFIX = 0 # This WILL be read from config per field
-    EMPTYFIX = 0 # This WILL be read from config per field
+    NANFIX = 0  # This WILL be read from config per field
+    EMPTYFIX = 0  # This WILL be read from config per field
     EMPTYLISTFIX = []
     print(f'getting data for {field_name}')
     task = fields_config[field_name]['operation']
@@ -283,13 +286,13 @@ def get_field_data(field_name, poly, src_data):
         print('no sourcefield given, returns empty...')
         return EMPTYFIX
     ret_values = src_data[src_data['geometry'].map(
-            lambda shape: shape.intersects(poly))]  # geoseries of intersections
+        lambda shape: shape.intersects(poly))]  # geoseries of intersections
     if len(ret_values):
         all_values = np.nan_to_num(
             np.array(list(ret_values[fields_config[field_name]['sourcefields'][0]])), NANFIX)  # single values for sourcefield
     else:
         all_values = np.array([])
-    if task == 'AVERAGE':  # Take an average across all intersections         
+    if task == 'AVERAGE':  # Take an average across all intersections
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
         value = np.average(all_values)
@@ -298,16 +301,18 @@ def get_field_data(field_name, poly, src_data):
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
         return np.sum(all_values)
-    elif task == 'COUNT': # Count the intersections by id
+    elif task == 'COUNT':  # Count the intersections by id
         return len(all_values)
     elif task == 'MAX':
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
-        return np.max(all_values)  # Currently can return NaN, need to handle that
+        # Currently can return NaN, need to handle that
+        return np.max(all_values)
     elif task == 'MIN':
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
-        return np.min(all_values) # Currently can return NaN, need to handle that
+        # Currently can return NaN, need to handle that
+        return np.min(all_values)
     elif task == 'LIST':
         if not len(all_values):
             return EMPTYLISTFIX
@@ -335,7 +340,7 @@ def generate_data(input_data=input_s3, debug=False):
     gpkg_data = {}
 
     # Generate output dictionary, blank for now
-    output_dict = {f:fields_config[f]['operation'] for f in fields_config}
+    output_dict = {f: fields_config[f]['operation'] for f in fields_config}
 
     # THIS BLOCK FOR DEV ONLY
     # THIS WILL MOVE TO if has_new_values
@@ -343,18 +348,19 @@ def generate_data(input_data=input_s3, debug=False):
     # test_ids = [1, 2, 3, 4, 5]
     test_fields = ["ookola_fixed_d_mbps_21_07",
                    "project_name", "id", "geometry"]
-    first_round_ops = ['AVERAGE', 'SUM', 'COUNT', 'LIST', 'NONZERO', 'SET']
+    first_round_ops = ['AVERAGE', 'SUM', 'COUNT', 'LIST',
+                       'MAX', 'MIN', 'NONZERO', 'SET']
 
     # for id in test_ids:
     # FIRST GET QUERIED INPUT GEOMETRY TO INTERSECT
     # return 1st (only) geoseries geometry element matched by id
     poly_of_interest = input_data.loc[input_data['objectid']
-                                        == id]['geometry'].iloc[0]
+                                      == id]['geometry'].iloc[0]
     # fccold_summ, fccnew_summ = generate_summaries(poly_of_interest, gpkg_data)
 
     # for field in fields_config.keys():
     for field in output_dict:
-    # for field in test_fields:
+        # for field in test_fields:
         try:
             gpkg_src_file = fields_config[field]['sourcefile']
         except:
