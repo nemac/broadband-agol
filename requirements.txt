@@ -1,4 +1,5 @@
 arcgis==2.0.1
+arcgis2geojson==3.0.1
 attrs==22.1.0
 boto3==1.26.25
 botocore==1.29.25
