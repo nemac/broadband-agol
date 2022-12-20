@@ -6,15 +6,17 @@ from arcgis import GIS
 from arcgis.features import Feature
 from arcgis2geojson import arcgis2geojson
 import json, os
-# from generateData import generateData
+from generateData import generate_data
 
 # Define all of your constant that you will need for the function
-
 agol_username = os.environ['AGOL_USERNAME']
 agol_password = os.environ['AGOL_PASSWORD']
 gis = GIS("https://unca.maps.arcgis.com/home/index.html", agol_username, agol_password)
-agol_survey_id = "f3e35478aebf4ca08cd9ca5af3218477" # survey where polys are drawn
-agol_output_data_id = "9cfbc22bfadb4be7b5127f50714c16a8" # feature layer where data is outputted to
+agol_test_survey_id = "4cc4055b7cc14f08984378f2e247ea67"
+agol_test_output_data_id = "d3454682e9844327be5d18fd76ef9d6b"
+
+#agol_survey_id = "f3e35478aebf4ca08cd9ca5af3218477" # survey where polys are drawn
+#agol_output_data_id = "9cfbc22bfadb4be7b5127f50714c16a8" # feature layer where data is outputted to
 
 def broadband(event, context):
     """This function takes an incoming json payload, deserializes 
@@ -35,24 +37,40 @@ def broadband(event, context):
 
     try:
         # deserialize json
-        json_loads = json.loads(event['body'])
-        
+        print('jeff 0')
+        incoming_json = event['body']
+        print('jeff 1')
+        json_loads = json.loads(incoming_json)
+        print('jeff 2')
+
         # grab all important data from the incoming payload
         incoming_feature = json_loads['feature']
+        print('jeff 3')
         incoming_objectid = json_loads['feature']['attributes']['objectid']
+        print('jeff 4')
         incoming_global_id = json_loads['feature']['attributes']['globalid']
+        print('jeff 5')
         incoming_project_name = json_loads['feature']['attributes']['project_name']
+        print('jeff 6')
         incoming_esri_geometry = json_loads['feature']['geometry']
+        print('jeff 7')
 
         # convert feature to geojson for easier processing in generateData.py
-        feature_geojson = arcgis2geojson(incoming_feature)
+        feature_geojson = arcgis2geojson(json.dumps(incoming_feature))
+        print('jeff 8')
+        print(feature_geojson)
+        print('jeff 9')
+        print(type(feature_geojson))
+        print('jeff 10')
 
         # call generateData, pass it the geojson, and expect a dictionary of updates in return
         # at the moment this is commented out so we're building a dictionary ourselves below
-        #output_feature_layer_updates = generateData(feature_geojson)
+        output_feature_layer_updates = generate_data(feature_geojson)
+        print('jeff 11')
 
         # Grab survey that corresponds with incoming id so we can get the rest of the attributes
-        survey = gis.content.get(agol_survey_id).layers[0] 
+        #survey = gis.content.get(agol_survey_id).layers[0]
+        survey = gis.content.get(agol_test_survey_id).layers[0] 
         query_string = f"objectid='{incoming_objectid}'"
         feature_set = survey.query(where=query_string)
         survey_features_dict = feature_set.features[0].as_dict
@@ -82,15 +100,16 @@ def broadband(event, context):
         }
 
         # test dictionary that is simulating return from generateData.py. Key 'objectid' MUST BE INCLUDED!!!
-        output_feature_layer_updates = {
-            'attributes': {
-              'objectid': incoming_objectid,
-              'update_from_lambda' : 'hello from lambda' # the only update was 'update_from_lambda' in this case
-            }
-        }
+        # output_feature_layer_updates = {
+        #     'attributes': {
+        #       'objectid': incoming_objectid,
+        #       'update_from_lambda' : 'hello from lambda' # the only update was 'update_from_lambda' in this case
+        #     }
+        # }
         
         # use AGOL API to grab output feature collection using id above
-        agol_feature_layer_collection = gis.content.get(agol_output_data_id)
+        #agol_feature_layer_collection = gis.content.get(agol_output_data_id)
+        agol_feature_layer_collection = gis.content.get(agol_test_output_data_id)
         agol_feature_layer = agol_feature_layer_collection.layers[0] # grab first layer and assume it's the only one
 
         # use AGOL API again to find the feature layer that was just created so that we can edit it 
