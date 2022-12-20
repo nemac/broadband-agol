@@ -336,7 +336,9 @@ def generate_data(input_data=input_s3, debug=False):
     :rtype: dict """
 
     # CHECK FOR NEW ENTRIES
-    id = input_data['objectid'][0]
+    deserialized_input = json.load(input_data)
+    id = deserialized_input['properties']['objectid']
+    print(id)
     gpkg_data = {}
 
     # Generate output dictionary, blank for now
