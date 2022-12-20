@@ -8,17 +8,19 @@ import numpy as np
 from pprint import pprint
 
 # READ GPKGS FROM S3
+session = boto3.Session()
 s3_client = boto3.client("s3")
+s3 = session.resource('s3')
 S3_BUCKET = 'broadband-agol-data'
-s3_file_content = s3_client.list_objects_v2(Bucket=S3_BUCKET)['Contents']
+my_bucket = s3.Bucket(S3_BUCKET)
 do_not_include = [
     'sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg',
     'sample input:output data/wnc_h3_level8_summary-YOU-DONT-NEED-TO_GENERATE-THIS.gpkg',
     'sample input:output data/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE',
     'wnc_h3_level8.gpkg']
-all_s3_gpkg_keys = [obj['Key']
-                    for obj in s3_file_content if not obj['Key'] in do_not_include]
-
+all_s3_gpkg_keys = [obj.key
+                    for obj in my_bucket.objects.all() if not obj.key in do_not_include]
+print(all_s3_gpkg_keys)
 output_data = geopandas.read_file(s3_client.get_object(
     Bucket=S3_BUCKET, Key='sample input:output data/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE')['Body'])
 input_s3 = geopandas.read_file(s3_client.get_object(
