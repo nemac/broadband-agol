@@ -4,7 +4,7 @@
         "sourcefields": [
             "id"
         ],
-        "operation": "COPYINPUT"
+        "operation": "COPYLATER"
     },
     "objectid": {
         "sourcefile": "USERINPUT",
@@ -18,35 +18,35 @@
         "sourcefields": [
             "globalid"
         ],
-        "operation": "COPYINPUT"
+        "operation": "COPYLATER"
     },
     "creationdate": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "creationdate"
         ],
-        "operation": "COPYINPUT"
+        "operation": "COPYLATER"
     },
     "creator": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "creator"
         ],
-        "operation": "COPYINPUT"
+        "operation": "COPYLATER"
     },
     "editdate": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "editdate"
         ],
-        "operation": "COPYINPUT"
+        "operation": "COPYLATER"
     },
     "editor": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "editor"
         ],
-        "operation": "COPYINPUT"
+        "operation": "COPYLATER"
     },
     "project_name": {
         "sourcefile": "USERINPUT",
@@ -63,79 +63,79 @@
         "operation": "COPYINPUT"
     },
     "hexid": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "USERINPUT",
+        "sourcefields": ["objectid"],
+        "operation": "COPYINPUT"
     },
     "is_ineligible_tract": {
-        "sourcefile": "wnc_ineligibletracts_2022",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "wnc_ineligibletracts_2022.gpkg",
+        "sourcefields": ["id"],
+        "operation": "NONZERO"
     },
     "ineligible_tract_count": {
-        "sourcefile": "wnc_ineligibletracts_2022",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "wnc_ineligibletracts_2022.gpkg",
+        "sourcefields": ["id"],
+        "operation": "COUNT"
     },
     "is_ineligible_great_round1": {
         "sourcefile": "wnc_great_grants_round1.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["Provider"],
+        "operation": "NONZERO"
     },
     "ineligible_great_round1_count": {
         "sourcefile": "wnc_great_grants_round1.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["Provider"],
+        "operation": "COUNT"
     },
     "ineligible_great_round1_names": {
         "sourcefile": "wnc_great_grants_round1.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["Provider"],
+        "operation": "LIST"
     },
     "is_ineligible_great_round2": {
         "sourcefile": "wnc_great_grants_round2.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["Provider"],
+        "operation": "NONZERO"
     },
     "ineligible_great_round2_count": {
         "sourcefile": "wnc_great_grants_round2.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["Provider"],
+        "operation": "COUNT"
     },
     "ineligible_great_round2_names": {
         "sourcefile": "wnc_great_grants_round2.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["Provider"],
+        "operation": "LIST"
     },
     "is_ineligible_great_round3": {
         "sourcefile": "wnc_great_grants_round3.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["Provider"],
+        "operation": "NONZERO"
     },
     "ineligible_great_round3_count": {
         "sourcefile": "wnc_great_grants_round3.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["Provider"],
+        "operation": "COUNT"
     },
     "ineligible_great_round3_names": {
         "sourcefile": "wnc_great_grants_round3.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["Provider"],
+        "operation": "LIST"
     },
     "fed_grant_names": {
         "sourcefile": "wnc_fed_grant_areas.gpkg",
-        "sourcefields": [],
-        "operation": "COPYINPUT"
+        "sourcefields": ["name"],
+        "operation": "LIST"
     },
     "is_fed_grant_ineligible": {
         "sourcefile": "wnc_fed_grant_areas.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["name"],
+        "operation": "NONZERO"
     },
     "fed_grant_count": {
         "sourcefile": "wnc_fed_grant_areas.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["name"],
+        "operation": "COUNT"
     },
     "rdof_auctions_name": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
@@ -330,47 +330,47 @@
     "state_survery_count": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
-        "operation": "TBD"
+        "operation": "COUNT"
     },
     "state_survery_maxdownload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
-        "operation": "TBD"
+        "operation": "MAX"
     },
     "state_survery_mindownload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
-        "operation": "TBD"
+        "operation": "MIN"
     },
     "state_survery_avgdownload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["dl_speed"],
+        "operation": "AVERAGE"
     },
     "state_survery_maxupload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
-        "operation": "TBD"
+        "operation": "MAX"
     },
     "state_survery_minupload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
-        "operation": "TBD"
+        "operation": "MIN"
     },
     "state_survery_avgupload": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "wnc_nc_broadband_survey.gpkg",
+        "sourcefields": ["ul_speed"],
+        "operation": "AVERAGE"
     },
     "state_survery_average_lat": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["latency"],
+        "operation": "AVERAGE"
     },
     "state_survery_average_jit": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefields": ["jitter"],
+        "operation": "AVERAGE"
     },
     "state_survery_number_no_cell_service": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
@@ -433,22 +433,22 @@
         "operation": "TBD"
     },
     "address_count": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "wnc_address.gpkg",
+        "sourcefields": ["full_addre"],
+        "operation": "COUNT"
     },
     "address_persqmeter": {
-        "sourcefile": "TBD",
+        "sourcefile": "wnc_address.gpkg",
         "sourcefields": [],
         "operation": "TBD"
     },
     "percent_addresses": {
-        "sourcefile": "TBD",
+        "sourcefile": "wnc_address.gpkg",
         "sourcefields": [],
         "operation": "TBD"
     },
     "adress_rank": {
-        "sourcefile": "TBD",
+        "sourcefile": "wnc_address.gpkg",
         "sourcefields": [],
         "operation": "TBD"
     },
@@ -555,14 +555,14 @@
     "ookola_fixed_d_mbps_22_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
-            "d_mbps_22_10"
+
         ],
         "operation": "AVERAGE"
     },
     "ookola_fixed_u_mbps_22_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
-            "u_mbps_22_10"
+
         ],
         "operation": "AVERAGE"
     },
@@ -905,14 +905,14 @@
     "ookola_mobile_d_mbps_22_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "d_mbps_22_10"
+
         ],
         "operation": "AVERAGE"
     },
     "ookola_mobile_u_mbps_22_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "u_mbps_22_10"
+
         ],
         "operation": "AVERAGE"
     },
@@ -1248,54 +1248,54 @@
     "ookola_mobile_total_devices": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
-            "total_device"
+            "total_devices"
         ],
         "operation": "SUM"
     },
     "uid": {
-        "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "operation": "TBD"
+        "sourcefile": "USERINPUT",
+        "sourcefields": ["objectid"],
+        "operation": "COPYINPUT"
     },
     "fccnew_questionable": {
         "sourcefile": "FCCNEW",
         "sourcefields": [
-            "tech_questionable",
+            "fccnew_tech_questionable",
             "fccnew_summary_speedtier",
-            "speed_questionable",
-            "ncsur_speed_questionable",
-            "ookola_speed_questionable",
-            "ook_speedtestsless",
-            "ncsur_peedtestsless"
+            "fccnew_speed_questionable",
+            "fccnew_ncsur_speed_questionable",
+            "fccnew_ookola_speed_questionable",
+            "fccnew_ook_speedtestsless",
+            "fccnew_ncsur_peedtestsless"
         ],
-        "operation": "BOOLSUMTABLE"
+        "operation": "FUNC2"
     },
     "fccnew_techquestionable": {
         "sourcefile": "FCCNEW",
         "sourcefields": [
             "fccnew_summary_categories"
         ],
-        "operation": "BOOLSUMTABLE"
+        "operation": "FUNC1"
     },
     "fccnew_need_more_ook": {
         "sourcefile": "FCCNEW",
         "sourcefields": [
-            "need_ook_speedtest",
-            "tech_questionable",
-            "ook_speedtestsless",
-            "ncsur_peedtestsless"
+            "fccnew_need_ook_speedtest",
+            "fccnew_techquestionable",
+            "fccnew_ook_speedtestsless",
+            "fccnew_ncsur_peedtestsless"
         ],
-        "operation": "BOOLSUMTABLE"
+        "operation": "FUNC1"
     },
     "fccnew_need_survey": {
         "sourcefile": "FCCNEW",
         "sourcefields": [
-            "need_ncsur",
-            "tech_questionable",
-            "ook_speedtestsless",
-            "ncsur_peedtestsless"
+            "fccnew_need_ncsur",
+            "fccnew_tech_questionable",
+            "fccnew_ook_speedtestsless",
+            "fccnew_ncsur_peedtestsless"
         ],
-        "operation": "BOOLSUMTABLE"
+        "operation": "FUNC1"
     },
     "fccnew_speed_questionable": {
         "sourcefile": "FCCNEW",
@@ -1304,45 +1304,45 @@
             "fccnew_max_advertised_upload_speed",
             "fccnew_summary_speedtier"
         ],
-        "operation": "BOOLSUMTABLE"
+        "operation": "FUNC1"
     },
     "fccold_questionable": {
         "sourcefile": "FCCOLD",
         "sourcefields": [
-            "tech_questionable",
-            "fccold_summary_speedtier",
-            "speed_questionable",
-            "ncsur_speed_questionable",
-            "ookola_speed_questionable",
-            "tech_questionable",
-            "ook_speedtestsless",
-            "ncsur_peedtestsless"
+            "fccold_tech_questionable",
+            "fccold_fccold_summary_speedtier",
+            "fccold_speed_questionable",
+            "fccold_ncsur_speed_questionable",
+            "fccold_ookola_speed_questionable",
+            "fccold_techquestionable",
+            "fccold_ook_speedtestsless",
+            "fccold_ncsur_peedtestsless"
         ],
-        "operation": "BOOLSUMTABLE"
+        "operation": "FUNC2"
     },
     "fccold_techquestionable": {
         "sourcefile": "FCCOLD",
         "sourcefields": ["fccold_summary_category"],
-        "operation": "BOOLSUMTABLE"
+        "operation": "FUNC1"
     },
     "fccold_need_more_ook": {
         "sourcefile": "FCCOLD",
         "sourcefields": [
-            "need_ook_speedtest",
-            "tech_questionable",
-            "ook_speedtestsless",
-            "ncsur_peedtestsless"
+            "fccold_need_ook_speedtest",
+            "fccold_techquestionable",
+            "fccold_ook_speedtestsless",
+            "fccold_ncsur_peedtestsless"
         ],
-        "operation": "BOOLSUMTABLE"
+        "operation": "FUNC1"
     },
     "fccold_need_survey": {
         "sourcefile": "FCCOLD",
         "sourcefields": [
-            "need_ncsur",
-            "tech_questionable",
-            "ook_speedtestsless",
-            "ncsur_peedtestsless"],
-        "operation": "BOOLSUMTABLE"
+            "fccold_need_ncsur",
+            "fccold_tech_questionable",
+            "fccold_ook_speedtestsless",
+            "fccold_ncsur_peedtestsless"],
+        "operation": "FUNC1"
     },
     "fccold_speed_questionable": {
         "sourcefile": "FCCOLD",
@@ -1351,7 +1351,7 @@
             "fccold_all_max_up",
             "fccold_speedtier"
         ],
-        "operation": "BOOLSUMTABLE"
+        "operation": "FUNC1"
     },
     "geometry": {
         "sourcefile": "USERINPUT",
