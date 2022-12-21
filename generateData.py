@@ -1,30 +1,22 @@
 import geopandas
 import os
 import json
-import glob
 import boto3
 import numpy as np
 
 from pprint import pprint
 
 # READ GPKGS FROM S3
-session = boto3.Session()
 s3_client = boto3.client("s3")
-s3 = session.resource('s3')
 S3_BUCKET = 'broadband-agol-data'
-my_bucket = s3.Bucket(S3_BUCKET)
+s3_file_content = s3_client.list_objects_v2(Bucket=S3_BUCKET)['Contents']
 do_not_include = [
     'sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg',
     'sample input:output data/wnc_h3_level8_summary-YOU-DONT-NEED-TO_GENERATE-THIS.gpkg',
     'sample input:output data/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE',
     'wnc_h3_level8.gpkg']
-all_s3_gpkg_keys = [obj.key
-                    for obj in my_bucket.objects.all() if not obj.key in do_not_include]
-print(all_s3_gpkg_keys)
-output_data = geopandas.read_file(s3_client.get_object(
-    Bucket=S3_BUCKET, Key='sample input:output data/wnc_user_defined_summary-THIS-IS-THE-ONE-YOU-NEED-TO-GENERATE')['Body'])
-input_s3 = geopandas.read_file(s3_client.get_object(
-    Bucket=S3_BUCKET, Key='sample input:output data/wnc_broadband_areas-THIS-IS-THE-USER-GENERATED-DATA-OR-THE-INPUT.gpkg')['Body'])
+all_s3_gpkg_keys = [obj['Key']
+                    for obj in s3_file_content if not obj['Key'] in do_not_include]
 
 
 # Get configurations for field data
@@ -47,17 +39,6 @@ def read_all_gpkgs(debug=False):
 
     print('Reading all gpkgs...')
 
-    def util_func(client, keys):
-        gpkg_data = {}
-        for f in keys:
-            try:
-                gpkg_data[f] = geopandas.read_file(s3_client.get_object(
-                    Bucket=S3_BUCKET, Key=f)['Body'])
-            except Exception as e:
-                print(f'failed to read {f}')
-                print(f'reason given: {e}')
-                exit()
-        return gpkg_data
     print(f"debug={debug}")
     if debug:
         file_names = ['ookola_fixed.gpkg', 'ookola_mobile.gpkg',
@@ -74,9 +55,8 @@ def read_all_gpkgs(debug=False):
             o) for n, o in zip(file_names, file_objects)}
 
     else:
-        gpkg_data = util_func(s3_client, all_s3_gpkg_keys)
-        # gpkg_data = {gpkg_file: geopandas.read_file(s3_client.get_object(
-        #     Bucket=S3_BUCKET, Key=gpkg_file)['Body']) for gpkg_file in all_s3_gpkg_keys}
+        gpkg_data = {gpkg_file: geopandas.read_file(s3_client.get_object(
+            Bucket=S3_BUCKET, Key=gpkg_file)['Body']) for gpkg_file in all_s3_gpkg_keys}
 
     print('done!')
     return gpkg_data
@@ -368,7 +348,6 @@ def generate_data(input_geojson, debug=False):
         except:
             print('cannot find entry for field:')
             print(field)
-            exit()
         # HANDLE SPECIAL CASES where data is input or summary
         if fields_config[field]['operation'] == 'COPYINPUT':
             output_dict[field] = copy_input(id, field, input_data)
@@ -383,38 +362,11 @@ def generate_data(input_geojson, debug=False):
                 src_data = gpkg_data[gpkg_src_file]
                 output_dict[field] = get_field_data(
                     field, poly_of_interest, src_data)
-    final_output = {'attributes': output_dict}
-    return final_output
 
-    ookla_data = geopandas.read_file(
-        os.path.join(sample_dir, 'ookola_fixed.gpkg'))
-
-    # Currently only creates fields for ookla fixed dataset
-    poly_of_interest = input_data.geometry[0]
-    targ_rows = ookla_data[ookla_data['geometry'].map(lambda shape: shape.intersects(
-        poly_of_interest))]  # YAY, This gets ALL The Data for a queried intersection!
-    # These are the columns that are in the output but not the input
-    new_cols = list(set(targ_rows.columns.tolist()) -
-                    set(input_data.columns.tolist()))
-    form_cols = ['ookla_fixed_'+new_col for new_col in new_cols]
-
-    # print(form_cols)
-    output_df = input_data.reindex(
-        columns=input_data.columns.tolist() + new_cols)
-    # Iterates all sample shapes
-    for index, geom in enumerate(input_data.geometry):
-        raw_data = ookla_data[ookla_data['geometry'].map(
-            lambda shape: shape.intersects(geom))]
-    for i, col_name in enumerate(new_cols):
-        output_df.loc[index, form_cols[i]] = raw_data[col_name].mean()
-    # print(output_df)  # WE ALSO WANT TO WRITE THIS JAZZ TO S3 as a TIMESTAMP OF GOOD TIMES!!!!!!
-    return output_df
-
+    return {'attributes': output_dict}
 
 if __name__ == '__main__':
     input_geojson = """{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[-83.24920801364088, 35.24898181734354], [-83.24920801364088, 35.24891172352602], [-83.2491060896983, 35.24897305561967], [
         -83.24920801364088, 35.24898181734354]]]}, "properties": {"project_name": "dsfdsafdsdsffds fssdf sdfsdf", "_date": 1671037200000, "globalid": "{31724E0B-CE20-4965-82ED-0A6AA55DABC8}", "objectid": 8}}"""
-    # test_input = geopandas.read_file(input_geojson)
     pprint(generate_data(input_geojson))
-    # get_field_data('id')
-    # pprint(generate_data())
+

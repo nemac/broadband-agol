@@ -14,6 +14,20 @@ custom:
 
 provider:
   name: aws
+  iam:
+    role:
+      statements:
+        # Allow functions to list all buckets
+        - Effect: Allow
+          Action: 's3:ListBucket'
+          Resource: 'arn:aws:s3:::broadband-agol-data'
+        # Allow functions to read/write objects in a bucket
+        - Effect: Allow
+          Action:
+            - 's3:GetObject'
+            - 's3:PutObject'
+          Resource:
+            - 'arn:aws:s3:::broadband-agol-data/*'
   runtime: python3.9
   stage: ${opt:stage, 'dev'}
   memorySize: 2048
@@ -29,14 +43,7 @@ functions:
           path: broadband
           method: post
           cors: true
-    iamRoleStatementsName: broadband-agol-s3
-    iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - s3: GetObject
-        Resource: arn:aws:s3:::broadband-agol-data
 
 plugins:
   - serverless-offline
   - serverless-python-requirements
-  - serverless-iam-roles-per-function
