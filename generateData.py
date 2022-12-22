@@ -242,6 +242,11 @@ def copy_input(id, field_name, src_data):
     # return 1st (only) geoseries element (all fields) matched by id
     target_field = fields_config[field_name]['sourcefields'][0]
     value = src_data.loc[src_data['objectid'] == id][target_field].iloc[0]
+    if field_name == 'geometry':
+        print('looks like geometry is coming back as an object so returning something else')
+        print('that way we can override it easily in handler.py')
+        return_value = "this will be easily overwritten"
+        return return_value
     return value
 
 
@@ -261,7 +266,7 @@ def get_field_data(field_name, poly, src_data):
     :rtype: String || double || int || bool """
     NANFIX = 0  # This WILL be read from config per field
     EMPTYFIX = 0  # This WILL be read from config per field
-    EMPTYLISTFIX = []
+    EMPTYLISTFIX = '[]'
     print(f'getting data for {field_name}')
     task = fields_config[field_name]['operation']
     if len(fields_config[field_name]['sourcefields']) == 0:
@@ -301,7 +306,7 @@ def get_field_data(field_name, poly, src_data):
     elif task == 'NONZERO':
         return bool(len(all_values))
     elif task == 'SET':
-        return set(list(all_values))
+        return str(set(list(all_values)))
     else:
         raise Exception('Could not complete, unknown Operation:', task)
 
@@ -362,6 +367,24 @@ def generate_data(input_geojson, debug=False):
                 src_data = gpkg_data[gpkg_src_file]
                 output_dict[field] = get_field_data(
                     field, poly_of_interest, src_data)
+
+    # Pop these for now since they are incompatible with the final update
+    output_dict.pop('id')
+    output_dict.pop('creationdate')
+    output_dict.pop('creator')
+    output_dict.pop('editdate')
+    output_dict.pop('editor')
+    output_dict.pop('globalid')
+    output_dict.pop('fccnew_questionable')
+    output_dict.pop('fccnew_techquestionable')
+    output_dict.pop('fccnew_need_more_ook')
+    output_dict.pop('fccnew_need_survey')
+    output_dict.pop('fccnew_speed_questionable')
+    output_dict.pop('fccold_questionable')
+    output_dict.pop('fccold_techquestionable')
+    output_dict.pop('fccold_need_more_ook')
+    output_dict.pop('fccold_need_survey')
+    output_dict.pop('fccold_speed_questionable')
 
     return {'attributes': output_dict}
 

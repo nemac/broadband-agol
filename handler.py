@@ -66,20 +66,40 @@ def broadband(event, context):
         # call generateData, pass it the geojson, and expect a dictionary of updates in return
         # at the moment this is commented out so we're building a dictionary ourselves below
         output_feature_layer_updates = generate_data(feature_geojson)
-        print('jeff 11')
+        print('THIS IS OUTPUT_FEATURE_LAYER_UPDATES BEFORE GEOM UPDATED')
+        print(type(output_feature_layer_updates))
+        print(output_feature_layer_updates)
+        print('THIS IS OUTPUT_FEATURE_LAYER_UPDATES AFTER GEOM UPDATED')
+        # overwrite/add geometry, fid
+        output_feature_layer_updates['attributes']['geometry'] = incoming_esri_geometry
+        output_feature_layer_updates['attributes']['fid'] = incoming_objectid
+
+        print(output_feature_layer_updates)
+
 
         # Grab survey that corresponds with incoming id so we can get the rest of the attributes
         #survey = gis.content.get(agol_survey_id).layers[0]
-        survey = gis.content.get(agol_test_survey_id).layers[0] 
-        query_string = f"objectid='{incoming_objectid}'"
-        feature_set = survey.query(where=query_string)
-        survey_features_dict = feature_set.features[0].as_dict
-        survey_shape_area = survey_features_dict['attributes']['Shape__Area']
-        survey_shape_length = survey_features_dict['attributes']['Shape__Length']
-        survey_creation_date = survey_features_dict['attributes']['CreationDate']
-        survey_creator = survey_features_dict['attributes']['Creator']
-        survey_edit_date = survey_features_dict['attributes']['EditDate']
-        survey_editor = survey_features_dict['attributes']['Editor']
+        # print('jeff 11')
+        # survey = gis.content.get(agol_test_survey_id).layers[0]
+        # print('jeff 12') 
+        # query_string = f"objectid='{incoming_objectid}'"
+        # print('jeff 13')
+        # feature_set = survey.query(where=query_string)
+        # print('jeff 14')
+        # survey_features_dict = feature_set.features[0].as_dict
+        # print('jeff 15')
+        # survey_shape_area = survey_features_dict['attributes']['Shape__Area']
+        # print('jeff 16')
+        # survey_shape_length = survey_features_dict['attributes']['Shape__Length']
+        # print('jeff 17')
+        # survey_creation_date = survey_features_dict['attributes']['CreationDate']
+        # print('jeff 18')
+        # survey_creator = survey_features_dict['attributes']['Creator']
+        # print('jeff 19')
+        # survey_edit_date = survey_features_dict['attributes']['EditDate']
+        # print('jeff 20')
+        # survey_editor = survey_features_dict['attributes']['Editor']
+        # print('jeff 21')
 
         # Build a dictionary that combines the information from the incoming json and survey
         # We will send this up separately later on since we do not want to lose this information
@@ -89,12 +109,12 @@ def broadband(event, context):
                 'id': incoming_objectid,
                 'objectid': incoming_objectid,
                 'globalid': incoming_global_id,
-                'Shape__Area': survey_shape_area,
-                'Shape__Length': survey_shape_length,
-                'creationdate' : survey_creation_date,
-                'creator': survey_creator,
-                'editdate': survey_edit_date,
-                'editor': survey_editor,
+                #'Shape__Area': survey_shape_area,
+                #'Shape__Length': survey_shape_length,
+                #'creationdate' : survey_creation_date,
+                #'creator': survey_creator,
+                #'editdate': survey_edit_date,
+                #'editor': survey_editor,
                 'project_name': incoming_project_name 
             }
         }
@@ -124,10 +144,10 @@ def broadband(event, context):
 
         # convert both dictionaries from above into Features to send to AGOL
         converted_feature = Feature.from_dict(incoming_json_and_survey)
-        update_result = agol_feature_layer.edit_features(updates=[converted_feature])
-        print(update_result)
+        #update_result = agol_feature_layer.edit_features(updates=[converted_feature])
+        #print(update_result)
         converted_feature = Feature.from_dict(output_feature_layer_updates)
-        update_result = agol_feature_layer.edit_features(updates=[converted_feature])
+        update_result = agol_feature_layer.edit_features(adds=[converted_feature])
         print(update_result)
 
     except Exception as e:
