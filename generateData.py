@@ -325,6 +325,7 @@ def generate_data(input_geojson, debug=False):
     # CHECK FOR NEW ENTRIES
     deserialized_input = json.loads(input_geojson)
     input_data = geopandas.read_file(input_geojson)
+    input_data = input_data.to_crs('3857')
     id = deserialized_input['properties']['objectid']
     gpkg_data = {}
 
