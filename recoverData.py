@@ -1,9 +1,10 @@
 from arcgis import GIS
 from arcgis.features import Feature
 from copy import deepcopy
+import os
 
-agol_username = 'jbliss-nemac'
-agol_password = '8kwMB97A1eOJ'
+agol_username = os.environ['AGOL_USERNAME']
+agol_password = os.environ['AGOL_PASSWORD']
 gis = GIS("https://unca.maps.arcgis.com/home/index.html", agol_username, agol_password)
 
 test_output = "d3454682e9844327be5d18fd76ef9d6b"
