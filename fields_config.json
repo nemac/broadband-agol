@@ -139,27 +139,24 @@
     },
     "rdof_auctions_name": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["bidder"],
+        "operation": "SET"
     },
     "rdof_auctions_item": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["item"],
+        "operation": "SET"
     },
     "is_rdof_auctions_ineligible": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789 
+        "sourcefields": ["item"],
+        "operation": "NONZERO" 
     },
     "rdof_auctions_count": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789 
+        "sourcefields": ["rdof_auctions_item"],
+        "NEEDSTOBECALCULATED": "UPDATE SOURCEFILE WITH CORRECT SOURCE FILE - REST SHOULD BE GOOD",
+        "operation": "FUNC1" 
     },
     "fccold_all_provider_names": {
         "sourcefile": "TBD",
