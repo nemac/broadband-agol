@@ -159,16 +159,14 @@
         "operation": "FUNC1" 
     },
     "fccold_all_provider_names": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
+        "sourcefields": ["providername"],
+        "operation": "SET"
     },
     "fccold_all_techfamily": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
+        "sourcefields": ["techfamily"],
+        "operation": "SET"
     },
     "fccold_all_count_of_providers": {
         "sourcefile": "TBD",
@@ -177,40 +175,34 @@
         "operation": 123456789 
     },
     "fccold_all_max_down": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
+        "sourcefields": ["maxaddown"],
+        "operation": "MAX"
     },
     "fccold_all_max_up": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789 
+        "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
+        "sourcefields": ["maxadup"],
+        "operation": "MAX" 
     },
     "fccold_all_min_down": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789 
+        "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
+        "sourcefields": ["maxaddown"],
+        "operation": "MIN" 
     },
     "fccold_all_min_up": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789 
+        "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
+        "sourcefields": ["maxadup"],
+        "operation": "MIN" 
     },
     "fccold_all_avg_down": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789 
+        "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
+        "sourcefields": ["maxaddown"],
+        "operation": "AVERAGE" 
     },
     "fccold_all_avg_up": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
+        "sourcefields": ["maxadup"],
+        "operation": "AVERAGE"
     },
     "fccold_summary_count": {
         "sourcefile": "TBD",
