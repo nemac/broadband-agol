@@ -140,191 +140,229 @@
     "rdof_auctions_name": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "rdof_auctions_item": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "is_rdof_auctions_ineligible": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789 
     },
     "rdof_auctions_count": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789 
     },
     "fccold_all_provider_names": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "fccold_all_techfamily": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "fccold_all_count_of_providers": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789 
     },
     "fccold_all_max_down": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccold_all_max_up": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789 
     },
     "fccold_all_min_down": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789 
     },
     "fccold_all_min_up": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789 
     },
     "fccold_all_avg_down": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789 
     },
     "fccold_all_avg_up": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccold_summary_count": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccold_summary_category": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "fccold_summary_speedtier": {
         "sourcefile": "TBD",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "fccnew_summary_speedrank": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_summary_speedtier": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "fccnew_summary_min_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_summary_min_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_summary_avg_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_summary_avg_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_summary_max_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_summary_max_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_summary_providers": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "fccnew_summary_categories": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "fccnew_count": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_name": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "fccnew_category": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "fccnew_max_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_max_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_min_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_min_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_avg_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_avg_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "fccnew_speedtier": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "fccnew_speedrank": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "isparkway": {
         "sourcefile": "wnc_blueridegeparkway.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_count": {
@@ -375,61 +413,73 @@
     "state_survey_number_no_cell_service": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_number_no_internet": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_number_no_internet_due_provider": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_number_no_internet_due_cost": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_number_10_1_threshold_met": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_number_25_3_threshold_met": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_count_na": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_count_other": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_count_too_exp": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_count_no_answer": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "state_survey_providers": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "state_survey_carrier_names": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "address_count": {
@@ -440,116 +490,139 @@
     "address_persqmeter": {
         "sourcefile": "wnc_address.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "percent_addresses": {
         "sourcefile": "wnc_address.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "adress_rank": {
         "sourcefile": "wnc_address.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_count": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_length": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_avg_sinuosity": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_avg_slope": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_sinuosityone": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_sinuositytwo": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_sinuositythree": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_sinuosityfour": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_sinuosityfive": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_slopeone": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_slopetwo": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_slopethree": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_slopefour": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "streets_slopefive": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "rocky_mukey": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "rocky_type": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "rocky_depth": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "isrocky": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "railway_count": {
         "sourcefile": "wnc_railways.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "railways_names": {
         "sourcefile": "wnc_railways.gpkg",
         "sourcefields": [],
+        "NEEDSTOBECALCULATED": "true",
         "operation": "TBD"
     },
     "ookola_fixed_d_mbps_22_10": {
@@ -1145,6 +1218,7 @@
         "sourcefields": [
             "tests_20_01"
         ],
+        "NEEDSTOBECALCULATED": "true",
         "operation": 123456789
     },
     "ookola_mobile_devices_22_07": {
