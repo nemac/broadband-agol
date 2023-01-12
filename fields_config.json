@@ -367,17 +367,17 @@
     },
     "state_survey_count": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
+        "sourcefields": ["id"],
         "operation": "COUNT"
     },
     "state_survey_maxdownload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
+        "sourcefields": ["dl_speed"],
         "operation": "MAX"
     },
     "state_survey_mindownload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
+        "sourcefields": ["dl_speed"],
         "operation": "MIN"
     },
     "state_survey_avgdownload": {
@@ -387,12 +387,12 @@
     },
     "state_survey_maxupload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
+        "sourcefields": ["ul_speed"],
         "operation": "MAX"
     },
     "state_survey_minupload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
+        "sourcefields": ["ul_speed"],
         "operation": "MIN"
     },
     "state_survey_avgupload": {
