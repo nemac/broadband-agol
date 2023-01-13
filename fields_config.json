@@ -1137,70 +1137,70 @@
         "sourcefields": [
             "tests_22_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "SUM"
     },
     "ookola_mobile_tests_22_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_22_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "SUM"
     },
     "ookola_mobile_tests_22_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_22_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "SUM"
     },
     "ookola_mobile_tests_21_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_21_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "SUM"
     },
     "ookola_mobile_tests_21_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_21_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "SUM"
     },
     "ookola_mobile_tests_21_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_21_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "SUM"
     },
     "ookola_mobile_tests_21_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_21_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "SUM"
     },
     "ookola_mobile_tests_20_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_20_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "SUM"
     },
     "ookola_mobile_tests_20_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_20_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "SUM"
     },
     "ookola_mobile_tests_20_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_20_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "SUM"
     },
     "ookola_mobile_tests_20_01": {
         "sourcefile": "ookola_mobile.gpkg",
@@ -1208,7 +1208,7 @@
             "tests_20_01"
         ],
         "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "operation": "SUM"
     },
     "ookola_mobile_devices_22_07": {
         "sourcefile": "ookola_mobile.gpkg",
