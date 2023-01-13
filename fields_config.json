@@ -401,75 +401,67 @@
     },
     "state_survey_number_no_cell_service": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["c_no_cell_service_available"],
+        "operation": "SUM"
     },
     "state_survey_number_no_internet": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["c_no_internet"],
+        "operation": "SUM"
     },
     "state_survey_number_no_internet_due_provider": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["c_no_internet_due_to_provider"],
+        "operation": "SUM"
     },
     "state_survey_number_no_internet_due_cost": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["c_no_internet_due_to_expense"],
+        "operation": "SUM"
     },
     "state_survey_number_10_1_threshold_met": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["c_10_1_threshold_met"],
+        "operation": "SUM"
     },
     "state_survey_number_25_3_threshold_met": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["c_25_3_threshold_met"],
+        "operation": "SUM"
     },
     "state_survey_count_na": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["c_primary_reason_no_internet"],
+        "eqValue": "Not available",
+        "operation": "COUNTEQVALUE"
     },
     "state_survey_count_other": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["c_primary_reason_no_internet"],
+        "eqValue": "Other reason",
+        "operation": "COUNTEQVALUE"
     },
     "state_survey_count_too_exp": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["c_primary_reason_no_internet"],
+        "eqValue": "Too expensive",
+        "operation": "COUNTEQVALUE"
     },
     "state_survey_count_no_answer": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["c_primary_reason_no_internet"],
+        "eqValue": "No answer",
+        "operation": "COUNTEQVALUE"
     },
     "state_survey_providers": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["spname"],
+        "operation": "SET"
     },
     "state_survey_carrier_names": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["p_carrier_name"],
+        "operation": "SET"
     },
     "address_count": {
         "sourcefile": "wnc_address.gpkg",

@@ -307,6 +307,8 @@ def get_field_data(field_name, poly, src_data):
         return bool(len(all_values))
     elif task == 'SET':
         return str(set(list(all_values)))
+    elif task == 'COUNTEQVALUE':
+        return np.count_nonzero(all_values == fields_config[field_name]['eqValue'])
     else:
         raise Exception('Could not complete, unknown Operation:', task)
 
@@ -337,7 +339,7 @@ def generate_data(input_geojson, debug=False):
     gpkg_data = read_all_gpkgs(debug=debug)
 
     first_round_ops = ['AVERAGE', 'SUM', 'COUNT', 'LIST',
-                       'MAX', 'MIN', 'NONZERO', 'SET']
+                       'MAX', 'MIN', 'NONZERO', 'SET', 'COUNTEQVALUE']
 
     # for id in test_ids:
     # FIRST GET QUERIED INPUT GEOMETRY TO INTERSECT
