@@ -13,12 +13,12 @@ agol_username = os.environ['AGOL_USERNAME']
 agol_password = os.environ['AGOL_PASSWORD']
 gis = GIS("https://unca.maps.arcgis.com/home/index.html", agol_username, agol_password)
 agol_test_survey_id = "4cc4055b7cc14f08984378f2e247ea67"
-agol_test_output_data_id = "d3454682e9844327be5d18fd76ef9d6b"
+agol_test_output_data_id = "e757a5a007b64ba9b73ccb44362c2b15"
 
 #agol_survey_id = "f3e35478aebf4ca08cd9ca5af3218477" # survey where polys are drawn
 #agol_output_data_id = "9cfbc22bfadb4be7b5127f50714c16a8" # feature layer where data is outputted to
 
-def broadband(event, context):
+def handler(event, context):
     """This function takes an incoming json payload, deserializes 
     it and parses it into geojson for processing in generateData.py. 
     Then generateData.py will return a dict and this function uses

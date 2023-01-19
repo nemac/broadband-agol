@@ -34,8 +34,6 @@ provider:
             - 'arn:aws:s3:::broadband-agol-data/*'
   runtime: python3.9
   stage: ${opt:stage, 'dev'}
-  memorySize: 4096
-  timeout: 300
   environment:
     STAGE: ${self:provider.stage}
   # iam:
@@ -49,7 +47,21 @@ provider:
 
 functions:
   broadband:
-    handler: handler.broadband
+    handler: broadband.handler
+    timeout: 300
+    memorySize: 4096
+  receive: 
+    handler: receive.handler
+    timeout: 30
+    memorySize: 128
+    iamRoleStatements:
+      # Allow to invoke other lambda function
+      - Effect: Allow
+        Action:
+          - 'lambda:InvokeFunction'
+          - 'lambda:InvokeAsync'
+        Resource:
+          - arn:aws:lambda:us-east-1:104538610210:function:broadband-agol-beta-broadband
     events: 
       - http: 
           path: broadband
@@ -59,3 +71,4 @@ functions:
 plugins:
   - serverless-offline
   - serverless-python-requirements
+  - serverless-iam-roles-per-function
