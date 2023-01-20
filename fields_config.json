@@ -170,7 +170,7 @@
     },
     "fccold_all_count_of_providers": {
         "sourcefile": "wnc_fixed_summary_block_477",
-        "sourcefields": ["name"],
+        "sourcefields": ["providername"],
         "operation": "COUNTUNIQUE"
     },
     "fccold_all_max_down": {
