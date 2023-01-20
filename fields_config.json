@@ -572,39 +572,33 @@
     },
     "rocky_mukey": {
         "sourcefile": "wnc_rocky.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["mukey"],
+        "operation": "LIST"
     },
     "rocky_type": {
         "sourcefile": "wnc_rocky.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["muaggatt_muname"],
+        "operation": "LIST"
     },
     "rocky_depth": {
         "sourcefile": "wnc_rocky.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["muaggatt_brockdepmin"],
+        "operation": "LIST"
     },
     "isrocky": {
         "sourcefile": "wnc_rocky.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["id"],
+        "operation": "NONZERO"
     },
     "railway_count": {
         "sourcefile": "wnc_railways.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["name"],
+        "operation": "COUNT"
     },
     "railways_names": {
         "sourcefile": "wnc_railways.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["name"],
+        "operation": "SET"
     },
     "ookola_fixed_d_mbps_22_10": {
         "sourcefile": "ookola_fixed.gpkg",
