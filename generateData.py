@@ -284,12 +284,19 @@ def get_field_data(field_name, poly, src_data):
             return EMPTYFIX
         value = np.average(all_values)
         return value  # Currently can return NaN, need to handle that
+      elif task == 'ROUNDAVERAGE':  # Take an average across all intersections
+        if not len(all_values):  # Geometry does not intersect data region
+            return EMPTYFIX
+        value = round(np.average(all_values))
+        return value  # Currently can return NaN, need to handle that
     elif task == 'SUM':  # Add the values of all intersections
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
         return np.sum(all_values)
     elif task == 'COUNT':  # Count the intersections by id
         return len(all_values)
+    elif task == 'COUNTUNIQUE':
+        return len(set(list(all_values)))
     elif task == 'MAX':
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX

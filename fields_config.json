@@ -169,10 +169,9 @@
         "operation": "SET"
     },
     "fccold_all_count_of_providers": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789 
+        "sourcefile": "wnc_fixed_summary_block_477",
+        "sourcefields": ["name"],
+        "operation": "COUNTUNIQUE"
     },
     "fccold_all_max_down": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
@@ -205,154 +204,133 @@
         "operation": "AVERAGE"
     },
     "fccold_summary_count": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefile": "wnc_fixed_summary_block_477",
+        "sourcefields": ["countproviders"],
+        "operation": "SUM"
     },
     "fccold_summary_category": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefile": "wnc_fixed_summary_block_477",
+        "sourcefields": ["tech_family"],
+        "operation": "SET"
     },
     "fccold_summary_speedtier": {
-        "sourcefile": "TBD",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefile": "wnc_fixed_summary_block_477",
+        "sourcefields": ["speedtier"],
+        "operation": "SET"
     },
     "fccnew_summary_speedrank": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["speedrank"],
+        "operation": "ROUNDAVERAGE"
     },
     "fccnew_summary_speedtier": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["fccnew_max_advertised_download_speed",
+                            "fccnew_max_advertised_upload_speed"],
+        "NEEDSTOBECALCULATED": "true - may use summary data or gpkg data",
+        "operation": "FUNC1"
     },
     "fccnew_summary_min_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_download_speed"],
+        "operation": "MIN"
     },
     "fccnew_summary_min_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_upload_speed"],
+        "operation": "MIN"
     },
     "fccnew_summary_avg_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_download_speed"],
+        "operation": "AVERAGE"
     },
     "fccnew_summary_avg_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_upload_speed"],
+        "operation": "AVERAGE"
     },
     "fccnew_summary_max_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_download_speed"],
+        "operation": "MAX"
     },
     "fccnew_summary_max_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_upload_speed"],
+        "operation": "MAX"
     },
     "fccnew_summary_providers": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["providers"],
+        "operation": "SET"
     },
     "fccnew_summary_categories": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["categories"],
+        "operation": "SET"
     },
     "fccnew_count": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["brand_name"],
+        "operation": "COUNT"
     },
     "fccnew_name": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["brand_name"],
+        "operation": "SET"
     },
     "fccnew_category": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["category"],
+        "operation": "SET"
     },
     "fccnew_max_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_download_speed"],
+        "operation": "MAX"
     },
     "fccnew_max_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_upload_speed"],
+        "operation": "MAX"
     },
     "fccnew_min_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_download_speed"],
+        "operation": "MIN"
     },
     "fccnew_min_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_upload_speed"],
+        "operation": "MIN"
     },
     "fccnew_avg_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_download_speed"],
+        "operation": "AVERAGE"
     },
     "fccnew_avg_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["max_advertised_upload_speed"],
+        "operation": "AVERAGE"
     },
     "fccnew_speedtier": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "TBD"
+        "sourcefields": ["fccnew_max_advertised_download_speed",
+            "fccnew_max_advertised_upload_speed"],
+"NEEDSTOBECALCULATED": "true - may use summary data or gpkg data",
+"operation": "FUNC1"
     },
     "fccnew_speedrank": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["speedrank"],
+        "operation": "ROUNDAVERAGE"
     },
     "isparkway": {
         "sourcefile": "wnc_blueridegeparkway.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["id"],
+        "operation": "NONZERO"
     },
     "state_survey_count": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
