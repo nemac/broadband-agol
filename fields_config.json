@@ -470,21 +470,23 @@
     },
     "address_persqmeter": {
         "sourcefile": "wnc_address.gpkg",
-        "sourcefields": [],
+        "sourcefields": ["address_count", "geom"],
         "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "SPECIAL_NOTES": "Uses ST_Area() in geom",
+        "operation": "FUNC1"
     },
     "percent_addresses": {
         "sourcefile": "wnc_address.gpkg",
-        "sourcefields": [],
+        "sourcefields": ["state_survey_count", "address_count"],
         "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "operation": "FUNC1"
     },
     "adress_rank": {
-        "sourcefile": "wnc_address.gpkg",
-        "sourcefields": [],
+        "sourcefile": "wnc_address_hex_count.gpkg",
+        "sourcefields": ["quantile_rank"],
         "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "SPECIAL_NOTES": "ROUND(avg(quantile_rank))",
+        "operation": "FUNC1 but not really"
     },
     "streets_count": {
         "sourcefile": "wnc_osm_roads.gpkg",
