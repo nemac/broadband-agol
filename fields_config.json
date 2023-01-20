@@ -488,87 +488,83 @@
     },
     "streets_count": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["name"],
+        "operation": "COUNT"
     },
     "streets_length": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["streets_length"],
+        "operation": "SUM"
     },
     "streets_avg_sinuosity": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_sinuosity"],
+        "operation": "AVERAGE"
     },
     "streets_avg_slope": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_slope"],
+        "operation": "AVERAGE"
     },
     "streets_sinuosityone": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_sinuosity"],
+        "eqValue": 1,
+        "operation": "COUNTEQVALUE"
     },
     "streets_sinuositytwo": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_sinuosity"],
+        "eqValue": 2,
+        "operation": "COUNTEQVALUE"
     },
     "streets_sinuositythree": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_sinuosity"],
+        "eqValue": 3,
+        "operation": "COUNTEQVALUE"
     },
     "streets_sinuosityfour": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_sinuosity"],
+        "eqValue": 4,
+        "operation": "COUNTEQVALUE"
     },
     "streets_sinuosityfive": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_sinuosity"],
+        "eqValue": 5,
+        "operation": "COUNTEQVALUE"
     },
     "streets_slopeone": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_slope"],
+        "eqValue": 1,
+        "operation": "COUNTEQVALUE"
     },
     "streets_slopetwo": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_slope"],
+        "eqValue": 2,
+        "operation": "COUNTEQVALUE"
     },
     "streets_slopethree": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_slope"],
+        "eqValue": 3,
+        "operation": "COUNTEQVALUE"
     },
     "streets_slopefour": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_slope"],
+        "eqValue": 4,
+        "operation": "COUNTEQVALUE"
     },
     "streets_slopefive": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": [],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": 123456789
+        "sourcefields": ["rnk_slope"],
+        "eqValue": 5,
+        "operation": "COUNTEQVALUE"
     },
     "rocky_mukey": {
         "sourcefile": "wnc_rocky.gpkg",
