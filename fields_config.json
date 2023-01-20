@@ -319,8 +319,8 @@
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["fccnew_max_advertised_download_speed",
             "fccnew_max_advertised_upload_speed"],
-"NEEDSTOBECALCULATED": "true - may use summary data or gpkg data",
-"operation": "FUNC1"
+        "NEEDSTOBECALCULATED": "true - may use summary data or gpkg data",
+        "operation": "FUNC1"
     },
     "fccnew_speedrank": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",

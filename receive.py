@@ -17,7 +17,7 @@ def handler(event, context):
     client.invoke(
       FunctionName="broadband-agol-beta-broadband",
       InvocationType='Event',
-      Payload=json.dumps(body)
+      Payload=json.dumps(event['body'])
     )
 
     return {

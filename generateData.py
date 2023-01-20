@@ -284,7 +284,7 @@ def get_field_data(field_name, poly, src_data):
             return EMPTYFIX
         value = np.average(all_values)
         return value  # Currently can return NaN, need to handle that
-      elif task == 'ROUNDAVERAGE':  # Take an average across all intersections
+    elif task == 'ROUNDAVERAGE':  # Take an average across all intersections
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
         value = round(np.average(all_values))
@@ -385,16 +385,22 @@ def generate_data(input_geojson, debug=False):
     output_dict.pop('editdate')
     output_dict.pop('editor')
     output_dict.pop('globalid')
-    output_dict.pop('fccnew_questionable')
-    output_dict.pop('fccnew_techquestionable')
-    output_dict.pop('fccnew_need_more_ook')
-    output_dict.pop('fccnew_need_survey')
-    output_dict.pop('fccnew_speed_questionable')
-    output_dict.pop('fccold_questionable')
-    output_dict.pop('fccold_techquestionable')
-    output_dict.pop('fccold_need_more_ook')
-    output_dict.pop('fccold_need_survey')
-    output_dict.pop('fccold_speed_questionable')
+    output_dict.pop('fccnew_questionable') # FUNC2
+    output_dict.pop('fccold_questionable') # FUNC2
+    output_dict.pop('rdof_auctions_count') # FUNC1
+    output_dict.pop('fccnew_techquestionable') # FUNC1
+    output_dict.pop('fccnew_summary_speedtier') # FUNC1
+    output_dict.pop('address_persqmeter') # FUNC1
+    output_dict.pop('percent_addresses') # FUNC1
+    output_dict.pop('adress_rank') # FUNC1
+    output_dict.pop('fccnew_techquestionable') # FUNC1
+    output_dict.pop('fccnew_speed_questionable') # FUNC1
+    output_dict.pop('fccnew_need_more_ook') # FUNC1
+    output_dict.pop('fccnew_need_survey') # FUNC1
+    output_dict.pop('fccold_techquestionable') # FUNC1
+    output_dict.pop('fccold_need_more_ook') # FUNC1
+    output_dict.pop('fccold_need_survey') # FUNC1
+    output_dict.pop('fccold_speed_questionable') # FUNC1
 
     return {'attributes': output_dict}
 
