@@ -419,7 +419,6 @@ def generate_data(input_geojson, debug=False):
     output_dict.pop('address_persqmeter') # FUNC1
     output_dict.pop('percent_addresses') # FUNC1
     output_dict.pop('adress_rank') # FUNC1
-    output_dict.pop('fccnew_techquestionable') # FUNC1
     output_dict.pop('fccnew_speed_questionable') # FUNC1
     output_dict.pop('fccnew_need_more_ook') # FUNC1
     output_dict.pop('fccnew_need_survey') # FUNC1
@@ -427,6 +426,9 @@ def generate_data(input_geojson, debug=False):
     output_dict.pop('fccold_need_more_ook') # FUNC1
     output_dict.pop('fccold_need_survey') # FUNC1
     output_dict.pop('fccold_speed_questionable') # FUNC1
+    output_dict.pop('fccold_all_count_of_providers') #COUNTUNIQUE
+    output_dict.pop('fccnew_summary_speedrank') #ROUNDAVERAGE
+    output_dict.pop('fccnew_speedrank') #ROUNDAVERAGE
 
     return {'attributes': output_dict}
 

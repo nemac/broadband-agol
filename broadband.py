@@ -116,6 +116,7 @@ def handler(event, context):
         # converted_feature = Feature.from_dict(incoming_json_and_survey)
         #update_result = agol_feature_layer.edit_features(updates=[converted_feature])
         converted_feature = Feature.from_dict(output_feature_layer_updates)
+        print(f'converted feature: {converted_feature}')
         update_result = agol_feature_layer.edit_features(adds=[converted_feature])
         print(update_result)
 
