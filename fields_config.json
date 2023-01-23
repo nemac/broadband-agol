@@ -169,7 +169,7 @@
         "operation": "SET"
     },
     "fccold_all_count_of_providers": {
-        "sourcefile": "wnc_fixed_summary_block_477",
+        "sourcefile": "wnc_fixed_summary_block_477.gpkg",
         "sourcefields": ["providername"],
         "operation": "COUNTUNIQUE"
     },
@@ -204,17 +204,17 @@
         "operation": "AVERAGE"
     },
     "fccold_summary_count": {
-        "sourcefile": "wnc_fixed_summary_block_477",
+        "sourcefile": "wnc_fixed_summary_block_477.gpkg",
         "sourcefields": ["countproviders"],
         "operation": "SUM"
     },
     "fccold_summary_category": {
-        "sourcefile": "wnc_fixed_summary_block_477",
+        "sourcefile": "wnc_fixed_summary_block_477.gpkg",
         "sourcefields": ["tech_family"],
         "operation": "SET"
     },
     "fccold_summary_speedtier": {
-        "sourcefile": "wnc_fixed_summary_block_477",
+        "sourcefile": "wnc_fixed_summary_block_477.gpkg",
         "sourcefields": ["speedtier"],
         "operation": "SET"
     },
@@ -262,12 +262,12 @@
     },
     "fccnew_summary_providers": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": ["providers"],
+        "sourcefields": ["brand_name"],
         "operation": "SET"
     },
     "fccnew_summary_categories": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": ["categories"],
+        "sourcefields": ["category"],
         "operation": "SET"
     },
     "fccnew_count": {
@@ -473,7 +473,7 @@
     },
     "streets_length": {
         "sourcefile": "wnc_osm_roads.gpkg",
-        "sourcefields": ["streets_length"],
+        "sourcefields": ["actual_length"],
         "operation": "SUM"
     },
     "streets_avg_sinuosity": {

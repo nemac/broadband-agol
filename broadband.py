@@ -32,12 +32,12 @@ def handler(event, context):
     """
     body = {
         "message": "Go Serverless v2.0! Your function executed successfully!",
-        "input": event['body'],
+        "input": event,
     }
 
     try:
         # deserialize json
-        incoming_json = event['body']
+        incoming_json = event # it's just event as opposed to event['body'] due to receive.py sending only the body
         json_loads = json.loads(incoming_json)
         print("incoming json:", json_loads)
 
