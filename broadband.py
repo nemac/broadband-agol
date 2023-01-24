@@ -13,7 +13,8 @@ agol_username = os.environ['AGOL_USERNAME']
 agol_password = os.environ['AGOL_PASSWORD']
 gis = GIS("https://unca.maps.arcgis.com/home/index.html", agol_username, agol_password)
 agol_test_survey_id = "4cc4055b7cc14f08984378f2e247ea67"
-agol_test_output_data_id = "e757a5a007b64ba9b73ccb44362c2b15"
+#agol_test_output_data_id = "e757a5a007b64ba9b73ccb44362c2b15" # THIS IS JUST A TEST ONE
+agol_test_output_data_id = "9cfbc22bfadb4be7b5127f50714c16a8" # THIS IS THE REAL ONE
 
 #agol_survey_id = "f3e35478aebf4ca08cd9ca5af3218477" # survey where polys are drawn
 #agol_output_data_id = "9cfbc22bfadb4be7b5127f50714c16a8" # feature layer where data is outputted to
@@ -56,7 +57,7 @@ def handler(event, context):
         # at the moment this is commented out so we're building a dictionary ourselves below
         output_feature_layer_updates = generate_data(feature_geojson)
         # overwrite/add geometry, fid
-        output_feature_layer_updates['attributes']['geometry'] = incoming_esri_geometry
+        output_feature_layer_updates['geometry'] = incoming_esri_geometry
         output_feature_layer_updates['attributes']['fid'] = incoming_objectid
 
 

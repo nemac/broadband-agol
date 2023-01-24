@@ -280,68 +280,61 @@ def get_field_data(field_name, poly, src_data):
     else:
         all_values = np.array([])
     print(f'values: {all_values}')
+
     if task == 'AVERAGE':  # Take an average across all intersections
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
-        if isinstance(all_values[0], str):# convert string to int/double/float
-            converted = [eval(i) for i in all_values]
-            return np.average(converted)
-        if None in all_values:
-            all_values = (int(0 if value is None else value) for value in all_values) # convert None to int
-        value = np.average(all_values)
-        return value  # Currently can return NaN, need to handle that
+        # Convert None to 0 and also convert all strings to int/double/float
+        all_values = ([eval(str(0) if value is None else str(value)) for value in all_values])
+        return np.average(all_values)
+
     elif task == 'ROUNDAVERAGE':  # Take an average across all intersections
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
-        if isinstance(all_values[0], str):# convert string to int/double/float
-            converted = [eval(i) for i in all_values]
-            return round(np.average(converted))
-        if None in all_values:
-            all_values = (int(0 if value is None else value) for value in all_values) # convert None to int
-        value = round(np.average(all_values))
-        return value  # Currently can return NaN, need to handle that
+        # Convert None to 0 and also convert all strings to int/double/float
+        all_values = ([eval(str(0) if value is None else str(value)) for value in all_values])
+        return round(np.average(all_values))
+
     elif task == 'SUM':  # Add the values of all intersections
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
-        if isinstance(all_values[0], str):# convert string to int/double/float
-            converted = [eval(i) for i in all_values]
-            return np.sum(converted)
-        if None in all_values:
-            all_values = (int(0 if value is None else value) for value in all_values) # convert None to int
+        # Convert None to 0 and also convert all strings to int/double/float
+        all_values = ([eval(str(0) if value is None else str(value)) for value in all_values])
         return np.sum(all_values)
+
     elif task == 'COUNT':  # Count the intersections by id
         return len(all_values)
+    
     elif task == 'COUNTUNIQUE':
         return len(set(list(all_values)))
+
     elif task == 'MAX':
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
-        if isinstance(all_values[0], str):# convert string to int/double/float
-            converted = [eval(i) for i in all_values]
-            return np.max(converted)
-        # Currently can return NaN, need to handle that
-        if None in all_values:
-            all_values = (int(0 if value is None else value) for value in all_values) # convert None to int
+        # Convert None to 0 and also convert all strings to int/double/float
+        all_values = ([eval(str(0) if value is None else str(value)) for value in all_values])
         return np.max(all_values)
+
     elif task == 'MIN':
         if not len(all_values):  # Geometry does not intersect data region
             return EMPTYFIX
-        if isinstance(all_values[0], str):# convert string to int/double/float
-            converted = [eval(i) for i in all_values]
-            return np.min(converted)
-        # Currently can return NaN, need to handle that
-        if None in all_values:
-            all_values = (int(0 if value is None else value) for value in all_values) # convert None to int
+        # Convert None to 0 and also convert all strings to int/double/float
+        all_values = ([eval(str(0) if value is None else str(value)) for value in all_values])
         return np.min(all_values)
+
     elif task == 'LIST':
         if not len(all_values):
             return EMPTYLISTFIX
+
     elif task == 'NONZERO':
         return bool(len(all_values))
+
     elif task == 'SET':
         return str(set(list(all_values)))
+
     elif task == 'COUNTEQVALUE':
         return np.count_nonzero(all_values == fields_config[field_name]['eqValue'])
+
     else:
         raise Exception('Could not complete, unknown Operation:', task)
 

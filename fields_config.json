@@ -559,7 +559,7 @@
     "rocky_depth": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": ["muaggatt_brockdepmin"],
-        "operation": "LIST"
+        "operation": "AVERAGE"
     },
     "isrocky": {
         "sourcefile": "wnc_rocky.gpkg",
@@ -1377,6 +1377,96 @@
             "fccold_speedtier"
         ],
         "operation": "FUNC1"
+    },
+    "census_indices_percent_pop_25_3": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_pop__25_3"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_pop_100_20": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_pop__100_20"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_pop_fiber": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_pop__fiber"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_hhld_density": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["hhld__density"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_pop_no_prov": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_pop__no_prov_"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_pop_dsl_only": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_pop__dsl_only"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_availability": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["availability"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_bbnd_sub": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_bbnd__sub"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_ages_18_34": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_ages_18_34"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_bach": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_bach_"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_hhlds_children": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_hhlds__children"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_work_from_home": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_work_from_home"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_ages_65_and_over": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_ages_65_and_over"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_poverty": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_poverity"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_disability": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_disability"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_percent_lim_english": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_lim__english"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_adoption": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["adoption"],
+        "operation": "AVERAGE"
+    },
+    "census_indices_theyear": {
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["year"],
+        "operation": "MAX"
     },
     "geometry": {
         "sourcefile": "USERINPUT",
