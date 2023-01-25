@@ -6,7 +6,18 @@ from previous calculations
 
 ####### FUNC1 Functions
 def calculate_fccnew_summary_speedtier(data):
-    return 'dummy_value_fccnew_summary_speedtier'
+    download_speed = data["fccnew_max_advertised_download_speed"]
+    upload_speed = data["fccnew_max_advertised_upload_speed"]
+    if download_speed == 0 or upload_speed == 0:
+        return 'No Service'
+    elif download_speed <= 25 and upload_speed <= 3:
+        return 'Less Than 25/3'
+    elif download_speed > 25 and upload_speed > 3 and download_speed < 100 and upload_speed < 10:
+        return 'Greater Than 25/3'
+    elif download_speed >= 100 and upload_speed >= 10:
+        return 'Greater Than 100/10'
+    else:
+        return 'No Service'
 
 def calculate_fccnew_speedtier(data):
     return 'dummy_value_fccnew_speedtier'
