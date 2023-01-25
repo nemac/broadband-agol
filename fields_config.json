@@ -181,9 +181,9 @@
     },
     "rdof_auctions_count": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
-        "sourcefields": ["rdof_auctions_item"],
+        "sourcefields": ["item"],
         "NEEDSTOBECALCULATED": "UPDATE SOURCEFILE WITH CORRECT SOURCE FILE - REST SHOULD BE GOOD",
-        "operation": "FUNC1" ,
+        "operation": "COUNTUNIQUE" ,
         "order": 2
     },
     "fccold_all_provider_names": {
