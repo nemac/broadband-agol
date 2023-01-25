@@ -4,1165 +4,1356 @@
         "sourcefields": [
             "id"
         ],
-        "operation": "COPYLATER"
+        "operation": "COPYLATER",
+        "order": 1
     },
     "objectid": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "objectid"
         ],
-        "operation": "COPYINPUT"
+        "operation": "COPYINPUT",
+        "order": 1
     },
     "globalid": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "globalid"
         ],
-        "operation": "COPYLATER"
+        "operation": "COPYLATER",
+        "order": 1
     },
     "creationdate": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "creationdate"
         ],
-        "operation": "COPYLATER"
+        "operation": "COPYLATER",
+        "order": 1
     },
     "creator": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "creator"
         ],
-        "operation": "COPYLATER"
+        "operation": "COPYLATER",
+        "order": 1
     },
     "editdate": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "editdate"
         ],
-        "operation": "COPYLATER"
+        "operation": "COPYLATER",
+        "order": 1
     },
     "editor": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "editor"
         ],
-        "operation": "COPYLATER"
+        "operation": "COPYLATER",
+        "order": 1
     },
     "project_name": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "project_name"
         ],
-        "operation": "COPYINPUT"
+        "operation": "COPYINPUT",
+        "order": 1
     },
     "_date": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "_date"
         ],
-        "operation": "COPYINPUT"
+        "operation": "COPYINPUT",
+        "order": 1
     },
     "hexid": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["objectid"],
-        "operation": "COPYINPUT"
+        "operation": "COPYINPUT",
+        "order": 1
     },
     "is_ineligible_tract": {
         "sourcefile": "wnc_ineligibletracts_2022.gpkg",
         "sourcefields": ["id"],
-        "operation": "NONZERO"
+        "operation": "NONZERO",
+        "order": 1
     },
     "ineligible_tract_count": {
         "sourcefile": "wnc_ineligibletracts_2022.gpkg",
         "sourcefields": ["id"],
-        "operation": "COUNT"
+        "operation": "COUNT",
+        "order": 1
     },
     "is_ineligible_great_round1": {
         "sourcefile": "wnc_great_grants_round1.gpkg",
         "sourcefields": ["Provider"],
-        "operation": "NONZERO"
+        "operation": "NONZERO",
+        "order": 1
     },
     "ineligible_great_round1_count": {
         "sourcefile": "wnc_great_grants_round1.gpkg",
         "sourcefields": ["Provider"],
-        "operation": "COUNT"
+        "operation": "COUNT",
+        "order": 1
     },
     "ineligible_great_round1_names": {
         "sourcefile": "wnc_great_grants_round1.gpkg",
         "sourcefields": ["Provider"],
-        "operation": "LIST"
+        "operation": "LIST",
+        "order": 1
     },
     "is_ineligible_great_round2": {
         "sourcefile": "wnc_great_grants_round2.gpkg",
         "sourcefields": ["Provider"],
-        "operation": "NONZERO"
+        "operation": "NONZERO",
+        "order": 1
     },
     "ineligible_great_round2_count": {
         "sourcefile": "wnc_great_grants_round2.gpkg",
         "sourcefields": ["Provider"],
-        "operation": "COUNT"
+        "operation": "COUNT",
+        "order": 1
     },
     "ineligible_great_round2_names": {
         "sourcefile": "wnc_great_grants_round2.gpkg",
         "sourcefields": ["Provider"],
-        "operation": "LIST"
+        "operation": "LIST",
+        "order": 1
     },
     "is_ineligible_great_round3": {
         "sourcefile": "wnc_great_grants_round3.gpkg",
         "sourcefields": ["Provider"],
-        "operation": "NONZERO"
+        "operation": "NONZERO",
+        "order": 1
     },
     "ineligible_great_round3_count": {
         "sourcefile": "wnc_great_grants_round3.gpkg",
         "sourcefields": ["Provider"],
-        "operation": "COUNT"
+        "operation": "COUNT",
+        "order": 1
     },
     "ineligible_great_round3_names": {
         "sourcefile": "wnc_great_grants_round3.gpkg",
         "sourcefields": ["Provider"],
-        "operation": "LIST"
+        "operation": "LIST",
+        "order": 1
     },
     "fed_grant_names": {
         "sourcefile": "wnc_fed_grant_areas.gpkg",
         "sourcefields": ["name"],
-        "operation": "LIST"
+        "operation": "LIST",
+        "order": 1
     },
     "is_fed_grant_ineligible": {
         "sourcefile": "wnc_fed_grant_areas.gpkg",
         "sourcefields": ["name"],
-        "operation": "NONZERO"
+        "operation": "NONZERO",
+        "order": 1
     },
     "fed_grant_count": {
         "sourcefile": "wnc_fed_grant_areas.gpkg",
         "sourcefields": ["name"],
-        "operation": "COUNT"
+        "operation": "COUNT",
+        "order": 1
     },
     "rdof_auctions_name": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": ["bidder"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "rdof_auctions_item": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": ["item"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "is_rdof_auctions_ineligible": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": ["item"],
-        "operation": "NONZERO" 
+        "operation": "NONZERO" ,
+        "order": 1
     },
     "rdof_auctions_count": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": ["rdof_auctions_item"],
         "NEEDSTOBECALCULATED": "UPDATE SOURCEFILE WITH CORRECT SOURCE FILE - REST SHOULD BE GOOD",
-        "operation": "FUNC1" 
+        "operation": "FUNC1" ,
+        "order": 2
     },
     "fccold_all_provider_names": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["providername"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "fccold_all_techfamily": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["techfamily"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "fccold_all_count_of_providers": {
         "sourcefile": "wnc_fixed_summary_block_477.gpkg",
         "sourcefields": ["providername"],
-        "operation": "COUNTUNIQUE"
+        "operation": "COUNTUNIQUE",
+        "order": 1
     },
     "fccold_all_max_down": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["maxaddown"],
-        "operation": "MAX"
+        "operation": "MAX",
+        "order": 1
     },
     "fccold_all_max_up": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["maxadup"],
-        "operation": "MAX" 
+        "operation": "MAX" ,
+        "order": 1
     },
     "fccold_all_min_down": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["maxaddown"],
-        "operation": "MIN" 
+        "operation": "MIN" ,
+        "order": 1
     },
     "fccold_all_min_up": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["maxadup"],
-        "operation": "MIN" 
+        "operation": "MIN" ,
+        "order": 1
     },
     "fccold_all_avg_down": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["maxaddown"],
-        "operation": "AVERAGE" 
+        "operation": "AVERAGE" ,
+        "order": 1
     },
     "fccold_all_avg_up": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["maxadup"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "fccold_summary_count": {
         "sourcefile": "wnc_fixed_summary_block_477.gpkg",
         "sourcefields": ["countproviders"],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "fccold_summary_category": {
         "sourcefile": "wnc_fixed_summary_block_477.gpkg",
         "sourcefields": ["tech_family"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "fccold_summary_speedtier": {
         "sourcefile": "wnc_fixed_summary_block_477.gpkg",
         "sourcefields": ["speedtier"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "fccnew_summary_speedrank": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["speedrank"],
-        "operation": "ROUNDAVERAGE"
+        "operation": "ROUNDAVERAGE",
+        "order": 1
     },
     "fccnew_summary_speedtier": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["fccnew_max_advertised_download_speed",
                             "fccnew_max_advertised_upload_speed"],
         "NEEDSTOBECALCULATED": "true - may use summary data or gpkg data",
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "fccnew_summary_min_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
-        "operation": "MIN"
+        "operation": "MIN",
+        "order": 1
     },
     "fccnew_summary_min_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
-        "operation": "MIN"
+        "operation": "MIN",
+        "order": 1
     },
     "fccnew_summary_avg_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "fccnew_summary_avg_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "fccnew_summary_max_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
-        "operation": "MAX"
+        "operation": "MAX",
+        "order": 1
     },
     "fccnew_summary_max_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
-        "operation": "MAX"
+        "operation": "MAX",
+        "order": 1
     },
     "fccnew_summary_providers": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["brand_name"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "fccnew_summary_categories": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["category"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "fccnew_count": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["brand_name"],
-        "operation": "COUNT"
+        "operation": "COUNT",
+        "order": 1
     },
     "fccnew_name": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["brand_name"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "fccnew_category": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["category"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "fccnew_max_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
-        "operation": "MAX"
+        "operation": "MAX",
+        "order": 1
     },
     "fccnew_max_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
-        "operation": "MAX"
+        "operation": "MAX",
+        "order": 1
     },
     "fccnew_min_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
-        "operation": "MIN"
+        "operation": "MIN",
+        "order": 1
     },
     "fccnew_min_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
-        "operation": "MIN"
+        "operation": "MIN",
+        "order": 1
     },
     "fccnew_avg_advertised_download_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "fccnew_avg_advertised_upload_speed": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "fccnew_speedtier": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["fccnew_max_advertised_download_speed",
             "fccnew_max_advertised_upload_speed"],
         "NEEDSTOBECALCULATED": "true - may use summary data or gpkg data",
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "fccnew_speedrank": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["speedrank"],
-        "operation": "ROUNDAVERAGE"
+        "operation": "ROUNDAVERAGE",
+        "order": 1
     },
     "isparkway": {
         "sourcefile": "wnc_blueridegeparkway.gpkg",
         "sourcefields": ["id"],
-        "operation": "NONZERO"
+        "operation": "NONZERO",
+        "order": 1
     },
     "state_survey_count": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["id"],
-        "operation": "COUNT"
+        "operation": "COUNT",
+        "order": 1
     },
     "state_survey_maxdownload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["dl_speed"],
-        "operation": "MAX"
+        "operation": "MAX",
+        "order": 1
     },
     "state_survey_mindownload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["dl_speed"],
-        "operation": "MIN"
+        "operation": "MIN",
+        "order": 1
     },
     "state_survey_avgdownload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["dl_speed"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "state_survey_maxupload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["ul_speed"],
-        "operation": "MAX"
+        "operation": "MAX",
+        "order": 1
     },
     "state_survey_minupload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["ul_speed"],
-        "operation": "MIN"
+        "operation": "MIN",
+        "order": 1
     },
     "state_survey_avgupload": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["ul_speed"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "state_survey_average_lat": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["latency"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "state_survey_average_jit": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["jitter"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "state_survey_number_no_cell_service": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_cell_service_available"],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "state_survey_number_no_internet": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_internet"],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "state_survey_number_no_internet_due_provider": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_internet_due_to_provider"],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "state_survey_number_no_internet_due_cost": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_internet_due_to_expense"],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "state_survey_number_10_1_threshold_met": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_10_1_threshold_met"],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "state_survey_number_25_3_threshold_met": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_25_3_threshold_met"],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "state_survey_count_na": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_primary_reason_no_internet"],
         "eqValue": "Not available",
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "state_survey_count_other": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_primary_reason_no_internet"],
         "eqValue": "Other reason",
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "state_survey_count_too_exp": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_primary_reason_no_internet"],
         "eqValue": "Too expensive",
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "state_survey_count_no_answer": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_primary_reason_no_internet"],
         "eqValue": "No answer",
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "state_survey_providers": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["spname"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "state_survey_carrier_names": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["p_carrier_name"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "address_count": {
         "sourcefile": "wnc_address.gpkg",
         "sourcefields": ["full_addre"],
-        "operation": "COUNT"
+        "operation": "COUNT",
+        "order": 1
     },
     "address_persqmeter": {
         "sourcefile": "wnc_address.gpkg",
         "sourcefields": ["address_count", "geom"],
         "NEEDSTOBECALCULATED": "true",
         "SPECIAL_NOTES": "Uses ST_Area() in geom",
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "percent_addresses": {
         "sourcefile": "wnc_address.gpkg",
         "sourcefields": ["state_survey_count", "address_count"],
         "NEEDSTOBECALCULATED": "true",
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "adress_rank": {
         "sourcefile": "wnc_address_hex_count.gpkg",
         "sourcefields": ["quantile_rank"],
         "NEEDSTOBECALCULATED": "true",
         "SPECIAL_NOTES": "ROUND(avg(quantile_rank))",
-        "operation": "FUNC1 but not really"
+        "operation": "FUNC1 but not really",
+        "order": 2
     },
     "streets_count": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["name"],
-        "operation": "COUNT"
+        "operation": "COUNT",
+        "order": 1
     },
     "streets_length": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["actual_length"],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "streets_avg_sinuosity": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_sinuosity"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "streets_avg_slope": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_slope"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "streets_sinuosityone": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_sinuosity"],
         "eqValue": 1,
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "streets_sinuositytwo": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_sinuosity"],
         "eqValue": 2,
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "streets_sinuositythree": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_sinuosity"],
         "eqValue": 3,
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "streets_sinuosityfour": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_sinuosity"],
         "eqValue": 4,
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "streets_sinuosityfive": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_sinuosity"],
         "eqValue": 5,
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "streets_slopeone": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_slope"],
         "eqValue": 1,
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "streets_slopetwo": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_slope"],
         "eqValue": 2,
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "streets_slopethree": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_slope"],
         "eqValue": 3,
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "streets_slopefour": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_slope"],
         "eqValue": 4,
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "streets_slopefive": {
         "sourcefile": "wnc_osm_roads.gpkg",
         "sourcefields": ["rnk_slope"],
         "eqValue": 5,
-        "operation": "COUNTEQVALUE"
+        "operation": "COUNTEQVALUE",
+        "order": 1
     },
     "rocky_mukey": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": ["mukey"],
-        "operation": "LIST"
+        "operation": "LIST",
+        "order": 1
     },
     "rocky_type": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": ["muaggatt_muname"],
-        "operation": "LIST"
+        "operation": "LIST",
+        "order": 1
     },
     "rocky_depth": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": ["muaggatt_brockdepmin"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "isrocky": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": ["id"],
-        "operation": "NONZERO"
+        "operation": "NONZERO",
+        "order": 1
     },
     "railway_count": {
         "sourcefile": "wnc_railways.gpkg",
         "sourcefields": ["name"],
-        "operation": "COUNT"
+        "operation": "COUNT",
+        "order": 1
     },
     "railways_names": {
         "sourcefile": "wnc_railways.gpkg",
         "sourcefields": ["name"],
-        "operation": "SET"
+        "operation": "SET",
+        "order": 1
     },
     "ookola_fixed_d_mbps_22_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
 
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_22_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
 
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_22_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_22_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_22_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_22_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_22_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_22_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_22_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_22_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_22_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_22_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_22_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_22_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_21_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_21_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_21_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_21_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_21_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_21_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_21_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_21_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_21_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_21_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_21_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_21_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_21_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_21_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_21_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_21_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_20_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_20_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_20_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_20_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_20_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_20_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_20_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_20_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_20_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_20_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_20_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_20_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_d_mbps_20_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "d_mbps_20_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_u_mbps_20_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "u_mbps_20_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_22_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_22_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_22_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_22_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_22_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_22_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_21_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_21_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_21_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_21_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_21_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_21_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_21_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_21_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_20_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_20_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_20_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_20_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_20_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_20_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_tests_20_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "tests_20_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_22_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_22_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_22_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_22_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_22_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_22_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_21_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_21_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_21_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_21_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_21_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_21_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_21_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_21_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_20_10": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_20_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_20_07": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_20_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_20_04": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_20_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_devices_20_01": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "devices_20_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_avg_d_mbps": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "avg_d_mbps"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_avg_u_mbps": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "avg_u_mbps"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_fixed_total_tests": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "total_tests"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_fixed_total_devices": {
         "sourcefile": "ookola_fixed.gpkg",
         "sourcefields": [
             "total_devices"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_d_mbps_22_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
 
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_22_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
 
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_22_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_22_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_22_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_22_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_22_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_22_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_22_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_22_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_22_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_22_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_22_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_22_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_21_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_21_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_21_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_21_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_21_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_21_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_21_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_21_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_21_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_21_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_21_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_21_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_21_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_21_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_21_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_21_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_20_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_20_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_20_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_20_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_20_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_20_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_20_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_20_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_20_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_20_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_20_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_20_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_d_mbps_20_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "d_mbps_20_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_u_mbps_20_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "u_mbps_20_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_tests_22_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_22_07"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_tests_22_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_22_04"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_tests_22_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_22_01"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_tests_21_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_21_10"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_tests_21_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_21_07"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_tests_21_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_21_04"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_tests_21_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_21_01"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_tests_20_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_20_10"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_tests_20_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_20_07"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_tests_20_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "tests_20_04"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_tests_20_01": {
         "sourcefile": "ookola_mobile.gpkg",
@@ -1170,117 +1361,134 @@
             "tests_20_01"
         ],
         "NEEDSTOBECALCULATED": "true",
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_devices_22_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_22_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_devices_22_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_22_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_devices_22_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_22_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_devices_21_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_21_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_devices_21_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_21_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_devices_21_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_21_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_devices_21_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_21_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_devices_20_10": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_20_10"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_devices_20_07": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_20_07"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_devices_20_04": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_20_04"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_devices_20_01": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "devices_20_01"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_avg_d_mbps": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "avg_d_mbps"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_avg_u_mbps": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "avg_u_mbps"
         ],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "ookola_mobile_total_tests": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "total_tests"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "ookola_mobile_total_devices": {
         "sourcefile": "ookola_mobile.gpkg",
         "sourcefields": [
             "total_devices"
         ],
-        "operation": "SUM"
+        "operation": "SUM",
+        "order": 1
     },
     "uid": {
         "sourcefile": "USERINPUT",
         "sourcefields": ["objectid"],
-        "operation": "COPYINPUT"
+        "operation": "COPYINPUT",
+        "order": 1
     },
     "fccnew_questionable": {
         "sourcefile": "FCCNEW",
@@ -1293,14 +1501,16 @@
             "fccnew_ook_speedtestsless",
             "fccnew_ncsur_peedtestsless"
         ],
-        "operation": "FUNC2"
+        "operation": "FUNC2",
+        "order": 3
     },
     "fccnew_techquestionable": {
         "sourcefile": "FCCNEW",
         "sourcefields": [
             "fccnew_summary_categories"
         ],
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "fccnew_need_more_ook": {
         "sourcefile": "FCCNEW",
@@ -1310,7 +1520,8 @@
             "fccnew_ook_speedtestsless",
             "fccnew_ncsur_peedtestsless"
         ],
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "fccnew_need_survey": {
         "sourcefile": "FCCNEW",
@@ -1320,7 +1531,8 @@
             "fccnew_ook_speedtestsless",
             "fccnew_ncsur_peedtestsless"
         ],
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "fccnew_speed_questionable": {
         "sourcefile": "FCCNEW",
@@ -1329,7 +1541,8 @@
             "fccnew_max_advertised_upload_speed",
             "fccnew_summary_speedtier"
         ],
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "fccold_questionable": {
         "sourcefile": "FCCOLD",
@@ -1343,12 +1556,14 @@
             "fccold_ook_speedtestsless",
             "fccold_ncsur_peedtestsless"
         ],
-        "operation": "FUNC2"
+        "operation": "FUNC2",
+        "order": 3
     },
     "fccold_techquestionable": {
         "sourcefile": "FCCOLD",
         "sourcefields": ["fccold_summary_category"],
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "fccold_need_more_ook": {
         "sourcefile": "FCCOLD",
@@ -1358,7 +1573,8 @@
             "fccold_ook_speedtestsless",
             "fccold_ncsur_peedtestsless"
         ],
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "fccold_need_survey": {
         "sourcefile": "FCCOLD",
@@ -1367,7 +1583,8 @@
             "fccold_tech_questionable",
             "fccold_ook_speedtestsless",
             "fccold_ncsur_peedtestsless"],
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "fccold_speed_questionable": {
         "sourcefile": "FCCOLD",
@@ -1376,103 +1593,123 @@
             "fccold_all_max_up",
             "fccold_speedtier"
         ],
-        "operation": "FUNC1"
+        "operation": "FUNC1",
+        "order": 2
     },
     "census_indices_percent_pop_25_3": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__25_3"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_pop_100_20": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__100_20"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_pop_fiber": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__fiber"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_hhld_density": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["hhld__density"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_pop_no_prov": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__no_prov_"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_pop_dsl_only": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__dsl_only"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_availability": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["availability"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_bbnd_sub": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_bbnd__sub"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_ages_18_34": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_ages_18_34"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_bach": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_bach_"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_hhlds_children": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_hhlds__children"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_work_from_home": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_work_from_home"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_ages_65_and_over": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_ages_65_and_over"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_poverty": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_poverty"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_disability": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_disability"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_percent_lim_english": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_lim__english"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_adoption": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["adoption"],
-        "operation": "AVERAGE"
+        "operation": "AVERAGE",
+        "order": 1
     },
     "census_indices_theyear": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["year"],
-        "operation": "MAX"
+        "operation": "MAX",
+        "order": 1
     },
     "geometry": {
         "sourcefile": "USERINPUT",
         "sourcefields": [
             "geometry"
         ],
-        "operation": "COPYINPUT"
+        "operation": "COPYINPUT",
+        "order": 1
     }
 }
