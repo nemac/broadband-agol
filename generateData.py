@@ -274,6 +274,9 @@ def get_field_data(field_name, poly, src_data):
         return EMPTYFIX
     ret_values = src_data[src_data['geometry'].map(
         lambda shape: shape.intersects(poly))]  # geoseries of intersections
+    if len(ret_values) and field_name.startswith('census'):
+        print(f'census is getting in here {field_name}')
+        ret_values = ret_values.loc[ret_values['year'] == 2019]
     if len(ret_values):
         all_values = np.nan_to_num(
             np.array(list(ret_values[fields_config[field_name]['sourcefields'][0]])), NANFIX)  # single values for sourcefield
@@ -351,6 +354,7 @@ def generate_data(input_geojson, debug=False):
     :rtype: dict """
 
     # CHECK FOR NEW ENTRIES
+    print(input_geojson)
     deserialized_input = json.loads(input_geojson)
     input_data = geopandas.read_file(input_geojson)
     input_data = input_data.to_crs('3857')
@@ -426,7 +430,7 @@ def generate_data(input_geojson, debug=False):
     return {'attributes': output_dict}
 
 if __name__ == '__main__':
-    input_geojson = """{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[-83.24920801364088, 35.24898181734354], [-83.24920801364088, 35.24891172352602], [-83.2491060896983, 35.24897305561967], [
-        -83.24920801364088, 35.24898181734354]]]}, "properties": {"project_name": "dsfdsafdsdsffds fssdf sdfsdf", "_date": 1671037200000, "globalid": "{31724E0B-CE20-4965-82ED-0A6AA55DABC8}", "objectid": 8}}"""
+    input_geojson = """{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-82.68245188437649,35.541600938788264],[-82.66871897421989,35.54125173858815],[-82.66820399008901,35.54648958194431],[-82.68279520713041,35.546594335321956],[-82.68245188437649,35.541600938788264]]]},
+    "properties":{"project_name":"testing-census","_date":1674579600000,"globalid":"{67D71F9F-ED4D-4D13-8356-C2841FE6FBD3}","objectid":18}}"""
     pprint(generate_data(input_geojson))
 
