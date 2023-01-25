@@ -1445,7 +1445,7 @@
     },
     "census_indices_percent_poverty": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
-        "sourcefields": ["percent_poverity"],
+        "sourcefields": ["percent_poverty"],
         "operation": "AVERAGE"
     },
     "census_indices_percent_disability": {
