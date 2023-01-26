@@ -96,7 +96,7 @@ def calculate_fccold_need_more_ook(data):
     ookola_mobile_total_tests = data['ookola_mobile_total_tests']
     need_ook_speedtest = ookola_mobile_total_tests > 2 or ookola_mobile_total_tests == None
     if need_ook_speedtest:
-        tech_questionable = data['tech_questionable']
+        tech_questionable = data['fccold_techquestionable']
         ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
         fccold_all_max_down = data['fccold_all_max_down']
         address_count = data['address_count']
