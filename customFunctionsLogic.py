@@ -64,7 +64,22 @@ def calculate_fccnew_techquestionable(data):
     return 0 # default return 0????
 
 def calculate_fccnew_need_more_ook(data):
-    return 123456789
+    # HERE DATA is SUMMARY
+    ookola_mobile_total_tests = data['ookola_mobile_total_tests']
+    fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_speed']
+    # Is null converted to 0?  SQL uses null comparison for fccnew_max_advertised_download_speed
+    need_ook_speedtest = ookola_mobile_total_tests < 2 or fccnew_max_advertised_download_speed is 0
+    if need_ook_speedtest:
+        tech_questionable = data['fccnew_techquestionable']
+        ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
+        address_count = data['address_count']
+        state_survey_count = data['state_survey_count']
+        state_survey_maxdownload = data['state_survey_maxdownload']
+        
+        ook_speedtestsless = int(ookola_mobile_total_tests > 1 and ookola_mobile_avg_d_mbps < fccnew_max_advertised_download_speed)
+        ncsur_peedtestsless = int(address_count/state_survey_count > .1 and state_survey_maxdownload < fccnew_max_advertised_download_speed)
+        return  tech_questionable + ook_speedtestsless + ncsur_peedtestsless
+    return 0
 
 def calculate_fccnew_need_survey(data):
     return 987654321
@@ -94,7 +109,8 @@ def calculate_fccold_techquestionable(data):
 def calculate_fccold_need_more_ook(data):
     # HERE DATA is SUMMARY
     ookola_mobile_total_tests = data['ookola_mobile_total_tests']
-    need_ook_speedtest = ookola_mobile_total_tests > 2 or ookola_mobile_total_tests == None
+    # SQL accounts for NULL but I think we are setting to 0?
+    need_ook_speedtest = ookola_mobile_total_tests < 2
     if need_ook_speedtest:
         tech_questionable = data['fccold_techquestionable']
         ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
