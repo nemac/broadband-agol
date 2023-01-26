@@ -85,7 +85,25 @@ def calculate_fccnew_need_more_ook(data):
     return 0
 
 def calculate_fccnew_need_survey(data):
-    return 987654321
+    # DATA
+    tech_questionable = data['fccnew_techquestionable']
+    ookola_mobile_total_tests = data['ookola_mobile_total_tests']
+    fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_speed']
+    ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
+    address_count = data['address_count']
+    state_survey_count = data['state_survey_count']
+    state_survey_maxdownload = data['state_survey_maxdownload']
+
+    # CALCULATIONS
+    need_ncsur = 0
+    if (address_count/state_survey_count) < .1 or not state_survey_count:
+        need_ncsur = 1
+    ook_speedtestsless = int(ookola_mobile_total_tests > 1 and ookola_mobile_avg_d_mbps < fccnew_max_advertised_download_speed)
+    ncsur_peedtestsless = int(address_count/state_survey_count > .1 and state_survey_maxdownload < fccnew_max_advertised_download_speed)
+    return_value = 0
+    if need_ncsur:
+        return_value = tech_questionable + ook_speedtestsless + ncsur_peedtestsless
+    return return_value
 
 def calculate_fccnew_speed_questionable(data):
     fccnew_summary_speedtier = data['fccnew_summary_speedtier']
