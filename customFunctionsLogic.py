@@ -129,22 +129,23 @@ def calculate_fccold_speed_questionable(data):
 
 ###### FUNC2 Functions
 def calculate_fccnew_questionable(data):
-    '''CONDITION:
-        case when tech_questionable > 0 or fccnew_summary_speedtier like '%No Service%' then speed_questionable + ncsur_speed_questionable + ookola_speed_questionable + tech_questionable + ook_speedtestsless + ncsur_peedtestsless else 0 end as questionable'''
-        # ORDER: 3
-    '''NEEDED FIEDS:
-        OUTER:
-        tech_questionable > calculated here
-        fccnew_summary_speedtier
-        INNER:
-        speed_questionable > calculated here
-        ncsur_speed_questionable 
-        ookola_speed_questionable 
-        tech_questionable > calculated here
-        ook_speedtestsless
-        ncsur_peedtestsless'''
-    print('isquestionable')
-    return 987654321
+    tech_questionable = data['fccnew_techquestionable']
+    fccnew_summary_speedtier = data['fccnew_summary_speedtier']
+    no_service = ('No Service' in fccnew_summary_speedtier)
+    if tech_questionable > 0 or no_service:
+        fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_speed']
+        fccnew_max_advertised_upload_speed = data['fccnew_max_advertised_upload_speed']
+        state_survey_maxdownload = data['state_survey_maxdownload']
+        state_survey_maxupload = data['state_survey_maxupload']
+        ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
+        ookola_mobile_avg_u_mbps = data['ookola_mobile_avg_u_mbps']
+
+        speed_questionable = int((fccnew_max_advertised_download_speed <= 25 and fccnew_max_advertised_upload_speed <= 3 ) or no_service)
+        ncsur_speed_questionable = int(state_survey_maxdownload <= 25 and state_survey_maxupload <= 3)
+        ookola_speed_questionable = int(ookola_mobile_avg_d_mbps <= 25 and ookola_mobile_avg_u_mbps <= 3)
+        return speed_questionable + ncsur_speed_questionable + ookola_speed_questionable + tech_questionable + ook_speedtestsless + ncsur_peedtestsless
+
+    return 0
 
 def calculate_fccold_questionable(data):
     '''CONDITION: case when tech_questionable > 0  or fccold_summary_speedtier like '%No Service%' then speed_questionable + ncsur_speed_questionable + ookola_speed_questionable + tech_questionable + ook_speedtestsless + ncsur_peedtestsless else 0 end as questionable,'''
