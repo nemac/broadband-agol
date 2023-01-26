@@ -1531,8 +1531,8 @@
             "fccnew_ook_speedtestsless",
             "fccnew_ncsur_peedtestsless"
         ],
-        "operation": "FUNC1",
-        "order": 2
+        "operation": "FUNC2",
+        "order": 3
     },
     "fccnew_speed_questionable": {
         "sourcefile": "FCCNEW",
