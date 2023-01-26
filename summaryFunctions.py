@@ -146,15 +146,25 @@ def calculate_fccold_need_more_ook(data):
     return 0
 
 def calculate_fccold_need_survey(data):
-    '''CONDITION:
-        case when need_ncsur = 1 then tech_questionable + ook_speedtestsless + ncsur_peedtestsless else 0 end as need_survey'''
-        # ORDER: 2
-    '''NEEDED FIELDS:
-        tech_quesitonable > calculated
-        ook_speedtestsless
-        ncsur_peedtestsless'''
-    print('fcc_old_need_survey')
-    return 987654321
+    # DATA
+    tech_questionable = data['fccold_techquestionable']
+    ookola_mobile_total_tests = data['ookola_mobile_total_tests']
+    fccold_all_max_down = data['fccold_all_max_down']
+    ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
+    address_count = data['address_count']
+    state_survey_count = data['state_survey_count']
+    state_survey_maxdownload = data['state_survey_maxdownload']
+
+    # CALCULATIONS
+    need_ncsur = 0
+    if (address_count/state_survey_count) < .1 or not state_survey_count:
+        need_ncsur = 1
+    ook_speedtestsless = int(ookola_mobile_total_tests > 1 and ookola_mobile_avg_d_mbps < fccold_all_max_down)
+    ncsur_peedtestsless = int(address_count/state_survey_count > .1 and state_survey_maxdownload < fccold_all_max_down)
+    return_value = 0
+    if need_ncsur:
+        return_value = tech_questionable + ook_speedtestsless + ncsur_peedtestsless
+    return return_value
 
 def calculate_fccold_speed_questionable(data):
     fccold_summary_speedtier = data['fccold_summary_speedtier']
