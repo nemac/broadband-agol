@@ -181,9 +181,9 @@
     },
     "rdof_auctions_count": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
-        "sourcefields": ["rdof_auctions_item"],
+        "sourcefields": ["item"],
         "NEEDSTOBECALCULATED": "UPDATE SOURCEFILE WITH CORRECT SOURCE FILE - REST SHOULD BE GOOD",
-        "operation": "FUNC1" ,
+        "operation": "COUNTUNIQUE" ,
         "order": 2
     },
     "fccold_all_provider_names": {
@@ -377,7 +377,7 @@
     "fccnew_speedtier": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["fccnew_max_advertised_download_speed",
-            "fccnew_max_advertised_upload_speed"],
+                           "fccnew_max_advertised_upload_speed"],
         "NEEDSTOBECALCULATED": "true - may use summary data or gpkg data",
         "operation": "FUNC1",
         "order": 2
