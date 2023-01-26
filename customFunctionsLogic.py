@@ -70,7 +70,13 @@ def calculate_fccnew_need_survey(data):
     return 987654321
 
 def calculate_fccnew_speed_questionable(data):
-    return 123456789
+    fccnew_summary_speedtier = data['fccnew_summary_speedtier']
+    no_service = ('No Service' in fccnew_summary_speedtier)
+    fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_speed']
+    fccnew_max_advertised_upload_speed = data['fccnew_max_advertised_upload_speed']
+    speed_questionable = int((fccnew_max_advertised_download_speed <= 25 and fccnew_max_advertised_upload_speed <= 3 ) or no_service)
+
+    return speed_questionable
 
 def calculate_fccold_techquestionable(data):
     fccold_summary_category = data['fccold_summary_category']
@@ -88,16 +94,14 @@ def calculate_fccold_techquestionable(data):
 def calculate_fccold_need_more_ook(data):
     # HERE DATA is SUMMARY
     ookola_mobile_total_tests = data['ookola_mobile_total_tests']
-    tech_questionable = data['tech_questionable']
     need_ook_speedtest = ookola_mobile_total_tests > 2 or ookola_mobile_total_tests == None
     if need_ook_speedtest:
+        tech_questionable = data['tech_questionable']
         ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
         fccold_all_max_down = data['fccold_all_max_down']
         address_count = data['address_count']
         state_survey_count = data['state_survey_count']
         state_survey_maxdownload = data['state_survey_maxdownload']
-        
-        
         
         ook_speedtestsless = int(ookola_mobile_total_tests > 1 and ookola_mobile_avg_d_mbps < fccold_all_max_down)
         ncsur_peedtestsless = int(address_count/state_survey_count > .1 and state_survey_maxdownload < fccold_all_max_down)
@@ -116,16 +120,12 @@ def calculate_fccold_need_survey(data):
     return 987654321
 
 def calculate_fccold_speed_questionable(data):
-    '''CONDITION:
-        case when (fccold_all_max_down <= 25 AND fccold_all_max_up <= 3 ) or fccold_summary_speedtier like '%No Service%'  then 1 else 0 end speed_questionable,'''
-        # ORDER: 1
-    '''NEEDED FILES:
-        fccold_all_max_down
-        fccold_all_max_up
-        fccold_summary_speedtier'''
-    print('fcc_old_speed_questionable')
-    return 123456789
-
+    fccold_summary_speedtier = data['fccold_summary_speedtier']
+    no_service = ('No Service' in fccold_summary_speedtier)
+    fccold_all_max_down = data['fccold_all_max_down']
+    fccold_all_max_up = data['fccold_all_max_up']
+    speed_questionable = int((fccold_all_max_down <= 25 and fccold_all_max_up <= 3 ) or no_service)
+    return speed_questionable
 
 ###### FUNC2 Functions
 def calculate_fccnew_questionable(data):
@@ -133,8 +133,7 @@ def calculate_fccnew_questionable(data):
     fccnew_summary_speedtier = data['fccnew_summary_speedtier']
     no_service = ('No Service' in fccnew_summary_speedtier)
     if tech_questionable > 0 or no_service:
-        fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_speed']
-        fccnew_max_advertised_upload_speed = data['fccnew_max_advertised_upload_speed']
+        
         state_survey_maxdownload = data['state_survey_maxdownload']
         state_survey_maxupload = data['state_survey_maxupload']
         ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
@@ -143,7 +142,7 @@ def calculate_fccnew_questionable(data):
         address_count = data['address_count']
         state_survey_count = data['state_survey_count']
 
-        speed_questionable = int((fccnew_max_advertised_download_speed <= 25 and fccnew_max_advertised_upload_speed <= 3 ) or no_service)
+        speed_questionable = data['fccnew_speed_questionable']
         ncsur_speed_questionable = int(state_survey_maxdownload <= 25 and state_survey_maxupload <= 3)
         ookola_speed_questionable = int(ookola_mobile_avg_d_mbps <= 25 and ookola_mobile_avg_u_mbps <= 3)
         ook_speedtestsless = int(ookola_mobile_total_tests > 1 and ookola_mobile_avg_d_mbps < fccnew_max_advertised_download_speed)
@@ -159,7 +158,6 @@ def calculate_fccold_questionable(data):
     no_service = ('No Service' in fccold_summary_speedtier)
     if tech_questionable > 0 or no_service:
         fccold_all_max_down = data['fccold_all_max_down']
-        fccold_all_max_up = data['fccold_all_max_up']
         state_survey_maxdownload = data['state_survey_maxdownload']
         state_survey_maxupload = data['state_survey_maxupload']
         ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
@@ -168,11 +166,12 @@ def calculate_fccold_questionable(data):
         address_count = data['address_count']
         state_survey_count = data['state_survey_count']
 
-        speed_questionable = int((fccold_all_max_down <= 25 and fccold_all_max_up <= 3 ) or no_service)
+        speed_questionable = data['fccold_speed_questionable']
         ncsur_speed_questionable = int(state_survey_maxdownload <= 25 and state_survey_maxupload <= 3)
         ookola_speed_questionable = int(ookola_mobile_avg_d_mbps <= 25 and ookola_mobile_avg_u_mbps <= 3)
         ook_speedtestsless = int(ookola_mobile_total_tests > 1 and ookola_mobile_avg_d_mbps < fccold_all_max_down)
         ncsur_peedtestsless = int(address_count/state_survey_count > .1 and state_survey_maxdownload < fccold_all_max_down)
 
         return speed_questionable + ncsur_speed_questionable + ookola_speed_questionable + tech_questionable + ook_speedtestsless + ncsur_peedtestsless
-    return 123456789
+    
+    return 0
