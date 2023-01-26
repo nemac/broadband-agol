@@ -40,13 +40,8 @@ def calculate_fccnew_speedtier(data):
         return 'No Service'
 
 
-def calculate_address_persqmeter(data):
-    #### Need input geojson here in CRS 3857 or at the very least the geometry in CRS 3857
-    input_geojson = """{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-82.68245188437649,35.541600938788264],[-82.66871897421989,35.54125173858815],[-82.66820399008901,35.54648958194431],[-82.68279520713041,35.546594335321956],[-82.68245188437649,35.541600938788264]]]},
-    "properties":{"project_name":"testing-census","_date":1674579600000,"globalid":"{67D71F9F-ED4D-4D13-8356-C2841FE6FBD3}","objectid":18}}"""
-    input_data = geopandas.read_file(input_geojson)
-    input_data = input_data.to_crs('3857')
-    area = input_data.area # what units is this in???
+def calculate_address_persqmeter(data, geometry):
+    area = geometry.area # what units is this in???
     address_count = data['address_count']
     return (address_count / area)
 
@@ -223,10 +218,10 @@ def calculate_fccold_questionable(data):
     
     return 0
 
-def get_func(field_name, data):
+def get_func(field_name, data, geometry):
     summ_funcs = {'fccnew_summary_speedtier': calculate_fccnew_summary_speedtier(data),
         'fccnew_speedtier': calculate_fccnew_speedtier(data),
-        'address_persqmeter': calculate_address_persqmeter(data),
+        'address_persqmeter': calculate_address_persqmeter(data, geometry),
         'percent_addresses': calculate_percent_addresses(data),
         'fccnew_techquestionable': calculate_fccnew_techquestionable(data),
         'fccnew_need_more_ook': calculate_fccnew_need_more_ook(data),

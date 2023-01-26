@@ -1,82 +1,4 @@
 {
-    "id": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": [
-            "id"
-        ],
-        "operation": "COPYLATER",
-        "order": 1
-    },
-    "objectid": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": [
-            "objectid"
-        ],
-        "operation": "COPYINPUT",
-        "order": 1
-    },
-    "globalid": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": [
-            "globalid"
-        ],
-        "operation": "COPYLATER",
-        "order": 1
-    },
-    "creationdate": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": [
-            "creationdate"
-        ],
-        "operation": "COPYLATER",
-        "order": 1
-    },
-    "creator": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": [
-            "creator"
-        ],
-        "operation": "COPYLATER",
-        "order": 1
-    },
-    "editdate": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": [
-            "editdate"
-        ],
-        "operation": "COPYLATER",
-        "order": 1
-    },
-    "editor": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": [
-            "editor"
-        ],
-        "operation": "COPYLATER",
-        "order": 1
-    },
-    "project_name": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": [
-            "project_name"
-        ],
-        "operation": "COPYINPUT",
-        "order": 1
-    },
-    "_date": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": [
-            "_date"
-        ],
-        "operation": "COPYINPUT",
-        "order": 1
-    },
-    "hexid": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": ["objectid"],
-        "operation": "COPYINPUT",
-        "order": 1
-    },
     "is_ineligible_tract": {
         "sourcefile": "wnc_ineligibletracts_2022.gpkg",
         "sourcefields": ["id"],
@@ -199,7 +121,7 @@
         "order": 1
     },
     "fccold_all_count_of_providers": {
-        "sourcefile": "wnc_fixed_summary_block_477.gpkg",
+        "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["providername"],
         "operation": "COUNTUNIQUE",
         "order": 1
@@ -265,11 +187,6 @@
         "order": 1
     },
     "fccnew_summary_speedtier": {
-        "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": ["fccnew_max_advertised_download_speed",
-                            "fccnew_max_advertised_upload_speed"],
-        "NEEDSTOBECALCULATED": "true - may use summary data or gpkg data",
-        "operation": "FUNC1",
         "order": 2
     },
     "fccnew_summary_min_advertised_download_speed": {
@@ -375,11 +292,6 @@
         "order": 1
     },
     "fccnew_speedtier": {
-        "sourcefile": "new_fcc_hex3_l8.gpkg",
-        "sourcefields": ["fccnew_max_advertised_download_speed",
-                           "fccnew_max_advertised_upload_speed"],
-        "NEEDSTOBECALCULATED": "true - may use summary data or gpkg data",
-        "operation": "FUNC1",
         "order": 2
     },
     "fccnew_speedrank": {
@@ -531,27 +443,17 @@
         "order": 1
     },
     "address_persqmeter": {
-        "sourcefile": "wnc_address.gpkg",
-        "sourcefields": ["address_count", "geom"],
-        "NEEDSTOBECALCULATED": "true",
-        "SPECIAL_NOTES": "Uses ST_Area() in geom",
-        "operation": "FUNC1",
         "order": 2
     },
     "percent_addresses": {
-        "sourcefile": "wnc_address.gpkg",
-        "sourcefields": ["state_survey_count", "address_count"],
-        "NEEDSTOBECALCULATED": "true",
-        "operation": "FUNC1",
         "order": 2
     },
     "adress_rank": {
         "sourcefile": "wnc_address_hex_count.gpkg",
-        "sourcefields": ["quantile_rank"],
-        "NEEDSTOBECALCULATED": "true",
-        "SPECIAL_NOTES": "ROUND(avg(quantile_rank))",
-        "operation": "FUNC1 but not really",
-        "order": 2
+        "sourcefields": ["rank"],
+        "NOTE FOR US": "maybe it is quantile_rank ???",
+        "operation": "ROUNDAVERAGE",
+        "order": 1
     },
     "streets_count": {
         "sourcefile": "wnc_osm_roads.gpkg",
@@ -1491,110 +1393,34 @@
         "order": 1
     },
     "fccnew_questionable": {
-        "sourcefile": "FCCNEW",
-        "sourcefields": [
-            "fccnew_tech_questionable",
-            "fccnew_summary_speedtier",
-            "fccnew_speed_questionable",
-            "fccnew_ncsur_speed_questionable",
-            "fccnew_ookola_speed_questionable",
-            "fccnew_ook_speedtestsless",
-            "fccnew_ncsur_peedtestsless"
-        ],
-        "operation": "FUNC2",
         "order": 3
     },
     "fccnew_techquestionable": {
-        "sourcefile": "FCCNEW",
-        "sourcefields": [
-            "fccnew_summary_categories"
-        ],
-        "operation": "FUNC1",
         "order": 2
     },
     "fccnew_need_more_ook": {
-        "sourcefile": "FCCNEW",
-        "sourcefields": [
-            "fccnew_need_ook_speedtest",
-            "fccnew_techquestionable",
-            "fccnew_ook_speedtestsless",
-            "fccnew_ncsur_peedtestsless"
-        ],
-        "operation": "FUNC2",
         "order": 3
     },
     "fccnew_need_survey": {
-        "sourcefile": "FCCNEW",
-        "sourcefields": [
-            "fccnew_need_ncsur",
-            "fccnew_tech_questionable",
-            "fccnew_ook_speedtestsless",
-            "fccnew_ncsur_peedtestsless"
-        ],
-        "operation": "FUNC2",
         "order": 3
     },
     "fccnew_speed_questionable": {
-        "sourcefile": "FCCNEW",
-        "sourcefields": [
-            "fccnew_max_advertised_download_speed",
-            "fccnew_max_advertised_upload_speed",
-            "fccnew_summary_speedtier"
-        ],
-        "operation": "FUNC1",
-        "order": 2
+        "order": 3
     },
     "fccold_questionable": {
-        "sourcefile": "FCCOLD",
-        "sourcefields": [
-            "fccold_tech_questionable",
-            "fccold_fccold_summary_speedtier",
-            "fccold_speed_questionable",
-            "fccold_ncsur_speed_questionable",
-            "fccold_ookola_speed_questionable",
-            "fccold_techquestionable",
-            "fccold_ook_speedtestsless",
-            "fccold_ncsur_peedtestsless"
-        ],
-        "operation": "FUNC2",
         "order": 3
     },
     "fccold_techquestionable": {
-        "sourcefile": "FCCOLD",
-        "sourcefields": ["fccold_summary_category"],
-        "operation": "FUNC1",
         "order": 2
     },
     "fccold_need_more_ook": {
-        "sourcefile": "FCCOLD",
-        "sourcefields": [
-            "fccold_need_ook_speedtest",
-            "fccold_techquestionable",
-            "fccold_ook_speedtestsless",
-            "fccold_ncsur_peedtestsless"
-        ],
-        "operation": "FUNC2",
         "order": 3
     },
     "fccold_need_survey": {
-        "sourcefile": "FCCOLD",
-        "sourcefields": [
-            "fccold_need_ncsur",
-            "fccold_tech_questionable",
-            "fccold_ook_speedtestsless",
-            "fccold_ncsur_peedtestsless"],
-        "operation": "FUNC1",
         "order": 2
     },
     "fccold_speed_questionable": {
-        "sourcefile": "FCCOLD",
-        "sourcefields": [
-            "fccold_all_max_down",
-            "fccold_all_max_up",
-            "fccold_speedtier"
-        ],
-        "operation": "FUNC1",
-        "order": 2
+        "order": 3
     },
     "census_indices_percent_pop_25_3": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
@@ -1702,14 +1528,6 @@
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["year"],
         "operation": "MAX",
-        "order": 1
-    },
-    "geometry": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": [
-            "geometry"
-        ],
-        "operation": "COPYINPUT",
         "order": 1
     }
 }

@@ -183,11 +183,12 @@ def generate_data(input_geojson, debug=False):
     deserialized_input = json.loads(input_geojson)
     input_data = geopandas.read_file(input_geojson)
     input_data = input_data.to_crs('3857')
+    geometry = input_data['geometry']
     id = deserialized_input['properties']['objectid']
     gpkg_data = {}
 
     # Generate output dictionary, blank for now
-    summary_dict = {f: fields_config[f]['operation'] for f in fields_config}
+    summary_dict = {f: None for f in fields_config}
 
     # THIS BLOCK FOR DEV ONLY
     # THIS WILL MOVE TO if has_new_values
@@ -211,6 +212,7 @@ def generate_data(input_geojson, debug=False):
                                       == id]['geometry'].iloc[0]
 
     for field in first_round_ops:
+        print(field)
         try:
             gpkg_src_file = fields_config[field]['sourcefile']
         except:
@@ -225,35 +227,35 @@ def generate_data(input_geojson, debug=False):
                 field, poly_of_interest, src_data)
 
     for field in second_round_ops:
-        summaryFunctions.get_func(field, summary_dict)
+        summaryFunctions.get_func(field, summary_dict, geometry)
     for field in third_round_ops:
-        summaryFunctions.get_func(field, summary_dict)
+        summaryFunctions.get_func(field, summary_dict, geometry)
 
     # Pop these for now since they are incompatible with the final update
-    summary_dict.pop('id')
-    summary_dict.pop('creationdate')
-    summary_dict.pop('creator')
-    summary_dict.pop('editdate')
-    summary_dict.pop('editor')
-    summary_dict.pop('globalid')
-    summary_dict.pop('fccnew_questionable') # FUNC2
-    summary_dict.pop('fccold_questionable') # FUNC2
-    summary_dict.pop('rdof_auctions_count') # FUNC1
-    summary_dict.pop('fccnew_techquestionable') # FUNC1
-    summary_dict.pop('fccnew_summary_speedtier') # FUNC1
-    summary_dict.pop('address_persqmeter') # FUNC1
-    summary_dict.pop('percent_addresses') # FUNC1
-    summary_dict.pop('adress_rank') # FUNC1
-    summary_dict.pop('fccnew_speed_questionable') # FUNC1
-    summary_dict.pop('fccnew_need_more_ook') # FUNC1
-    summary_dict.pop('fccnew_need_survey') # FUNC1
-    summary_dict.pop('fccold_techquestionable') # FUNC1
-    summary_dict.pop('fccold_need_more_ook') # FUNC1
-    summary_dict.pop('fccold_need_survey') # FUNC1
-    summary_dict.pop('fccold_speed_questionable') # FUNC1
-    summary_dict.pop('fccold_all_count_of_providers') #COUNTUNIQUE
-    summary_dict.pop('fccnew_summary_speedrank') #ROUNDAVERAGE
-    summary_dict.pop('fccnew_speedrank') #ROUNDAVERAGE
+    # summary_dict.pop('id')
+    # summary_dict.pop('creationdate')
+    # summary_dict.pop('creator')
+    # summary_dict.pop('editdate')
+    # summary_dict.pop('editor')
+    # summary_dict.pop('globalid')
+    # summary_dict.pop('fccnew_questionable') # FUNC2
+    # summary_dict.pop('fccold_questionable') # FUNC2
+    # summary_dict.pop('rdof_auctions_count') # FUNC1
+    # summary_dict.pop('fccnew_techquestionable') # FUNC1
+    # summary_dict.pop('fccnew_summary_speedtier') # FUNC1
+    # summary_dict.pop('address_persqmeter') # FUNC1
+    # summary_dict.pop('percent_addresses') # FUNC1
+    # summary_dict.pop('adress_rank') # FUNC1
+    # summary_dict.pop('fccnew_speed_questionable') # FUNC1
+    # summary_dict.pop('fccnew_need_more_ook') # FUNC1
+    # summary_dict.pop('fccnew_need_survey') # FUNC1
+    # summary_dict.pop('fccold_techquestionable') # FUNC1
+    # summary_dict.pop('fccold_need_more_ook') # FUNC1
+    # summary_dict.pop('fccold_need_survey') # FUNC1
+    # summary_dict.pop('fccold_speed_questionable') # FUNC1
+    # summary_dict.pop('fccold_all_count_of_providers') #COUNTUNIQUE
+    # summary_dict.pop('fccnew_summary_speedrank') #ROUNDAVERAGE
+    # summary_dict.pop('fccnew_speedrank') #ROUNDAVERAGE
 
     return {'attributes': summary_dict}
 
