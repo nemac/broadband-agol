@@ -104,9 +104,8 @@
     "rdof_auctions_count": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": ["item"],
-        "NEEDSTOBECALCULATED": "UPDATE SOURCEFILE WITH CORRECT SOURCE FILE - REST SHOULD BE GOOD",
         "operation": "COUNTUNIQUE" ,
-        "order": 2
+        "order": 1
     },
     "fccold_all_provider_names": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
@@ -1386,14 +1385,8 @@
         "operation": "SUM",
         "order": 1
     },
-    "uid": {
-        "sourcefile": "USERINPUT",
-        "sourcefields": ["objectid"],
-        "operation": "COPYINPUT",
-        "order": 1
-    },
     "fccnew_questionable": {
-        "order": 3
+        "order": 4
     },
     "fccnew_techquestionable": {
         "order": 2
@@ -1408,7 +1401,7 @@
         "order": 3
     },
     "fccold_questionable": {
-        "order": 3
+        "order": 4
     },
     "fccold_techquestionable": {
         "order": 2

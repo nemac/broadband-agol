@@ -197,6 +197,7 @@ def generate_data(input_geojson, debug=False):
     first_round_ops = []
     second_round_ops = []
     third_round_ops = []
+    fourth_round_ops = []
 
     for fname in fields_config:
         if fields_config[fname]['order'] == 1:
@@ -205,6 +206,8 @@ def generate_data(input_geojson, debug=False):
             second_round_ops.append(fname)
         elif fields_config[fname]['order'] == 3:
             third_round_ops.append(fname)
+        elif fields_config[fname]['order'] == 4:
+            fourth_round_ops.append(fname)
     # for id in test_ids:
     # FIRST GET QUERIED INPUT GEOMETRY TO INTERSECT
     # return 1st (only) geoseries geometry element matched by id
@@ -212,24 +215,27 @@ def generate_data(input_geojson, debug=False):
                                       == id]['geometry'].iloc[0]
 
     for field in first_round_ops:
-        print(field)
         try:
             gpkg_src_file = fields_config[field]['sourcefile']
         except:
             print('cannot find entry for field:')
             print(field)
-        # HANDLE SPECIAL CASES where data is input or summary
-        if fields_config[field]['operation'] == 'COPYINPUT':
-            summary_dict[field] = copy_input(id, field, input_data)
-        else:
-            src_data = gpkg_data[gpkg_src_file]
-            summary_dict[field] = get_field_data(
-                field, poly_of_interest, src_data)
+        src_data = gpkg_data[gpkg_src_file]
+        summary_dict[field] = get_field_data(
+            field, poly_of_interest, src_data)
 
     for field in second_round_ops:
-        summaryFunctions.get_func(field, summary_dict, geometry)
+        print(f'second round ops field: {field}')
+        function_to_use = summaryFunctions.get_func(field)
+        summary_dict[field] = function_to_use(summary_dict, geometry)
     for field in third_round_ops:
-        summaryFunctions.get_func(field, summary_dict, geometry)
+        print(f'third round ops field: {field}')
+        function_to_use = summaryFunctions.get_func(field)
+        summary_dict[field] = function_to_use(summary_dict, geometry)
+    for field in fourth_round_ops:
+        print(f'fourth round ops field: {field}')
+        function_to_use = summaryFunctions.get_func(field)
+        summary_dict[field] = function_to_use(summary_dict, geometry)
 
     # Pop these for now since they are incompatible with the final update
     # summary_dict.pop('id')
