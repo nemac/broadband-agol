@@ -4,6 +4,7 @@ import json
 import boto3
 import numpy as np
 
+import summaryFunctions
 from pprint import pprint
 
 # READ GPKGS FROM S3
@@ -362,25 +363,30 @@ def generate_data(input_geojson, debug=False):
     gpkg_data = {}
 
     # Generate output dictionary, blank for now
-    output_dict = {f: fields_config[f]['operation'] for f in fields_config}
+    summary_dict = {f: fields_config[f]['operation'] for f in fields_config}
 
     # THIS BLOCK FOR DEV ONLY
     # THIS WILL MOVE TO if has_new_values
     gpkg_data = read_all_gpkgs(debug=debug)
 
-    first_round_ops = ['AVERAGE', 'SUM', 'COUNT', 'LIST',
-                       'MAX', 'MIN', 'NONZERO', 'SET', 'COUNTEQVALUE']
+    first_round_ops = []
+    second_round_ops = []
+    third_round_ops = []
 
+    for fname in fields_config:
+        if fields_config[fname]['order'] == 1:
+            first_round_ops.append(fname)
+        elif fields_config[fname]['order'] == 2:
+            second_round_ops.append(fname)
+        elif fields_config[fname]['order'] == 3:
+            third_round_ops.append(fname)
     # for id in test_ids:
     # FIRST GET QUERIED INPUT GEOMETRY TO INTERSECT
     # return 1st (only) geoseries geometry element matched by id
     poly_of_interest = input_data.loc[input_data['objectid']
                                       == id]['geometry'].iloc[0]
-    # fccold_summ, fccnew_summ = generate_summaries(poly_of_interest, gpkg_data)
 
-    # for field in fields_config.keys():
-    for field in output_dict:
-        # for field in test_fields:
+    for field in first_round_ops:
         try:
             gpkg_src_file = fields_config[field]['sourcefile']
         except:
@@ -388,46 +394,44 @@ def generate_data(input_geojson, debug=False):
             print(field)
         # HANDLE SPECIAL CASES where data is input or summary
         if fields_config[field]['operation'] == 'COPYINPUT':
-            output_dict[field] = copy_input(id, field, input_data)
+            summary_dict[field] = copy_input(id, field, input_data)
         else:
-            if gpkg_src_file == 'TBD':
-                print(f'skipping {field}')
-            # if gpkg_src_file == 'FCCNEW':
-            #     src_data = fccnew_summ
-            # elif gpkg_src_file == 'FCCOLD':
-            #     src_data = fccold_summ
-            elif fields_config[field]['operation'] in first_round_ops:
-                src_data = gpkg_data[gpkg_src_file]
-                output_dict[field] = get_field_data(
-                    field, poly_of_interest, src_data)
+            src_data = gpkg_data[gpkg_src_file]
+            summary_dict[field] = get_field_data(
+                field, poly_of_interest, src_data)
+
+    for field in second_round_ops:
+        summaryFunctions.get_func(field, summary_dict)
+    for field in third_round_ops:
+        summaryFunctions.get_func(field, summary_dict)
 
     # Pop these for now since they are incompatible with the final update
-    output_dict.pop('id')
-    output_dict.pop('creationdate')
-    output_dict.pop('creator')
-    output_dict.pop('editdate')
-    output_dict.pop('editor')
-    output_dict.pop('globalid')
-    output_dict.pop('fccnew_questionable') # FUNC2
-    output_dict.pop('fccold_questionable') # FUNC2
-    output_dict.pop('rdof_auctions_count') # FUNC1
-    output_dict.pop('fccnew_techquestionable') # FUNC1
-    output_dict.pop('fccnew_summary_speedtier') # FUNC1
-    output_dict.pop('address_persqmeter') # FUNC1
-    output_dict.pop('percent_addresses') # FUNC1
-    output_dict.pop('adress_rank') # FUNC1
-    output_dict.pop('fccnew_speed_questionable') # FUNC1
-    output_dict.pop('fccnew_need_more_ook') # FUNC1
-    output_dict.pop('fccnew_need_survey') # FUNC1
-    output_dict.pop('fccold_techquestionable') # FUNC1
-    output_dict.pop('fccold_need_more_ook') # FUNC1
-    output_dict.pop('fccold_need_survey') # FUNC1
-    output_dict.pop('fccold_speed_questionable') # FUNC1
-    output_dict.pop('fccold_all_count_of_providers') #COUNTUNIQUE
-    output_dict.pop('fccnew_summary_speedrank') #ROUNDAVERAGE
-    output_dict.pop('fccnew_speedrank') #ROUNDAVERAGE
+    summary_dict.pop('id')
+    summary_dict.pop('creationdate')
+    summary_dict.pop('creator')
+    summary_dict.pop('editdate')
+    summary_dict.pop('editor')
+    summary_dict.pop('globalid')
+    summary_dict.pop('fccnew_questionable') # FUNC2
+    summary_dict.pop('fccold_questionable') # FUNC2
+    summary_dict.pop('rdof_auctions_count') # FUNC1
+    summary_dict.pop('fccnew_techquestionable') # FUNC1
+    summary_dict.pop('fccnew_summary_speedtier') # FUNC1
+    summary_dict.pop('address_persqmeter') # FUNC1
+    summary_dict.pop('percent_addresses') # FUNC1
+    summary_dict.pop('adress_rank') # FUNC1
+    summary_dict.pop('fccnew_speed_questionable') # FUNC1
+    summary_dict.pop('fccnew_need_more_ook') # FUNC1
+    summary_dict.pop('fccnew_need_survey') # FUNC1
+    summary_dict.pop('fccold_techquestionable') # FUNC1
+    summary_dict.pop('fccold_need_more_ook') # FUNC1
+    summary_dict.pop('fccold_need_survey') # FUNC1
+    summary_dict.pop('fccold_speed_questionable') # FUNC1
+    summary_dict.pop('fccold_all_count_of_providers') #COUNTUNIQUE
+    summary_dict.pop('fccnew_summary_speedrank') #ROUNDAVERAGE
+    summary_dict.pop('fccnew_speedrank') #ROUNDAVERAGE
 
-    return {'attributes': output_dict}
+    return {'attributes': summary_dict}
 
 if __name__ == '__main__':
     input_geojson = """{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-82.68245188437649,35.541600938788264],[-82.66871897421989,35.54125173858815],[-82.66820399008901,35.54648958194431],[-82.68279520713041,35.546594335321956],[-82.68245188437649,35.541600938788264]]]},
