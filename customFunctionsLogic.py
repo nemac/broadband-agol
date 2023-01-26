@@ -52,11 +52,16 @@ def calculate_percent_addresses(data):
     address_count = data['address_count']
     return (float(state_survey_count)/float(address_count) * 100 )
 
-def calculate_adress_rank(data):
-    return 123456789
-
 def calculate_fccnew_techquestionable(data):
-    return 987654321
+    fccnew_summary_categories = data['fccnew_summary_categories'] # this comes from 'categories' originally
+    categories_list_one = ['copper', 'gso satellite', 'ngso satellite']
+    categories_list_two = ['cable, fiber, licensed_fixed_wireless']
+    if not any(category in fccnew_summary_categories for category in categories_list_two):
+      if any(category in fccnew_summary_categories for category in categories_list_one):
+          return 1 # tech is questionable
+      else: 
+          return 0 # tech is not questionable
+    return 0 # default return 0????
 
 def calculate_fccnew_need_more_ook(data):
     return 123456789
@@ -68,6 +73,7 @@ def calculate_fccnew_speed_questionable(data):
     return 123456789
 
 def calculate_fccold_techquestionable(data):
+    ### JEFF STOP HERE
     return 987654321
 
 def calculate_fccold_need_more_ook(data):
