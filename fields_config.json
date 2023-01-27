@@ -317,135 +317,145 @@
         "operation": "NONZERO",
         "order": 1
     },
-    "state_survey_count": {
+    "state_survery_count": {
+        "name": "state_survey_count",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["id"],
         "operation": "COUNT",
         "order": 1
     },
-    "state_survey_maxdownload": {
+    "state_survery_maxdownload": {
+        "name": "state_survey_maxdownload",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["dl_speed"],
         "operation": "MAX",
         "order": 1
     },
-    "state_survey_mindownload": {
+    "state_survery_mindownload": {
+        "name": "state_survey_mindownload",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["dl_speed"],
         "operation": "MIN",
         "order": 1
     },
-    "state_survey_avgdownload": {
+    "state_survery_avgdownload": {
+        "name": "state_survey_avgdownload",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["dl_speed"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "state_survey_maxupload": {
+    "state_survery_maxupload": {
+        "name": "state_survey_maxupload",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["ul_speed"],
         "operation": "MAX",
         "order": 1
     },
-    "state_survey_minupload": {
+    "state_survery_minupload": {
+        "name": "state_survey_minupload",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["ul_speed"],
         "operation": "MIN",
         "order": 1
     },
-    "state_survey_avgupload": {
+    "state_survery_avgupload": {
+        "name": "state_survey_avgupload",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["ul_speed"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "state_survey_average_lat": {
+    "state_survery_average_lat": {
+        "name": "state_survey_average_lat",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["latency"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "state_survey_average_jit": {
+    "state_survery_average_jit": {
+        "name": "state_survey_average_jit",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["jitter"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "state_survey_number_no_cell_ser": {
+    "state_survery_number_no_cell_se": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_cell_service_available"],
         "operation": "SUM",
         "order": 1
     },
-    "state_survey_number_no_internet": {
+    "state_survery_number_no_interne": {
+        "name": "state_survey_number_no_internet",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_internet"],
         "operation": "SUM",
         "order": 1
     },
-    "state_survey_number_no_intern_1": {
+    "state_survery_number_no_inter_1": {
         "name": "state_survey_number_no_internet_due_provider",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_internet_due_to_provider"],
         "operation": "SUM",
         "order": 1
     },
-    "state_survey_number_no_intern_2": {
+    "state_survery_number_no_inter_2": {
         "name": "state_survey_number_no_internet_due_cost",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_internet_due_to_expense"],
         "operation": "SUM",
         "order": 1
     },
-    "state_survey_number_10_1_thresh": {
+    "state_survery_number_10_1_thres": {
         "name": "state_survey_number_10_1_threshold_met",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_10_1_threshold_met"],
         "operation": "SUM",
         "order": 1
     },
-    "state_survey_number_25_3_thresh": {
+    "state_survery_number_25_3_thres": {
         "name": "state_survey_number_25_3_threshold_met",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_25_3_threshold_met"],
         "operation": "SUM",
         "order": 1
     },
-    "state_survey_count_na": {
+    "state_survery_count_na": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_primary_reason_no_internet"],
         "eqValue": "Not available",
         "operation": "COUNTEQVALUE",
         "order": 1
     },
-    "state_survey_count_other": {
+    "state_survery_count_other": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_primary_reason_no_internet"],
         "eqValue": "Other reason",
         "operation": "COUNTEQVALUE",
         "order": 1
     },
-    "state_survey_count_too_exp": {
+    "state_survery_count_too_exp": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_primary_reason_no_internet"],
         "eqValue": "Too expensive",
         "operation": "COUNTEQVALUE",
         "order": 1
     },
-    "state_survey_count_no_answer": {
+    "state_survery_count_no_answer": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_primary_reason_no_internet"],
         "eqValue": "No answer",
         "operation": "COUNTEQVALUE",
         "order": 1
     },
-    "state_survey_providers": {
+    "state_survery_providers": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["spname"],
         "operation": "SET",
         "order": 1
     },
-    "state_survey_carrier_names": {
+    "state_survery_carrier_names": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["p_carrier_name"],
         "operation": "SET",
@@ -464,6 +474,7 @@
         "order": 2
     },
     "adress_rank": {
+        "name": "address_rank",
         "sourcefile": "wnc_address_hex_count.gpkg",
         "sourcefields": ["rank"],
         "NOTE FOR US": "maybe it is quantile_rank ???",

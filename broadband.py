@@ -59,7 +59,7 @@ def handler(event, context):
         # overwrite/add geometry, fid
         output_feature_layer_updates['geometry'] = incoming_esri_geometry
         output_feature_layer_updates['attributes']['fid'] = incoming_objectid
-        output_feature_layer_updates['project_name'] = incoming_project_name
+        output_feature_layer_updates['attributes']['project_name'] = incoming_project_name
 
 
         # Grab survey that corresponds with incoming id so we can get the rest of the attributes

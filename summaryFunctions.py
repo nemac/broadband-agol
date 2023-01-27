@@ -46,7 +46,7 @@ def calculate_address_persqmeter(data, geometry):
     return (address_count / area)
 
 def calculate_percent_addresses(data, geometry = None):
-    state_survey_count = data['state_survey_count']
+    state_survey_count = data['state_survery_count']
     address_count = data['address_count']
     return (float(state_survey_count)/float(address_count) * 100 )
 
@@ -71,8 +71,8 @@ def calculate_fccnew_need_more_ook(data, geometry = None):
         tech_questionable = data['fccnew_techquestionable']
         ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
         address_count = data['address_count']
-        state_survey_count = data['state_survey_count']
-        state_survey_maxdownload = data['state_survey_maxdownload']
+        state_survey_count = data['state_survery_count']
+        state_survey_maxdownload = data['state_survery_maxdownload']
         
         ook_speedtestsless = int(ookola_mobile_total_tests > 1 and ookola_mobile_avg_d_mbps < fccnew_max_advertised_download_speed)
         ncsur_peedtestsless = int(address_count/state_survey_count > .1 and state_survey_maxdownload < fccnew_max_advertised_download_speed)
@@ -86,8 +86,8 @@ def calculate_fccnew_need_survey(data, geometry = None):
     fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_']
     ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
     address_count = data['address_count']
-    state_survey_count = data['state_survey_count']
-    state_survey_maxdownload = data['state_survey_maxdownload']
+    state_survey_count = data['state_survery_count']
+    state_survey_maxdownload = data['state_survery_maxdownload']
 
     # CALCULATIONS
     need_ncsur = 0
@@ -132,8 +132,8 @@ def calculate_fccold_need_more_ook(data, geometry = None):
         ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
         fccold_all_max_down = data['fccold_all_max_down']
         address_count = data['address_count']
-        state_survey_count = data['state_survey_count']
-        state_survey_maxdownload = data['state_survey_maxdownload']
+        state_survey_count = data['state_survery_count']
+        state_survey_maxdownload = data['state_survery_maxdownload']
         
         ook_speedtestsless = int(ookola_mobile_total_tests > 1 and ookola_mobile_avg_d_mbps < fccold_all_max_down)
         ncsur_peedtestsless = int(address_count/state_survey_count > .1 and state_survey_maxdownload < fccold_all_max_down)
@@ -147,8 +147,8 @@ def calculate_fccold_need_survey(data, geometry = None):
     fccold_all_max_down = data['fccold_all_max_down']
     ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
     address_count = data['address_count']
-    state_survey_count = data['state_survey_count']
-    state_survey_maxdownload = data['state_survey_maxdownload']
+    state_survey_count = data['state_survery_count']
+    state_survey_maxdownload = data['state_survery_maxdownload']
 
     # CALCULATIONS
     need_ncsur = 0
@@ -175,13 +175,13 @@ def calculate_fccnew_questionable(data, geometry = None):
     no_service = ('No Service' in fccnew_summary_speedtier)
     if tech_questionable > 0 or no_service:
         
-        state_survey_maxdownload = data['state_survey_maxdownload']
-        state_survey_maxupload = data['state_survey_maxupload']
+        state_survey_maxdownload = data['state_survery_maxdownload']
+        state_survey_maxupload = data['state_survery_maxupload']
         ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
         ookola_mobile_avg_u_mbps = data['ookola_mobile_avg_u_mbps']
         ookola_mobile_total_tests = data['ookola_mobile_total_tests']
         address_count = data['address_count']
-        state_survey_count = data['state_survey_count']
+        state_survey_count = data['state_survery_count']
         fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_']
 
         speed_questionable = data['fccnew_speed_questionable']
@@ -200,13 +200,13 @@ def calculate_fccold_questionable(data, geometry = None):
     no_service = ('No Service' in fccold_summary_speedtier)
     if tech_questionable > 0 or no_service:
         fccold_all_max_down = data['fccold_all_max_down']
-        state_survey_maxdownload = data['state_survey_maxdownload']
-        state_survey_maxupload = data['state_survey_maxupload']
+        state_survey_maxdownload = data['state_survery_maxdownload']
+        state_survey_maxupload = data['state_survery_maxupload']
         ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
         ookola_mobile_avg_u_mbps = data['ookola_mobile_avg_u_mbps']
         ookola_mobile_total_tests = data['ookola_mobile_total_tests']
         address_count = data['address_count']
-        state_survey_count = data['state_survey_count']
+        state_survey_count = data['state_survery_count']
 
         speed_questionable = data['fccold_speed_questionable']
         ncsur_speed_questionable = int(state_survey_maxdownload <= 25 and state_survey_maxupload <= 3)
