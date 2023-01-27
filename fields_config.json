@@ -188,37 +188,43 @@
     "fccnew_summary_speedtier": {
         "order": 2
     },
-    "fccnew_summary_min_advertised_download_speed": {
+    "fccnew_summary_min_advertised_d": {
+        "name": "fccnew_summary_min_advertised_download_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
         "operation": "MIN",
         "order": 1
     },
-    "fccnew_summary_min_advertised_upload_speed": {
+    "fccnew_summary_min_advertised_u": {
+        "name": "fccnew_summary_min_advertised_upload_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
         "operation": "MIN",
         "order": 1
     },
-    "fccnew_summary_avg_advertised_download_speed": {
+    "fccnew_summary_avg_advertised_d": {
+        "name": "fccnew_summary_avg_advertised_download_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "fccnew_summary_avg_advertised_upload_speed": {
+    "fccnew_summary_avg_advertised_u": {
+        "name": "fccnew_summary_avg_advertised_upload_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "fccnew_summary_max_advertised_download_speed": {
+    "fccnew_summary_max_advertised_d": {
+        "name": "fccnew_summary_max_advertised_download_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
         "operation": "MAX",
         "order": 1
     },
-    "fccnew_summary_max_advertised_upload_speed": {
+    "fccnew_summary_max_advertised_u": {
+        "name": "fccnew_summary_max_advertised_upload_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
         "operation": "MAX",
@@ -254,37 +260,43 @@
         "operation": "SET",
         "order": 1
     },
-    "fccnew_max_advertised_download_speed": {
+    "fccnew_max_advertised_download_": {
+        "name": "fccnew_max_advertised_download_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
         "operation": "MAX",
         "order": 1
     },
-    "fccnew_max_advertised_upload_speed": {
+    "fccnew_max_advertised_upload_sp": {
+        "name": "fccnew_max_advertised_upload_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
         "operation": "MAX",
         "order": 1
     },
-    "fccnew_min_advertised_download_speed": {
+    "fccnew_min_advertised_download_": {
+        "name": "fccnew_min_advertised_download_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
         "operation": "MIN",
         "order": 1
     },
-    "fccnew_min_advertised_upload_speed": {
+    "fccnew_min_advertised_upload_sp": {
+        "name": "fccnew_min_advertised_upload_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
         "operation": "MIN",
         "order": 1
     },
-    "fccnew_avg_advertised_download_speed": {
+    "fccnew_avg_advertised_download_": {
+        "name": "fccnew_avg_advertised_download_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_download_speed"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "fccnew_avg_advertised_upload_speed": {
+    "fccnew_avg_advertised_upload_sp": {
+        "name": "fccnew_avg_advertised_upload_speed",
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["max_advertised_upload_speed"],
         "operation": "AVERAGE",
@@ -359,7 +371,7 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "state_survey_number_no_cell_service": {
+    "state_survey_number_no_cell_ser": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_cell_service_available"],
         "operation": "SUM",
@@ -371,25 +383,29 @@
         "operation": "SUM",
         "order": 1
     },
-    "state_survey_number_no_internet_due_provider": {
+    "state_survey_number_no_intern_1": {
+        "name": "state_survey_number_no_internet_due_provider",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_internet_due_to_provider"],
         "operation": "SUM",
         "order": 1
     },
-    "state_survey_number_no_internet_due_cost": {
+    "state_survey_number_no_intern_2": {
+        "name": "state_survey_number_no_internet_due_cost",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_no_internet_due_to_expense"],
         "operation": "SUM",
         "order": 1
     },
-    "state_survey_number_10_1_threshold_met": {
+    "state_survey_number_10_1_thresh": {
+        "name": "state_survey_number_10_1_threshold_met",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_10_1_threshold_met"],
         "operation": "SUM",
         "order": 1
     },
-    "state_survey_number_25_3_threshold_met": {
+    "state_survey_number_25_3_thresh": {
+        "name": "state_survey_number_25_3_threshold_met",
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["c_25_3_threshold_met"],
         "operation": "SUM",
@@ -1421,13 +1437,15 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_pop_100_20": {
+    "census_indices_percent_pop_100_": {
+        "name": "census_indices_percent_pop_100_20",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__100_20"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_pop_fiber": {
+    "census_indices_percent_pop_fibe": {
+        "name": "census_indices_percent_pop_fiber",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__fiber"],
         "operation": "AVERAGE",
@@ -1439,13 +1457,15 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_pop_no_prov": {
+    "census_indices_percent_pop_no_p": {
+        "name": "census_indices_percent_pop_no_prov",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__no_prov_"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_pop_dsl_only": {
+    "census_indices_percent_pop_dsl_": {
+        "name": "census_indices_percent_pop_dsl_only",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__dsl_only"],
         "operation": "AVERAGE",
@@ -1463,7 +1483,8 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_ages_18_34": {
+    "census_indices_percent_ages_18_": {
+        "name": "census_indices_percent_ages_18_34",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_ages_18_34"],
         "operation": "AVERAGE",
@@ -1475,23 +1496,40 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_hhlds_children": {
+    "census_indices_percent_hhlds_ch": {
+        "name": "census_indices_percent_hhlds_children",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_hhlds__children"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_work_from_home": {
+    "census_indices_percent_work_fro": {
+        "name": "census_indices_percent_work_from_home",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_work_from_home"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_ages_65_and_over": {
+    "census_indices_percent_ages_65_": {
+        "name": "census_indices_percent_ages_65_and_over",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_ages_65_and_over"],
         "operation": "AVERAGE",
         "order": 1
+    },
+    "census_indices_percent_no_int_a": {
+        "name": "census_indices_percent_no_int_access",
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_no_int__access"],
+        "operation": "AVERAGE",
+        "order": 1 
+    },
+    "census_indices_percent_no_comp_": {
+        "name": "census_indices_percent_no_comp_devices",
+        "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
+        "sourcefields": ["percent_no_comp__devices"],
+        "operation": "AVERAGE",
+        "order": 1 
     },
     "census_indices_percent_poverty": {
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
@@ -1499,13 +1537,15 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_disability": {
+    "census_indices_percent_disabili": {
+        "name": "census_indices_percent_disability",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_disability"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_lim_english": {
+    "census_indices_percent_lim_engl": {
+        "name": "census_indices_percent_lim_english",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_lim__english"],
         "operation": "AVERAGE",

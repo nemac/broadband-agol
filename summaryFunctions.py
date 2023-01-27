@@ -10,8 +10,8 @@ import numpy as np
 import geopandas
 
 def calculate_fccnew_summary_speedtier(data, geometry = None):
-    download_speed = data["fccnew_max_advertised_download_speed"]
-    upload_speed = data["fccnew_max_advertised_upload_speed"]
+    download_speed = data["fccnew_max_advertised_download_"]
+    upload_speed = data["fccnew_max_advertised_upload_sp"]
     if download_speed == 0 or upload_speed == 0:
         return 'No Service'
     elif download_speed <= 25 and upload_speed <= 3:
@@ -25,8 +25,8 @@ def calculate_fccnew_summary_speedtier(data, geometry = None):
 
 
 def calculate_fccnew_speedtier(data, geometry = None):
-    download_speed = data["fccnew_max_advertised_download_speed"]
-    upload_speed = data["fccnew_max_advertised_upload_speed"]
+    download_speed = data["fccnew_max_advertised_download_"]
+    upload_speed = data["fccnew_max_advertised_upload_sp"]
     if download_speed == 0 or upload_speed == 0:
         return 'No Service'
     elif download_speed <= 25 and upload_speed <= 3:
@@ -64,7 +64,7 @@ def calculate_fccnew_techquestionable(data, geometry = None):
 def calculate_fccnew_need_more_ook(data, geometry = None):
     # HERE DATA is SUMMARY
     ookola_mobile_total_tests = data['ookola_mobile_total_tests']
-    fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_speed']
+    fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_']
     # Is null converted to 0?  SQL uses null comparison for fccnew_max_advertised_download_speed
     need_ook_speedtest = ookola_mobile_total_tests < 2 or fccnew_max_advertised_download_speed == 0
     if need_ook_speedtest:
@@ -83,7 +83,7 @@ def calculate_fccnew_need_survey(data, geometry = None):
     # DATA
     tech_questionable = data['fccnew_techquestionable']
     ookola_mobile_total_tests = data['ookola_mobile_total_tests']
-    fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_speed']
+    fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_']
     ookola_mobile_avg_d_mbps = data['ookola_mobile_avg_d_mbps']
     address_count = data['address_count']
     state_survey_count = data['state_survey_count']
@@ -103,8 +103,8 @@ def calculate_fccnew_need_survey(data, geometry = None):
 def calculate_fccnew_speed_questionable(data, geometry = None):
     fccnew_summary_speedtier = data['fccnew_summary_speedtier']
     no_service = ('No Service' in fccnew_summary_speedtier)
-    fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_speed']
-    fccnew_max_advertised_upload_speed = data['fccnew_max_advertised_upload_speed']
+    fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_']
+    fccnew_max_advertised_upload_speed = data['fccnew_max_advertised_upload_sp']
     speed_questionable = int((fccnew_max_advertised_download_speed <= 25 and fccnew_max_advertised_upload_speed <= 3 ) or no_service)
 
     return speed_questionable
@@ -182,7 +182,7 @@ def calculate_fccnew_questionable(data, geometry = None):
         ookola_mobile_total_tests = data['ookola_mobile_total_tests']
         address_count = data['address_count']
         state_survey_count = data['state_survey_count']
-        fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_speed']
+        fccnew_max_advertised_download_speed = data['fccnew_max_advertised_download_']
 
         speed_questionable = data['fccnew_speed_questionable']
         ncsur_speed_questionable = int(state_survey_maxdownload <= 25 and state_survey_maxupload <= 3)
