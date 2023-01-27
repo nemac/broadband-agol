@@ -86,12 +86,14 @@
     "rdof_auctions_name": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": ["bidder"],
+        "emptyValue": "No bidders found",
         "operation": "SET",
         "order": 1
     },
     "rdof_auctions_item": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": ["item"],
+        "emptyValue": "No items found",
         "operation": "SET",
         "order": 1
     },
@@ -110,12 +112,14 @@
     "fccold_all_provider_names": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["providername"],
+        "emptyValue": "No providers found",
         "operation": "SET",
         "order": 1
     },
     "fccold_all_techfamily": {
         "sourcefile": "wnc_provider_boundaries_block_477.gpkg",
         "sourcefields": ["techfamily"],
+        "emptyValue": "No tech families found",
         "operation": "SET",
         "order": 1
     },
@@ -170,12 +174,14 @@
     "fccold_summary_category": {
         "sourcefile": "wnc_fixed_summary_block_477.gpkg",
         "sourcefields": ["tech_family"],
+        "emptyValue": "No tech families found",
         "operation": "SET",
         "order": 1
     },
     "fccold_summary_speedtier": {
         "sourcefile": "wnc_fixed_summary_block_477.gpkg",
         "sourcefields": ["speedtier"],
+        "emptyValue": "No speed tiers found",
         "operation": "SET",
         "order": 1
     },
@@ -233,12 +239,14 @@
     "fccnew_summary_providers": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["brand_name"],
+        "emptyValue": "No providers found",
         "operation": "SET",
         "order": 1
     },
     "fccnew_summary_categories": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["category"],
+        "emptyValue": "No categories found",
         "operation": "SET",
         "order": 1
     },
@@ -251,12 +259,14 @@
     "fccnew_name": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["brand_name"],
+        "emptyValue": "No names found",
         "operation": "SET",
         "order": 1
     },
     "fccnew_category": {
         "sourcefile": "new_fcc_hex3_l8.gpkg",
         "sourcefields": ["category"],
+        "emptyValue": "No categories found",
         "operation": "SET",
         "order": 1
     },
@@ -452,12 +462,14 @@
     "state_survery_providers": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["spname"],
+        "emptyValue": "No providers found",
         "operation": "SET",
         "order": 1
     },
     "state_survery_carrier_names": {
         "sourcefile": "wnc_nc_broadband_survey.gpkg",
         "sourcefields": ["p_carrier_name"],
+        "emptyValue": "No carriers found",
         "operation": "SET",
         "order": 1
     },
@@ -608,6 +620,7 @@
     "railways_names": {
         "sourcefile": "wnc_railways.gpkg",
         "sourcefields": ["name"],
+        "emptyValue": "No railways found",
         "operation": "SET",
         "order": 1
     },
@@ -1448,14 +1461,14 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_pop_100_": {
+    "census_indices_percent_pop_100_20": {
         "name": "census_indices_percent_pop_100_20",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__100_20"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_pop_fibe": {
+    "census_indices_percent_pop_fiber": {
         "name": "census_indices_percent_pop_fiber",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__fiber"],
@@ -1468,14 +1481,14 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_pop_no_p": {
+    "census_indices_percent_pop_no_prov": {
         "name": "census_indices_percent_pop_no_prov",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__no_prov_"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_pop_dsl_": {
+    "census_indices_percent_pop_dsl_only": {
         "name": "census_indices_percent_pop_dsl_only",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_pop__dsl_only"],
@@ -1494,7 +1507,7 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_ages_18_": {
+    "census_indices_percent_ages_18_34": {
         "name": "census_indices_percent_ages_18_34",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_ages_18_34"],
@@ -1507,35 +1520,35 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_hhlds_ch": {
+    "census_indices_percent_hhlds_children": {
         "name": "census_indices_percent_hhlds_children",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_hhlds__children"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_work_fro": {
+    "census_indices_percent_work_from_home": {
         "name": "census_indices_percent_work_from_home",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_work_from_home"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_ages_65_": {
+    "census_indices_percent_ages_65_and_over": {
         "name": "census_indices_percent_ages_65_and_over",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_ages_65_and_over"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_no_int_a": {
+    "census_indices_percent_no_int_access": {
         "name": "census_indices_percent_no_int_access",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_no_int__access"],
         "operation": "AVERAGE",
         "order": 1 
     },
-    "census_indices_percent_no_comp_": {
+    "census_indices_percent_no_comp_devices": {
         "name": "census_indices_percent_no_comp_devices",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_no_comp__devices"],
@@ -1548,14 +1561,14 @@
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_disabili": {
+    "census_indices_percent_disability": {
         "name": "census_indices_percent_disability",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_disability"],
         "operation": "AVERAGE",
         "order": 1
     },
-    "census_indices_percent_lim_engl": {
+    "census_indices_percent_lim_english": {
         "name": "census_indices_percent_lim_english",
         "sourcefile": "wnc_broadbandIndices_bytract.gpkg",
         "sourcefields": ["percent_lim__english"],

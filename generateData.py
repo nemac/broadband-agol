@@ -158,6 +158,8 @@ def get_field_data(field_name, poly, src_data):
         return bool(len(all_values))
 
     elif task == 'SET':
+        if not len(all_values):
+            return fields_config[field_name]['emptyValue']
         return str(set(list(all_values)))
 
     elif task == 'COUNTEQVALUE':
@@ -266,7 +268,7 @@ def generate_data(input_geojson, debug=False):
     return {'attributes': summary_dict}
 
 if __name__ == '__main__':
-    input_geojson = """{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-82.53022941320671,35.5384577834048],[-82.53027232855094,35.533359109750386],[-82.51812728613118,35.53314956828416],[-82.51907142370445,35.538527625999315],[-82.53022941320671,35.5384577834048]]]},
-    "properties":{"project_name":"test-with-new-functions","_date":1674838800000,"globalid":"{A09FB839-4BFC-4190-880F-206802B7AAC9}","objectid":20}}"""
+    input_geojson = """{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-83.19162098609121,35.31025565642567],[-83.19164244376333,35.30705122762364],[-83.18108526908044,35.306858607640514],[-83.1821152373422,35.30973034892737],[-83.19162098609121,35.31025565642567]]]},
+    "properties":{"project_name":"more-jeff-stuff","_date":1674838800000,"globalid":"{0B0F1C97-6CC3-4A44-8EF5-FA68D3F075F1}","objectid":27}}"""
     pprint(generate_data(input_geojson))
 
