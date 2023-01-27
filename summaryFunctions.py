@@ -41,6 +41,7 @@ def calculate_fccnew_speedtier(data, geometry = None):
 
 def calculate_address_persqmeter(data, geometry):
     area = geometry.area # what units is this in???
+    area = area.values[0]
     address_count = data['address_count']
     return (address_count / area)
 

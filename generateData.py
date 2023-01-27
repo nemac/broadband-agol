@@ -266,7 +266,7 @@ def generate_data(input_geojson, debug=False):
     return {'attributes': summary_dict}
 
 if __name__ == '__main__':
-    input_geojson = """{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-82.68245188437649,35.541600938788264],[-82.66871897421989,35.54125173858815],[-82.66820399008901,35.54648958194431],[-82.68279520713041,35.546594335321956],[-82.68245188437649,35.541600938788264]]]},
-    "properties":{"project_name":"testing-census","_date":1674579600000,"globalid":"{67D71F9F-ED4D-4D13-8356-C2841FE6FBD3}","objectid":18}}"""
+    input_geojson = """{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-82.53022941320671,35.5384577834048],[-82.53027232855094,35.533359109750386],[-82.51812728613118,35.53314956828416],[-82.51907142370445,35.538527625999315],[-82.53022941320671,35.5384577834048]]]},
+    "properties":{"project_name":"test-with-new-functions","_date":1674838800000,"globalid":"{A09FB839-4BFC-4190-880F-206802B7AAC9}","objectid":20}}"""
     pprint(generate_data(input_geojson))
 
