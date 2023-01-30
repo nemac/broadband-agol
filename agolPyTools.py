@@ -60,7 +60,8 @@ field = {
   "defaultValue": None
 }
 
-change_field_properties("e757a5a007b64ba9b73ccb44362c2b15", field)
+#change_field_properties("e757a5a007b64ba9b73ccb44362c2b15", field) # test data set
+change_field_properties("9cfbc22bfadb4be7b5127f50714c16a8", field) # real data set
 
 #feature_to_add = test_content_features[4] # Franklin Area
 

@@ -2,6 +2,8 @@
     "is_ineligible_tract": {
         "sourcefile": "wnc_ineligibletracts_2022.gpkg",
         "sourcefields": ["id"],
+        "emptyValue": "Not an ineligible tract",
+        "changeOperation": "probably should change operation to not be NONZERO",
         "operation": "NONZERO",
         "order": 1
     },
@@ -14,6 +16,7 @@
     "is_ineligible_great_round1": {
         "sourcefile": "wnc_great_grants_round1.gpkg",
         "sourcefields": ["Provider"],
+        "emptyValue": 0,
         "operation": "NONZERO",
         "order": 1
     },
@@ -26,12 +29,14 @@
     "ineligible_great_round1_names": {
         "sourcefile": "wnc_great_grants_round1.gpkg",
         "sourcefields": ["Provider"],
+        "emptyValue": "Rd 1 : No ineligibilities found",
         "operation": "LIST",
         "order": 1
     },
     "is_ineligible_great_round2": {
         "sourcefile": "wnc_great_grants_round2.gpkg",
         "sourcefields": ["Provider"],
+        "emptyValue": 0,
         "operation": "NONZERO",
         "order": 1
     },
@@ -44,12 +49,14 @@
     "ineligible_great_round2_names": {
         "sourcefile": "wnc_great_grants_round2.gpkg",
         "sourcefields": ["Provider"],
+        "emptyValue": "Rd 2 : No ineligibilities found",
         "operation": "LIST",
         "order": 1
     },
     "is_ineligible_great_round3": {
         "sourcefile": "wnc_great_grants_round3.gpkg",
         "sourcefields": ["Provider"],
+        "emptyValue": 0,
         "operation": "NONZERO",
         "order": 1
     },
@@ -62,18 +69,21 @@
     "ineligible_great_round3_names": {
         "sourcefile": "wnc_great_grants_round3.gpkg",
         "sourcefields": ["Provider"],
+        "emptyValue": "Rd 3 : No ineligibilities found",
         "operation": "LIST",
         "order": 1
     },
     "fed_grant_names": {
         "sourcefile": "wnc_fed_grant_areas.gpkg",
         "sourcefields": ["name"],
+        "emptyValue": "No federal grants found",
         "operation": "LIST",
         "order": 1
     },
     "is_fed_grant_ineligible": {
         "sourcefile": "wnc_fed_grant_areas.gpkg",
         "sourcefields": ["name"],
+        "emptyValue": 0,
         "operation": "NONZERO",
         "order": 1
     },
@@ -100,6 +110,7 @@
     "is_rdof_auctions_ineligible": {
         "sourcefile": "wnc_fcc_rdof_auction_904_results.gpkg",
         "sourcefields": ["item"],
+        "emptyValue": 0,
         "operation": "NONZERO" ,
         "order": 1
     },
@@ -324,6 +335,7 @@
     "isparkway": {
         "sourcefile": "wnc_blueridegeparkway.gpkg",
         "sourcefields": ["id"],
+        "emptyValue": "Does not cross parkway",
         "operation": "NONZERO",
         "order": 1
     },
@@ -590,12 +602,14 @@
     "rocky_mukey": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": ["mukey"],
+        "emptyValue": "No mukey found",
         "operation": "LIST",
         "order": 1
     },
     "rocky_type": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": ["muaggatt_muname"],
+        "emptyValue": "No rocky type found",
         "operation": "LIST",
         "order": 1
     },
@@ -608,6 +622,7 @@
     "isrocky": {
         "sourcefile": "wnc_rocky.gpkg",
         "sourcefields": ["id"],
+        "emptyValue": 0,
         "operation": "NONZERO",
         "order": 1
     },

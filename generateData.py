@@ -152,9 +152,11 @@ def get_field_data(field_name, poly, src_data):
 
     elif task == 'LIST':
         if not len(all_values):
-            return EMPTYLISTFIX
+            return fields_config[field_name]['emptyValue']
 
     elif task == 'NONZERO':
+        if not len(all_values):
+            return fields_config[field_name]['emptyValue']
         return bool(len(all_values))
 
     elif task == 'SET':
