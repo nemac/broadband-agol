@@ -61,6 +61,9 @@ def calculate_fccnew_techquestionable(data, geometry = None):
           return 0 # tech is not questionable
     return 0 # default return 0????
 
+"""fccnew_need_more_ook does some calculations to determine whether or not more ookola
+   speed tests are needed or not. If the result of these calculations are 0, then "False" 
+   is returned. If the result of these calculations is greater than zero then return "True" """
 def calculate_fccnew_need_more_ook(data, geometry = None):
     # HERE DATA is SUMMARY
     ookola_mobile_total_tests = data['ookola_mobile_total_tests']
@@ -76,9 +79,15 @@ def calculate_fccnew_need_more_ook(data, geometry = None):
         
         ook_speedtestsless = int(ookola_mobile_total_tests > 1 and ookola_mobile_avg_d_mbps < fccnew_max_advertised_download_speed)
         ncsur_peedtestsless = int(address_count/state_survey_count > .1 and state_survey_maxdownload < fccnew_max_advertised_download_speed)
-        return  tech_questionable + ook_speedtestsless + ncsur_peedtestsless
-    return 0
+        total_value = tech_questionable + ook_speedtestsless + ncsur_peedtestsless
+        if total_value > 0:
+            return "True"
+        return "False"
+    return "False"
 
+"""fccnew_need_survey does some calculations to determine whether or not more surveys
+   are needed or not. If the result of these calculations are 0, then "False" 
+   is returned. If the result of these calculations is greater than zero then return "True" """
 def calculate_fccnew_need_survey(data, geometry = None):
     # DATA
     tech_questionable = data['fccnew_techquestionable']
@@ -98,7 +107,9 @@ def calculate_fccnew_need_survey(data, geometry = None):
     return_value = 0
     if need_ncsur:
         return_value = tech_questionable + ook_speedtestsless + ncsur_peedtestsless
-    return return_value
+    if return_value > 0:
+        return "True"
+    return "False"
 
 def calculate_fccnew_speed_questionable(data, geometry = None):
     fccnew_summary_speedtier = data['fccnew_summary_speedtier']

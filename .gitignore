@@ -1,5 +1,6 @@
 # Distribution / packaging
 .Python
+__pycache__/
 env/
 build/
 develop-eggs/
@@ -16,8 +17,12 @@ var/
 .installed.cfg
 *.egg
 
-# Serverless directories
+# Serverless stuff
 .serverless
+.requirements.zip
 
 # Node
 node_modules/
+
+# Other stuff
+.DS_Store
