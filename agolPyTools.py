@@ -34,7 +34,7 @@ def change_field_properties(agol_id, field):
     for content_field in content_layer.properties.fields:
         if field['name'] == content_field['name']:
             print('before update')
-            print(field)
+            print(content_field)
     # update the definition
     content_layer.manager.update_definition({"fields": [field]})
 
@@ -44,14 +44,16 @@ def change_field_properties(agol_id, field):
     for content_field in content_layer.properties.fields:
         if field['name'] == content_field['name']:
             print('after update')
-            print(field)
+            print(content_field)
 
 
 field = {
-  "name": "isparkway",
+  #"name": "fccnew_need_more_ook",
+  "name": "fccnew_need_survey",
   "type": "esriFieldTypeString",
   #"type": "esriFieldTypeInteger",
-  "alias": "isparkway",
+  #"alias": "fccnew_need_more_ook",
+  "alias": "fccnew_need_survey",
   "length": 255,
   "sqlType": "sqlTypeOther",
   "nullable": True,
@@ -60,8 +62,8 @@ field = {
   "defaultValue": None
 }
 
-#change_field_properties("e757a5a007b64ba9b73ccb44362c2b15", field) # test data set
-change_field_properties("9cfbc22bfadb4be7b5127f50714c16a8", field) # real data set
+change_field_properties("e757a5a007b64ba9b73ccb44362c2b15", field) # test data set
+#change_field_properties("9cfbc22bfadb4be7b5127f50714c16a8", field) # real data set
 
 #feature_to_add = test_content_features[4] # Franklin Area
 
