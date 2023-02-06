@@ -62,8 +62,23 @@ field = {
   "defaultValue": None
 }
 
-change_field_properties("e757a5a007b64ba9b73ccb44362c2b15", field) # test data set
+def delete_feature(agol_id, feature_name):
+    """The purpose of this function is to delete a specific Feature Layer Collection feature by name"""
+    content = gis.content.get(agol_id)
+    content_layer = content.layers[0]
+    content_layer_feature_set = content_layer.query()
+    content_features = content_layer_feature_set.features
+    # select feature from feature_name
+    selected_feature = [f for f in content_features if f.attributes['project_name'] == feature_name][0]
+    # Note that examples use objectid but it appears that we are using fid and will need to delete by fid
+    id_to_delete = selected_feature.get_value('fid')
+    delete_result = content_layer.edit_features(deletes=[str(id_to_delete)])
+    print(delete_result)
+
+
+#change_field_properties("e757a5a007b64ba9b73ccb44362c2b15", field) # test data set
 #change_field_properties("9cfbc22bfadb4be7b5127f50714c16a8", field) # real data set
+delete_feature("9cfbc22bfadb4be7b5127f50714c16a8", "will-this-update-jeff-feb-6") # real data set
 
 #feature_to_add = test_content_features[4] # Franklin Area
 
