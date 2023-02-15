@@ -50,6 +50,12 @@ functions:
     handler: broadband.handler
     timeout: 300
     memorySize: 4096
+    # Uncomment if needed - Allows us to run sls locally and post to the actual broadband function
+    #events:
+    #  - http: 
+    #      path: temporary_please_delete
+    #      method: post
+    #      cors: true
   receive: 
     handler: receive.handler
     timeout: 30

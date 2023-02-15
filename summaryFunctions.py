@@ -81,9 +81,9 @@ def calculate_fccnew_need_more_ook(data, geometry = None):
         ncsur_peedtestsless = int(address_count/state_survey_count > .1 and state_survey_maxdownload < fccnew_max_advertised_download_speed)
         total_value = tech_questionable + ook_speedtestsless + ncsur_peedtestsless
         if total_value > 0:
-            return "True"
-        return "False"
-    return "False"
+            return "Needs more Ookola tests"
+        return "Does not need more Ookola tests"
+    return "Does not need more Ookola tests"
 
 """fccnew_need_survey does some calculations to determine whether or not more surveys
    are needed or not. If the result of these calculations are 0, then "False" 
@@ -108,8 +108,8 @@ def calculate_fccnew_need_survey(data, geometry = None):
     if need_ncsur:
         return_value = tech_questionable + ook_speedtestsless + ncsur_peedtestsless
     if return_value > 0:
-        return "True"
-    return "False"
+        return "Needs more state broadband surveys"
+    return "Does not need more state broadband surveys"
 
 def calculate_fccnew_speed_questionable(data, geometry = None):
     fccnew_summary_speedtier = data['fccnew_summary_speedtier']
@@ -201,9 +201,9 @@ def calculate_fccnew_questionable(data, geometry = None):
         ook_speedtestsless = int(ookola_mobile_total_tests > 1 and ookola_mobile_avg_d_mbps < fccnew_max_advertised_download_speed)
         ncsur_peedtestsless = int(address_count/state_survey_count > .1 and state_survey_maxdownload < fccnew_max_advertised_download_speed)
 
-        return speed_questionable + ncsur_speed_questionable + ookola_speed_questionable + tech_questionable + ook_speedtestsless + ncsur_peedtestsless
+        return "There are multiple questions about the availability of service"
 
-    return 0
+    return "There are NO questions about the availability of service"
 
 def calculate_fccold_questionable(data, geometry = None):
     tech_questionable = data['fccold_techquestionable']

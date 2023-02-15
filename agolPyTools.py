@@ -48,12 +48,10 @@ def change_field_properties(agol_id, field):
 
 
 field = {
-  #"name": "fccnew_need_more_ook",
-  "name": "fccnew_need_survey",
+  "name": "fccnew_questionable",
   "type": "esriFieldTypeString",
   #"type": "esriFieldTypeInteger",
-  #"alias": "fccnew_need_more_ook",
-  "alias": "fccnew_need_survey",
+  "alias": "fccnew_questionable",
   "length": 255,
   "sqlType": "sqlTypeOther",
   "nullable": True,
